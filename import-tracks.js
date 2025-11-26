@@ -1,56 +1,59 @@
-const https = require('https');
-const fs = require('fs');
-const querystring = require('querystring');
+const https = require("https");
+const fs = require("fs");
+const querystring = require("querystring");
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function searchTracks(query, limit = 10) {
   return new Promise((resolve, reject) => {
     const params = querystring.stringify({
       q: query,
-      limit: limit
+      limit: limit,
     });
 
-    const req = https.request({
-      hostname: 'api.deezer.com',
-      path: `/search?${params}`,
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'User-Agent': 'MusicApp-Coursework/1.0'
-      }
-    }, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const response = JSON.parse(data);
-          if (!response.data || !Array.isArray(response.data)) {
-            return reject(new Error(`No tracks for: ${query}`));
+    const req = https.request(
+      {
+        hostname: "api.deezer.com",
+        path: `/search?${params}`,
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "User-Agent": "MusicApp-Coursework/1.0",
+        },
+      },
+      (res) => {
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => {
+          try {
+            const response = JSON.parse(data);
+            if (!response.data || !Array.isArray(response.data)) {
+              return reject(new Error(`No tracks for: ${query}`));
+            }
+
+            const tracks = response.data.map((item) => ({
+              id: item.id.toString(),
+              name: item.title,
+              artist: item.artist.name,
+              album: item.album.title,
+              preview_url: item.preview,
+              duration_ms: item.duration * 1000,
+              popularity: item.rank,
+            }));
+
+            resolve(tracks);
+          } catch (e) {
+            reject(e);
           }
+        });
+      }
+    );
 
-          const tracks = response.data.map(item => ({
-            id: item.id.toString(),
-            name: item.title,
-            artist: item.artist.name,
-            album: item.album.title,
-            preview_url: item.preview,
-            duration_ms: item.duration * 1000,
-            popularity: item.rank
-          }));
-
-          resolve(tracks);
-        } catch (e) {
-          reject(e);
-        }
-      });
-    });
-
-    req.on('error', reject);
+    req.on("error", reject);
     req.setTimeout(10000);
-    req.on('timeout', () => {
+    req.on("timeout", () => {
       req.destroy();
       reject(new Error(`Timeout for: ${query}`));
     });
@@ -58,60 +61,276 @@ function searchTracks(query, limit = 10) {
   });
 }
 
+// async function fetchTracks() {
+//   try {
+//     console.log("🔍 Запрос треков из Deezer API...");
+
+//     // Рабочие запросы — по артистам и трекам
+//     const queries = [
+//       'artist:"Ed Sheeran"',
+//       'artist:"The Weeknd"',
+//       'artist:"Tones and I"',
+//       'artist:"Radiohead"',
+//       'artist:"Linkin Park"',
+//       'track:"Shape of You"',
+//       'track:"Blinding Lights"',
+//       'track:"Dance Monkey"',
+//     ];
+
+//     let allTracks = [];
+
+//     for (let i = 0; i < queries.length; i++) {
+//       const query = queries[i];
+//       console.log(`  → Запрос ${i + 1}/${queries.length}: ${query}`);
+
+//       try {
+//         const tracks = await searchTracks(query, 5);
+//         allTracks.push(...tracks);
+//         console.log(`    → Получено ${tracks.length} треков`);
+//       } catch (e) {
+//         console.warn(`    ⚠️ Пропущен: ${e.message}`);
+//       }
+
+//       if (i < queries.length - 1) {
+//         await sleep(2000); // 2 секунды пауза
+//       }
+//     }
+
+//     // Убираем дубликаты
+//     const uniqueTracks = allTracks.filter(
+//       (track, index, self) => index === self.findIndex((t) => t.id === track.id)
+//     );
+
+//     // Сортируем по популярности
+//     uniqueTracks.sort((a, b) => b.popularity - a.popularity);
+
+//     // Берём топ 100
+//     const top100 = uniqueTracks.slice(0, 100);
+
+//     // Сохраняем
+//     fs.writeFileSync("data.json", JSON.stringify(top100, null, 2));
+//     console.log(`\n✅ Успешно сохранено ${top100.length} треков в data.json`);
+//     const withPreview = top100.filter((t) => t.preview_url).length;
+//     console.log(
+//       `🎧 Сниппеты доступны для ${withPreview} из ${top100.length} треков`
+//     );
+//   } catch (error) {
+//     console.error("❌ Критическая ошибка:", error.message);
+//   }
+// }
+
+const path = require("path");
+const axios = require("axios");
+const { URL } = require("url");
+
+async function downloadResources(urls, outputDir = "./downloaded") {
+  for (const link of urls) {
+    try {
+      const urlObj = new URL(link);
+      const relativePath = urlObj.pathname.startsWith("/")
+        ? urlObj.pathname.slice(1)
+        : urlObj.pathname;
+      const localPath = path.join(outputDir, relativePath);
+
+      // Создаем директории, если их нет
+      fs.mkdirSync(path.dirname(localPath), { recursive: true });
+
+      console.log(`Скачиваю: ${link} -> ${localPath}`);
+
+      const response = await axios.get(link, { responseType: "arraybuffer" });
+      fs.writeFileSync(localPath, response.data);
+    } catch (error) {
+      console.error(`Ошибка при скачивании ${link}:`, error.message);
+    }
+  }
+}
+
+// (async () => {
+//   await fetchTracks();
+//   console.log("fetchTracks завершён");
+// })().then(() => {
+//   let tracks = JSON.parse(
+//     fs.readFileSync(path.join(__dirname, "data.json"), "utf8")
+//   );
+
+//   // Пример использования:
+//   const urls = tracks.map((tr) => tr.preview_url);
+
+//   downloadResources(urls);
+// });
+
+// Унифицированная функция для запросов к Deezer API с повторами
+function fetchDeezerEndpoint(endpoint, params = {}) {
+  // endpoint — например: "/search", "/genre/132/tracks"
+  // params — объект вроде { q: "популярная музыка", limit: 50 }
+
+  const queryString = querystring.stringify(params);
+  const fullPath = queryString ? `${endpoint}?${queryString}` : endpoint;
+
+  return new Promise((resolve, reject) => {
+    const req = https.request(
+      {
+        hostname: "api.deezer.com",
+        path: fullPath,
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "User-Agent": "MusicApp-Coursework/1.0",
+        },
+      },
+      (res) => {
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => {
+          if (res.statusCode !== 200) {
+            return reject(
+              new Error(
+                `Deezer API ${res.statusCode}: ${data || "no response"}`
+              )
+            );
+          }
+          try {
+            const json = JSON.parse(data);
+            resolve(json);
+          } catch (e) {
+            reject(new Error(`Invalid JSON: ${e.message}`));
+          }
+        });
+      }
+    );
+
+    req.on("error", reject);
+    req.setTimeout(10000);
+    req.on("timeout", () => {
+      req.destroy();
+      reject(new Error("Request timeout"));
+    });
+    req.end();
+  });
+}
+
+// Приведение формата трека к единому виду
+function normalizeTracks(rawTracks) {
+  return rawTracks.map((item) => ({
+    id: String(item.id),
+    name: item.title || "Unknown",
+    artist: item.artist?.name || "Unknown Artist",
+    album: item.album?.title || "Unknown Album",
+    preview_url: item.preview || null,
+    duration_ms: (item.duration || 0) * 1000,
+    popularity: item.rank || 0,
+  }));
+}
+
 async function fetchTracks() {
   try {
-    console.log('🔍 Запрос треков из Deezer API...');
-    
-    // Рабочие запросы — по артистам и трекам
-    const queries = [
-      'artist:"Ed Sheeran"',
-      'artist:"The Weeknd"',
-      'artist:"Tones and I"',
-      'artist:"Radiohead"',
-      'artist:"Linkin Park"',
-      'track:"Shape of You"',
-      'track:"Blinding Lights"',
-      'track:"Dance Monkey"'
-    ];
+    console.log("🔍 Сбор ~1000 популярных треков из разных жанров и языков...");
 
     let allTracks = [];
 
-    for (let i = 0; i < queries.length; i++) {
-      const query = queries[i];
-      console.log(`  → Запрос ${i + 1}/${queries.length}: ${query}`);
-      
-      try {
-        const tracks = await searchTracks(query, 5);
-        allTracks.push(...tracks);
-        console.log(`    → Получено ${tracks.length} треков`);
-      } catch (e) {
-        console.warn(`    ⚠️ Пропущен: ${e.message}`);
-      }
+    // 1. Глобальный чарт (top tracks)
+    console.log("→ Загрузка глобального чарта...");
+    const chart = await fetchDeezerEndpoint("/chart/0/tracks", { limit: 100 });
+    if (chart && Array.isArray(chart.data)) {
+      allTracks.push(...normalizeTracks(chart.data));
+      console.log(
+        `  → Получено ${chart.data.length} треков из глобального чарта`
+      );
+    }
 
-      if (i < queries.length - 1) {
-        await sleep(2000); // 2 секунды пауза
+    // 2. Популярные жанры (ID из Deezer)
+    // https://api.deezer.com/genre
+    const genreIds = [
+      132, // Pop
+      116, // Rock
+      113, // Hip Hop
+      106, // Electro
+      152, // Indie
+      113, // Rap (часто совпадает с Hip Hop)
+      85, // Alternative
+      466, // R&B
+      16, // Русская поп-музыка (часто используется для русскоязычного контента)
+      98, // Soul & Funk
+      144, // Metal
+    ];
+
+    for (const genreId of genreIds) {
+      console.log(`→ Загрузка треков из жанра ID ${genreId}...`);
+      try {
+        const result = await fetchDeezerEndpoint(`/genre/${genreId}/tracks`, {
+          limit: 80,
+        });
+        if (result && Array.isArray(result.data)) {
+          allTracks.push(...normalizeTracks(result.data));
+          console.log(`  → Получено ${result.data.length} треков`);
+        } else {
+          console.warn(`  ⚠️ Жанр ${genreId}: нет данных`);
+        }
+      } catch (e) {
+        console.warn(`  ⚠️ Ошибка жанра ${genreId}: ${e.message}`);
       }
+      await sleep(1500);
+    }
+
+    // 3. Поисковые запросы на русском и английском
+    // 3. Языковые поисковые запросы — ТЕПЕРЬ КОРРЕКТНО
+    const searchQueries = [
+      // English
+      "popular hits",
+      "new music 2025",
+      "top tracks",
+      "best songs",
+      "viral songs",
+      "chart hits",
+      "trending now",
+      // Russian
+      "популярная музыка",
+      "новинки музыки 2025",
+      "русские хиты",
+      "лучшие песни",
+      "топ треки",
+      "русский чарт",
+    ];
+
+    for (const query of searchQueries) {
+      console.log(`→ Поиск: ${query}`);
+      try {
+        const result = await fetchDeezerEndpoint("/search", {
+          q: query,
+          limit: 60,
+        });
+        if (result && Array.isArray(result.data)) {
+          allTracks.push(...normalizeTracks(result.data));
+          console.log(`  → Получено ${result.data.length} треков`);
+        } else {
+          console.warn(`  ⚠️ Нет данных для запроса: ${query}`);
+        }
+      } catch (e) {
+        console.warn(`  ⚠️ Ошибка поиска "${query}": ${e.message}`);
+      }
+      await sleep(2000);
     }
 
     // Убираем дубликаты
-    const uniqueTracks = allTracks.filter((track, index, self) =>
-      index === self.findIndex(t => t.id === track.id)
+    const uniqueTracks = allTracks.filter(
+      (track, index, self) => index === self.findIndex((t) => t.id === track.id)
     );
 
-    // Сортируем по популярности
+    // Сортируем по популярности (rank в Deezer)
     uniqueTracks.sort((a, b) => b.popularity - a.popularity);
 
-    // Берём топ 100
-    const top100 = uniqueTracks.slice(0, 100);
+    // Берём до 1000
+    const top1000 = uniqueTracks.slice(0, 1000);
 
     // Сохраняем
-    fs.writeFileSync('data.json', JSON.stringify(top100, null, 2));
-    console.log(`\n✅ Успешно сохранено ${top100.length} треков в data.json`);
-    const withPreview = top100.filter(t => t.preview_url).length;
-    console.log(`🎧 Сниппеты доступны для ${withPreview} из ${top100.length} треков`);
-
+    fs.writeFileSync("data.json", JSON.stringify(top1000, null, 2));
+    const withPreview = top1000.filter((t) => t.preview_url).length;
+    console.log(`\n✅ Успешно сохранено ${top1000.length} треков в data.json`);
+    console.log(
+      `🎧 Сниппеты доступны для ${withPreview} из ${top1000.length} треков`
+    );
   } catch (error) {
-    console.error('❌ Критическая ошибка:', error.message);
+    console.error("❌ Критическая ошибка в fetchTracks:", error.message);
   }
 }
 
