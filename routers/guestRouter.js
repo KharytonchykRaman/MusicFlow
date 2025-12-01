@@ -1,7 +1,9 @@
 const express = require("express");
 const tracksController = require("../controllers/tracksController");
 const artistsController = require("../controllers/artistsController");
+const albumsController = require("../controllers/albumsController");
 const genresController = require("../controllers/genresController");
+const playlistsController = require("../controllers/playlistsController");
 
 const router = express.Router();
 
@@ -11,19 +13,33 @@ router.get("/api/home", (req, res) => {
     const result = {
         genres: {},
         artists: {},
+        albums: {},
+        playlists: {},
     };
 
     try {
         const popularGenres = genresController.getPopularGenres();
 
         for (const genre of popularGenres) {
-            result.genres[genre] = getPopularTracksByGenre(genre, PLAYLIST_LENGTH);
+            result.genres[genre.name] = tracksController.getPopularTracksByGenre(genre.id, PLAYLIST_LENGTH);
         }
 
         const popularArtists = artistsController.getPopularArtists();
 
         for (const artist of popularArtists) {
-            result.artists[artist] = getPopularTracksByArtist(genre, PLAYLIST_LENGTH);
+            result.artists[artist.name] = tracksController.getPopularTracksByArtist(artist.id, PLAYLIST_LENGTH);
+        }
+
+        const popularAlbums = albumsController.getPopularAlbums();
+
+        for (const album of popularAlbums) {
+            result.albums[album.name] = albumsController.getTracks(album.id);
+        }
+
+        const popularPlaylists = playlistsController.getPopularPlaylists();
+
+        for (const playlist of popularPlaylists) {
+            result.playlists[playlist.name] = playlistsController.getTracks(playlist.id);
         }
 
         res.json(result);
@@ -33,6 +49,22 @@ router.get("/api/home", (req, res) => {
             message: error,
         })
     }
+})
+
+router.get("/api/search", (req, res) => {
+    const tracks = tracksController.search();
+    const artists = artistsController.search();
+    const playlists = playlistsController.search();
+    const albums = albumsController.search();
+
+    const result = {
+        tracks,
+        artists,
+        albums,
+        playlists,
+    };
+
+    res.json(result);
 })
 
 module.exports = router;
