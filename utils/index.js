@@ -11,9 +11,8 @@ const logger = async (data) => {
   }
 };
 
-// replace collection
 const createSearch = (collection, searchableFields = ["name"]) => {
-  return (query,limit = 20) => {
+  return (query, limit = 20) => {
     if (!query || typeof query !== "string") {
       return [];
     }
@@ -29,9 +28,9 @@ const createSearch = (collection, searchableFields = ["name"]) => {
   };
 };
 
-const pipe = (func) => {};
+const pipe = (func) => { };
 
-const compose = (func) => {};
+const compose = (func) => { };
 
 function curry(func) {
   return function curried(...args) {
