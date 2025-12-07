@@ -1,0 +1,3700 @@
+[
+  {
+    "id": "13",
+    "name": "Eminem",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/0f30bbd33a680030054af004d698d6ac/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 18677354,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "11044596",
+        "title": "Relapse [Deluxe]",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/61748c3c81d9ca57dbc926d84487aed2/1000x1000-000000-80-0-0.jpg",
+        "fans": 78664,
+        "release_date": "2009-05-19",
+        "record_type": "album"
+      },
+      {
+        "id": "72000342",
+        "title": "Kamikaze",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/bf74fc764097630ba58782ae79cfbee6/1000x1000-000000-80-0-0.jpg",
+        "fans": 357045,
+        "release_date": "2018-08-31",
+        "record_type": "album"
+      },
+      {
+        "id": "7090505",
+        "title": "The Marshall Mathers LP2 (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b6938db3addc3ccd9575d6d12220e466/1000x1000-000000-80-0-0.jpg",
+        "fans": 562089,
+        "release_date": "2013-11-05",
+        "record_type": "album"
+      },
+      {
+        "id": "127270232",
+        "title": "Music To Be Murdered By",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/4d00a7848dc8af475973ff1761ad828d/1000x1000-000000-80-0-0.jpg",
+        "fans": 223758,
+        "release_date": "2020-01-17",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "384236",
+    "name": "Ed Sheeran",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/d6bb84390641d8ae9118228d9544e53d/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 20596566,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "492434915",
+        "title": "Autumn Variations",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/382c67d648b5325a8f8f3892fa96b267/1000x1000-000000-80-0-0.jpg",
+        "fans": 25049,
+        "release_date": "2023-09-29",
+        "record_type": "album"
+      },
+      {
+        "id": "10210084",
+        "title": "5",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/15f20703a67aecfdac2e3ce487f580b7/1000x1000-000000-80-0-0.jpg",
+        "fans": 78938,
+        "release_date": "2014-06-23",
+        "record_type": "album"
+      },
+      {
+        "id": "103115532",
+        "title": "No.6 Collaborations Project",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/1d809f545fb9ecea849cf45fc8bcc681/1000x1000-000000-80-0-0.jpg",
+        "fans": 123597,
+        "release_date": "2019-07-12",
+        "record_type": "album"
+      },
+      {
+        "id": "320386257",
+        "title": "= (Tour Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/1bcf90bdbf3736b603287c05c10abbcb/1000x1000-000000-80-0-0.jpg",
+        "fans": 660,
+        "release_date": "2022-05-27",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "6982223",
+    "name": "BTS",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/ee31411771c1e1d80718f0bb7768db91/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 3701413,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "159769722",
+        "title": "MAP OF THE SOUL : 7 ~ THE JOURNEY ~",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/07153f92f2922bb2d091c2f1c72871a7/1000x1000-000000-80-0-0.jpg",
+        "fans": 62835,
+        "release_date": "2020-07-14",
+        "record_type": "album"
+      },
+      {
+        "id": "196590062",
+        "title": "Youth",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a33d9baa53b56865a2c792b9b6874447/1000x1000-000000-80-0-0.jpg",
+        "fans": 5249,
+        "release_date": "2017-11-01",
+        "record_type": "album"
+      },
+      {
+        "id": "788845101",
+        "title": "PERMISSION TO DANCE ON STAGE - LIVE",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5b56b0750fcd61d0a3c5b0eac461f699/1000x1000-000000-80-0-0.jpg",
+        "fans": 5065,
+        "release_date": "2025-07-18",
+        "record_type": "album"
+      },
+      {
+        "id": "274139972",
+        "title": "BE",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7218df00a126bf159d852516400a1127/1000x1000-000000-80-0-0.jpg",
+        "fans": 33170,
+        "release_date": "2020-11-20",
+        "record_type": "album"
+      },
+      {
+        "id": "584892432",
+        "title": "Angel Anniversary Edition (feat. Muni Long, JVKE, NLE Choppa)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/31907eb4868729c9f20eae8f1548d262/1000x1000-000000-80-0-0.jpg",
+        "fans": 1000,
+        "release_date": "2024-05-13",
+        "record_type": "single"
+      },
+      {
+        "id": "461355645",
+        "title": "Angel Pt. 2 (Acoustic Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/93fccb5c0ffd8eca0d4d3b3bc52dd3f6/1000x1000-000000-80-0-0.jpg",
+        "fans": 2436,
+        "release_date": "2023-07-13",
+        "record_type": "single"
+      },
+      {
+        "id": "450436785",
+        "title": "Take Two",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/327f27bb81e5d7a7bf74aa12133f9e13/1000x1000-000000-80-0-0.jpg",
+        "fans": 7344,
+        "release_date": "2023-06-09",
+        "record_type": "single"
+      },
+      {
+        "id": "456474325",
+        "title": "Angel Pt. 2 (feat. Jimin of BTS, Charlie Puth & Muni Long) (Sped Up) (FAST X Soundtrack)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/93fccb5c0ffd8eca0d4d3b3bc52dd3f6/1000x1000-000000-80-0-0.jpg",
+        "fans": 2329,
+        "release_date": "2023-06-28",
+        "record_type": "single"
+      },
+      {
+        "id": "451005965",
+        "title": "Angel Pt. 2 (feat. Jimin of BTS, Charlie Puth and Muni Long / FAST X Soundtrack) (FAST X Soundtrack)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/93fccb5c0ffd8eca0d4d3b3bc52dd3f6/1000x1000-000000-80-0-0.jpg",
+        "fans": 2768,
+        "release_date": "2023-06-15",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "12246",
+    "name": "Taylor Swift",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/e528e270424103b527f8a27ac625563b/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 12223667,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "504180521",
+        "title": "1989 (Taylor's Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/60c1f1896b2f6b4a4a29ca45d314d4bf/1000x1000-000000-80-0-0.jpg",
+        "fans": 47468,
+        "release_date": "2023-10-27",
+        "record_type": "album"
+      },
+      {
+        "id": "221543452",
+        "title": "Fearless (Taylor's Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cce4e99be496acc9dc2e4365c5b288fc/1000x1000-000000-80-0-0.jpg",
+        "fans": 70304,
+        "release_date": "2021-04-09",
+        "record_type": "album"
+      },
+      {
+        "id": "108447472",
+        "title": "Lover",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6111c5ab9729c8eac47883e4e50e9cf8/1000x1000-000000-80-0-0.jpg",
+        "fans": 177862,
+        "release_date": "2019-08-23",
+        "record_type": "album"
+      },
+      {
+        "id": "68491961",
+        "title": "Red (Deluxe Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/56a83d3002710bf2044b86c01db665aa/1000x1000-000000-80-0-0.jpg",
+        "fans": 48750,
+        "release_date": "2018-07-17",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "246791",
+    "name": "Drake",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/5d2fa7f140a6bdc2c864c3465a61fc71/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 23785543,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "11250516",
+        "title": "What A Time To Be Alive",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b58feddf14dd25f87bf82c56fdf2683c/1000x1000-000000-80-0-0.jpg",
+        "fans": 184850,
+        "release_date": "2015-09-25",
+        "record_type": "album"
+      },
+      {
+        "id": "15685208",
+        "title": "More Life",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8f0187ad83cdd1f47f1c55420f9df227/1000x1000-000000-80-0-0.jpg",
+        "fans": 375542,
+        "release_date": "2017-03-18",
+        "record_type": "album"
+      },
+      {
+        "id": "576747",
+        "title": "Thank Me Later (Int'l Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cc4f9cb36261380fe2d011d85bd441ac/1000x1000-000000-80-0-0.jpg",
+        "fans": 123409,
+        "release_date": "2010-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "256537782",
+        "title": "Certified Lover Boy",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ea8f80f2edb20885ac8aed8751716794/1000x1000-000000-80-0-0.jpg",
+        "fans": 7750,
+        "release_date": "2021-09-06",
+        "record_type": "album"
+      },
+      {
+        "id": "782753961",
+        "title": "What Did I Miss?",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9a9fbfced17f9064d1810b704464313d/1000x1000-000000-80-0-0.jpg",
+        "fans": 1919,
+        "release_date": "2025-07-05",
+        "record_type": "single"
+      },
+      {
+        "id": "789824151",
+        "title": "Pt’sco Healing",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ed756f75be9eae7fdaf4c0a3a4425fad/1000x1000-000000-80-0-0.jpg",
+        "fans": 94,
+        "release_date": "2025-07-11",
+        "record_type": "single"
+      },
+      {
+        "id": "817713721",
+        "title": "DOG HOUSE",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/aa0694c67133d2168285c753849c7adb/1000x1000-000000-80-0-0.jpg",
+        "fans": 137,
+        "release_date": "2025-09-09",
+        "record_type": "single"
+      },
+      {
+        "id": "816187621",
+        "title": "SOMEBODY LOVES ME PT. 2",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/98499379bf7da515fa97a5a565b0492f/1000x1000-000000-80-0-0.jpg",
+        "fans": 419,
+        "release_date": "2025-09-05",
+        "record_type": "single"
+      },
+      {
+        "id": "793705691",
+        "title": "Which One",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d04f4739ca6f79262874b8209c9954a5/1000x1000-000000-80-0-0.jpg",
+        "fans": 2829,
+        "release_date": "2025-07-25",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "4050205",
+    "name": "The Weeknd",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/581693b4724a7fcfa754455101e13a44/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 14137870,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "349788647",
+        "title": "Dawn FM (Alternate World)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f5d3f860ea2542b6a99d13de7ccb4d47/1000x1000-000000-80-0-0.jpg",
+        "fans": 15402,
+        "release_date": "2022-08-26",
+        "record_type": "album"
+      },
+      {
+        "id": "545532392",
+        "title": "The Highlights (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/fa03b7db1bf54e6672adb21e07759429/1000x1000-000000-80-0-0.jpg",
+        "fans": 5643,
+        "release_date": "2024-02-09",
+        "record_type": "album"
+      },
+      {
+        "id": "6875949",
+        "title": "Kiss Land (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/eef8d36d68b2016c3ec43d41e8c4d5f6/1000x1000-000000-80-0-0.jpg",
+        "fans": 75778,
+        "release_date": "2013-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "250970932",
+        "title": "Thursday (Original)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ef5abb0ea84232ad1bfd99f6eca0a100/1000x1000-000000-80-0-0.jpg",
+        "fans": 7880,
+        "release_date": "2021-08-18",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "75798",
+    "name": "Adele",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/e5fc443d2abc03b487234ba4de65a001/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 15231054,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "746059",
+        "title": "21",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8bdaf37e2e7f883e84bbc3462c938293/1000x1000-000000-80-0-0.jpg",
+        "fans": 845344,
+        "release_date": "2011-01-24",
+        "record_type": "album"
+      },
+      {
+        "id": "251821",
+        "title": "19",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cdab12a45f072fad70fe2ef35f10e28a/1000x1000-000000-80-0-0.jpg",
+        "fans": 258227,
+        "release_date": "2008-11-17",
+        "record_type": "album"
+      },
+      {
+        "id": "273425942",
+        "title": "30",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a87ee7c212c7b0f9ae687c378f260324/1000x1000-000000-80-0-0.jpg",
+        "fans": 239380,
+        "release_date": "2021-11-19",
+        "record_type": "album"
+      },
+      {
+        "id": "14880539",
+        "title": "25",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/eaeadce7932a97533fe495881d2fcd7a/1000x1000-000000-80-0-0.jpg",
+        "fans": 254408,
+        "release_date": "2015-11-20",
+        "record_type": "album"
+      },
+      {
+        "id": "105993",
+        "title": "Chasing Pavements",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/18fa57ece3d3fc7a4eab358df494b0f7/1000x1000-000000-80-0-0.jpg",
+        "fans": 22252,
+        "release_date": "2008-01-20",
+        "record_type": "single"
+      },
+      {
+        "id": "265655342",
+        "title": "Easy On Me",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a87ee7c212c7b0f9ae687c378f260324/1000x1000-000000-80-0-0.jpg",
+        "fans": 42987,
+        "release_date": "2021-10-14",
+        "record_type": "single"
+      },
+      {
+        "id": "232058",
+        "title": "Make You Feel My Love",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/1785c5d4ecda5cda57193d4aaf19a768/1000x1000-000000-80-0-0.jpg",
+        "fans": 34026,
+        "release_date": "2008-10-27",
+        "record_type": "single"
+      },
+      {
+        "id": "105519",
+        "title": "Hometown Glory",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/09aebaa321f094af5eb3ea512861b756/1000x1000-000000-80-0-0.jpg",
+        "fans": 4137,
+        "release_date": "2008-07-20",
+        "record_type": "single"
+      },
+      {
+        "id": "1149484",
+        "title": "Set Fire to the Rain (Remixes)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9cd029feea037dd6eb13f5a57c86f0e3/1000x1000-000000-80-0-0.jpg",
+        "fans": 47805,
+        "release_date": "2011-07-04",
+        "record_type": "single"
+      },
+      {
+        "id": "14880351",
+        "title": "Water Under the Bridge",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/191f1abe65daeee84a0c84107cf7d61c/1000x1000-000000-80-0-0.jpg",
+        "fans": 14810,
+        "release_date": "2016-11-04",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "892",
+    "name": "Coldplay",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/3087954bca22f306324912e5ac8375c3/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 18043671,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "1231767",
+        "title": "Viva La Vida or Death and All His Friends",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/eede3cd0dc3a5a87c7a5b1085b022e2d/1000x1000-000000-80-0-0.jpg",
+        "fans": 20648,
+        "release_date": "2008-05-26",
+        "record_type": "album"
+      },
+      {
+        "id": "6082458",
+        "title": "Live 2012",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/eb56003f4c40510f1de1920a2ebc6efb/1000x1000-000000-80-0-0.jpg",
+        "fans": 264866,
+        "release_date": "2012-11-19",
+        "record_type": "album"
+      },
+      {
+        "id": "9180567",
+        "title": "Ghost Stories Live 2014",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7e99bb1d67ac42619332f14c3b62c47f/1000x1000-000000-80-0-0.jpg",
+        "fans": 95330,
+        "release_date": "2014-11-21",
+        "record_type": "album"
+      },
+      {
+        "id": "1312875",
+        "title": "Mylo Xyloto",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e0dd8263dfed37c50a868abbf65fd7da/1000x1000-000000-80-0-0.jpg",
+        "fans": 413460,
+        "release_date": "2011-10-19",
+        "record_type": "album"
+      },
+      {
+        "id": "731048631",
+        "title": "Ma Meilleure Ennemie ft. Coldplay",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7848f386b4b919bed2ea4daf49af163c/1000x1000-000000-80-0-0.jpg",
+        "fans": 3955,
+        "release_date": "2025-04-04",
+        "record_type": "single"
+      },
+      {
+        "id": "807308121",
+        "title": "ALL MY LOVE",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8870017ca152897e8d439ae2bcbc43e0/1000x1000-000000-80-0-0.jpg",
+        "fans": 690,
+        "release_date": "2025-08-22",
+        "record_type": "single"
+      },
+      {
+        "id": "633352111",
+        "title": "WE PRAY (TINI Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5cca0ddd3c745d7c5ded162a0bf7ad41/1000x1000-000000-80-0-0.jpg",
+        "fans": 3140,
+        "release_date": "2024-09-06",
+        "record_type": "single"
+      },
+      {
+        "id": "708299791",
+        "title": "WE PRAY (Jasleen Royal Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/eee9b0f8bae27ece890c9d59a313d125/1000x1000-000000-80-0-0.jpg",
+        "fans": 651,
+        "release_date": "2025-02-13",
+        "record_type": "single"
+      },
+      {
+        "id": "633407581",
+        "title": "WE PRAY (Elyanna Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/de1c2dd0c53a0f0e10f39c026a0c10aa/1000x1000-000000-80-0-0.jpg",
+        "fans": 796,
+        "release_date": "2024-09-20",
+        "record_type": "single"
+      },
+      {
+        "id": "739063121",
+        "title": "WE PRAY (TWICE Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2782ca04969c44e8c88b6b73a0f9d993/1000x1000-000000-80-0-0.jpg",
+        "fans": 1025,
+        "release_date": "2025-04-17",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "564",
+    "name": "Rihanna",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/b78cdc205fae2641b89208e78b30e1b3/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 17604902,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "12279688",
+        "title": "ANTI (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/4fc5f387624c25de0ec96b4719e3a36d/1000x1000-000000-80-0-0.jpg",
+        "fans": 494596,
+        "release_date": "2016-01-28",
+        "record_type": "album"
+      },
+      {
+        "id": "923286",
+        "title": "S&M",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/31d1611e28e53aa614f8e4c3a498c08a/1000x1000-000000-80-0-0.jpg",
+        "fans": 15707,
+        "release_date": "2011-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "4009131",
+        "title": "Rockstar 101 The Remixes (The Remixes)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/76e73ab43a9fa78f486284af9a7c8700/1000x1000-000000-80-0-0.jpg",
+        "fans": 8287,
+        "release_date": "2010-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "557146",
+        "title": "Rated R: Remixed",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0f004f5502dd69c47421e0a7e3f1f84d/1000x1000-000000-80-0-0.jpg",
+        "fans": 35418,
+        "release_date": "2010-05-25",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "288166",
+    "name": "Justin Bieber",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/fe097f693cebf1f882e3da79e99e3bf9/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 10939411,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "262576282",
+        "title": "Justice (The Complete Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9d9e73e62db98659c09b5691b1abbdf0/1000x1000-000000-80-0-0.jpg",
+        "fans": 17644,
+        "release_date": "2021-10-08",
+        "record_type": "album"
+      },
+      {
+        "id": "7824628",
+        "title": "Journals",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/3e8aab499d0ea00c411a27521ba3bbe6/1000x1000-000000-80-0-0.jpg",
+        "fans": 173658,
+        "release_date": "2014-05-13",
+        "record_type": "album"
+      },
+      {
+        "id": "11674708",
+        "title": "Purpose (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/340283aafac320864b207c420124ee46/1000x1000-000000-80-0-0.jpg",
+        "fans": 829672,
+        "release_date": "2015-11-13",
+        "record_type": "album"
+      },
+      {
+        "id": "131498332",
+        "title": "Changes",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8d54ffac647e9e40cd91686c8a906de6/1000x1000-000000-80-0-0.jpg",
+        "fans": 174944,
+        "release_date": "2020-02-14",
+        "record_type": "album"
+      },
+      {
+        "id": "196879462",
+        "title": "Anyone",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/275d76303a0a27f438c37c37f3ac3bc1/1000x1000-000000-80-0-0.jpg",
+        "fans": 6208,
+        "release_date": "2021-01-01",
+        "record_type": "single"
+      },
+      {
+        "id": "350465797",
+        "title": "Beautiful Love (Free Fire)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ec6c1c0176fb6a1f1f9974dbf79eac61/1000x1000-000000-80-0-0.jpg",
+        "fans": 3173,
+        "release_date": "2022-08-30",
+        "record_type": "single"
+      },
+      {
+        "id": "251484092",
+        "title": "Essence (feat. Justin Bieber & Tems)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/743c86530e795fa9bfd12143838de467/1000x1000-000000-80-0-0.jpg",
+        "fans": 10674,
+        "release_date": "2021-08-13",
+        "record_type": "single"
+      },
+      {
+        "id": "314025467",
+        "title": "I Feel Funny",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/edd07377e64201474b63e69cf82d7fae/1000x1000-000000-80-0-0.jpg",
+        "fans": 1291,
+        "release_date": "2022-04-27",
+        "record_type": "single"
+      },
+      {
+        "id": "239585652",
+        "title": "Peaches (Masterkraft Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0b1bb26adc7a30d3cd3c8c8b0235c27a/1000x1000-000000-80-0-0.jpg",
+        "fans": 1376,
+        "release_date": "2021-06-25",
+        "record_type": "single"
+      },
+      {
+        "id": "314699917",
+        "title": "Honest",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9ca42566ed08eb67d841b2681720f5fc/1000x1000-000000-80-0-0.jpg",
+        "fans": 4309,
+        "release_date": "2022-04-29",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "9635624",
+    "name": "Billie Eilish",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/8eab1a9a644889aabaca1e193e05f984/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 8923355,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "91598612",
+        "title": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6630083f454d48eadb6a9b53f035d734/1000x1000-000000-80-0-0.jpg",
+        "fans": 531164,
+        "release_date": "2019-03-29",
+        "record_type": "album"
+      },
+      {
+        "id": "586786102",
+        "title": "HIT ME HARD AND SOFT",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5d284b31cb9ddeb1a0c79aede5a94e1c/1000x1000-000000-80-0-0.jpg",
+        "fans": 167064,
+        "release_date": "2024-05-17",
+        "record_type": "album"
+      },
+      {
+        "id": "248216622",
+        "title": "Happier Than Ever",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/bb2880548dd3bc71fb97def2eedec130/1000x1000-000000-80-0-0.jpg",
+        "fans": 196887,
+        "release_date": "2021-07-30",
+        "record_type": "album"
+      },
+      {
+        "id": "209096192",
+        "title": "ilomilo (Live From The Film - Billie Eilish: The World’s A Little Blurry)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/68f2d4c4f70a4d105ddbc0b0e6471f47/1000x1000-000000-80-0-0.jpg",
+        "fans": 8185,
+        "release_date": "2021-02-22",
+        "record_type": "single"
+      },
+      {
+        "id": "623577791",
+        "title": "Guess featuring billie eilish",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a6a00854b95f19a50772e50bdd2c4a0e/1000x1000-000000-80-0-0.jpg",
+        "fans": 8754,
+        "release_date": "2024-08-01",
+        "record_type": "single"
+      },
+      {
+        "id": "52674772",
+        "title": "COPYCAT (Sofi Tukker Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/62fcaa91c9747cfe659a1ffd3c6fb481/1000x1000-000000-80-0-0.jpg",
+        "fans": 16043,
+        "release_date": "2018-01-12",
+        "record_type": "single"
+      },
+      {
+        "id": "590476032",
+        "title": "L’AMOUR DE MA VIE [OVER NOW EXTENDED EDIT]",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/202b62d37389733c5817179d647c18fa/1000x1000-000000-80-0-0.jpg",
+        "fans": 5627,
+        "release_date": "2024-05-21",
+        "record_type": "single"
+      },
+      {
+        "id": "15444588",
+        "title": "Bellyache",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/29f4f9396754914bf312110698cfebbc/1000x1000-000000-80-0-0.jpg",
+        "fans": 38132,
+        "release_date": "2017-02-24",
+        "record_type": "single"
+      },
+      {
+        "id": "163509902",
+        "title": "my future",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/20d0563bd20ad340b9f5b3dbdf9be632/1000x1000-000000-80-0-0.jpg",
+        "fans": 30048,
+        "release_date": "2020-07-30",
+        "record_type": "single"
+      },
+      {
+        "id": "103327692",
+        "title": "bad guy (with Justin Bieber)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c61dbf18d17f0fc143b6379fe90b6071/1000x1000-000000-80-0-0.jpg",
+        "fans": 43686,
+        "release_date": "2019-07-11",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "7543848",
+    "name": "Post Malone",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/a5a8cca44e7eab2db7d44e039bed2574/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 4100430,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "470825825",
+        "title": "AUSTIN (Bonus)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5632768511a9f75966446ab265532d95/1000x1000-000000-80-0-0.jpg",
+        "fans": 3028,
+        "release_date": "2023-08-02",
+        "record_type": "album"
+      },
+      {
+        "id": "628964031",
+        "title": "F-1 Trillion: Long Bed",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/216e97fdada9b6f9d31eb61e25ac44b6/1000x1000-000000-80-0-0.jpg",
+        "fans": 4745,
+        "release_date": "2024-08-16",
+        "record_type": "album"
+      },
+      {
+        "id": "276935672",
+        "title": "Stoney (Complete Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0772ed28d5e7d486dd97d7ae4086844e/1000x1000-000000-80-0-0.jpg",
+        "fans": 4721,
+        "release_date": "2021-12-09",
+        "record_type": "album"
+      },
+      {
+        "id": "432089607",
+        "title": "The Diamond Collection",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/66d111754b59b20d48498729f8ccf401/1000x1000-000000-80-0-0.jpg",
+        "fans": 3706,
+        "release_date": "2023-04-21",
+        "record_type": "album"
+      },
+      {
+        "id": "429070417",
+        "title": "Chemical",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0fd4fd4af4831835ab92a6f49ee35311/1000x1000-000000-80-0-0.jpg",
+        "fans": 2649,
+        "release_date": "2023-04-14",
+        "record_type": "single"
+      },
+      {
+        "id": "442888125",
+        "title": "Mourning",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5632768511a9f75966446ab265532d95/1000x1000-000000-80-0-0.jpg",
+        "fans": 1433,
+        "release_date": "2023-05-19",
+        "record_type": "single"
+      },
+      {
+        "id": "619445591",
+        "title": "Guy For That",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/89916126647cd6b73c40cc8d53fbd600/1000x1000-000000-80-0-0.jpg",
+        "fans": 697,
+        "release_date": "2024-07-26",
+        "record_type": "single"
+      },
+      {
+        "id": "463331245",
+        "title": "Overdrive",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5632768511a9f75966446ab265532d95/1000x1000-000000-80-0-0.jpg",
+        "fans": 1133,
+        "release_date": "2023-07-14",
+        "record_type": "single"
+      },
+      {
+        "id": "318176647",
+        "title": "Cooped Up",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/bbea36069218d3a555cb91f54f9d2584/1000x1000-000000-80-0-0.jpg",
+        "fans": 2446,
+        "release_date": "2022-05-12",
+        "record_type": "single"
+      },
+      {
+        "id": "464553195",
+        "title": "Dial Drunk",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/47efed6feec7cc7fee90eb739f5176a0/1000x1000-000000-80-0-0.jpg",
+        "fans": 897,
+        "release_date": "2023-07-18",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "8706544",
+    "name": "Dua Lipa",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/7375742a46dbebb6efc0ae362e18eb24/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 8578670,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "606777322",
+        "title": "Radical Optimism (Extended Versions)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/1ced388b976d98d4639d9aef51154fe3/1000x1000-000000-80-0-0.jpg",
+        "fans": 158,
+        "release_date": "2024-06-28",
+        "record_type": "album"
+      },
+      {
+        "id": "664309351",
+        "title": "Training Season",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d36b3946f5ffecb5a2f864c81357cf22/1000x1000-000000-80-0-0.jpg",
+        "fans": 21,
+        "release_date": "2024-11-01",
+        "record_type": "album"
+      },
+      {
+        "id": "676891091",
+        "title": "Dua Lipa Live from the Royal Albert Hall",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/53685b48f0b576b6dc3274855bdd26f3/1000x1000-000000-80-0-0.jpg",
+        "fans": 548,
+        "release_date": "2024-12-06",
+        "record_type": "album"
+      },
+      {
+        "id": "169335932",
+        "title": "Club Future Nostalgia (DJ MIX)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/dbe60ae9c0b16b7324aefd57ba353258/1000x1000-000000-80-0-0.jpg",
+        "fans": 669,
+        "release_date": "2020-08-28",
+        "record_type": "album"
+      },
+      {
+        "id": "586207002",
+        "title": "Illusion (London Sessions)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f72bb6ec956a5a4c2b8a03a060d057c5/1000x1000-000000-80-0-0.jpg",
+        "fans": 54,
+        "release_date": "2024-05-17",
+        "record_type": "single"
+      },
+      {
+        "id": "620629361",
+        "title": "Illusion (Honey Dijon Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/3344b58a93f5cdd04170e1df9dbb6b2d/1000x1000-000000-80-0-0.jpg",
+        "fans": 9,
+        "release_date": "2024-08-02",
+        "record_type": "single"
+      },
+      {
+        "id": "666021541",
+        "title": "These Walls",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7840fdf9fdc4682158839fd0cc72d694/1000x1000-000000-80-0-0.jpg",
+        "fans": 63,
+        "release_date": "2024-11-08",
+        "record_type": "single"
+      },
+      {
+        "id": "590558552",
+        "title": "Illusion (The Blaze Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a64366f7f9018e8c57b2530e3d031ac4/1000x1000-000000-80-0-0.jpg",
+        "fans": 17,
+        "release_date": "2024-06-21",
+        "record_type": "single"
+      },
+      {
+        "id": "651946931",
+        "title": "Illusion (Regard Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d2adbd58700dc2ab16ee53ca26e15dee/1000x1000-000000-80-0-0.jpg",
+        "fans": 2,
+        "release_date": "2024-10-04",
+        "record_type": "single"
+      },
+      {
+        "id": "589662832",
+        "title": "Think I’m In Love With You (Live From The 59th ACM Awards)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8aba803b3bcbba8b2d4625cce15db9db/1000x1000-000000-80-0-0.jpg",
+        "fans": 736,
+        "release_date": "2024-05-20",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "429675",
+    "name": "Bruno Mars",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/7f3c0956357c326b2db2cf436f1dc8c5/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 12325514,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "763597161",
+        "title": "Treasure Remix EP",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/fd4a909b42e85ba60e3b684153b34afa/1000x1000-000000-80-0-0.jpg",
+        "fans": 122,
+        "release_date": "2013-08-12",
+        "record_type": "album"
+      },
+      {
+        "id": "298400782",
+        "title": "An Evening With Silk Sonic",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/faada8a8c545b2e3d454267b55c82e14/1000x1000-000000-80-0-0.jpg",
+        "fans": 47029,
+        "release_date": "2021-11-12",
+        "record_type": "album"
+      },
+      {
+        "id": "825623031",
+        "title": "Doo-Wops & Hooligans (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0f2b868260f5577ce85c6b7d0afb25e4/1000x1000-000000-80-0-0.jpg",
+        "fans": 216,
+        "release_date": "2010-05-11",
+        "record_type": "album"
+      },
+      {
+        "id": "14581500",
+        "title": "24K Magic",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/012b27906b430a37ec1d8f793d5c4fa6/1000x1000-000000-80-0-0.jpg",
+        "fans": 402022,
+        "release_date": "2016-11-18",
+        "record_type": "album"
+      },
+      {
+        "id": "40493071",
+        "title": "That's What I Like (Alan Walker Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f39bf7d4844035012b7bd4f04ec1389d/1000x1000-000000-80-0-0.jpg",
+        "fans": 10075,
+        "release_date": "2017-04-20",
+        "record_type": "single"
+      },
+      {
+        "id": "658285691",
+        "title": "APT.",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/258e6042338ce64bb4157c0c94b232ac/1000x1000-000000-80-0-0.jpg",
+        "fans": 29227,
+        "release_date": "2024-10-18",
+        "record_type": "single"
+      },
+      {
+        "id": "671744551",
+        "title": "Die With A Smile (Live in Las Vegas)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f2750e1aecc04eaaf0cf9142e985309e/1000x1000-000000-80-0-0.jpg",
+        "fans": 836,
+        "release_date": "2024-10-30",
+        "record_type": "single"
+      },
+      {
+        "id": "102484542",
+        "title": "BLOW",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/faf828874a2e23083e30f7d0fecc36e7/1000x1000-000000-80-0-0.jpg",
+        "fans": 8912,
+        "release_date": "2019-07-05",
+        "record_type": "single"
+      },
+      {
+        "id": "671744571",
+        "title": "Die With A Smile (Acoustic)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0eac10f8441c4652b7fd50e228ae9c8c/1000x1000-000000-80-0-0.jpg",
+        "fans": 613,
+        "release_date": "2024-10-30",
+        "record_type": "single"
+      },
+      {
+        "id": "40042261",
+        "title": "That's What I Like (BLVK JVCK Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f39bf7d4844035012b7bd4f04ec1389d/1000x1000-000000-80-0-0.jpg",
+        "fans": 5727,
+        "release_date": "2017-04-21",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "525046",
+    "name": "Kendrick Lamar",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/be0a7c550567f4af0ed202d7235b74d6/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 5952620,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "8621108",
+        "title": "Black Hippy 2",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/798b475dcd0832f7fff0d07a4b787394/1000x1000-000000-80-0-0.jpg",
+        "fans": 25817,
+        "release_date": "2014-09-15",
+        "record_type": "album"
+      },
+      {
+        "id": "6639397",
+        "title": "good kid, m.A.A.d city",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/beaffccb372735044f4b8252b0cd9c2b/1000x1000-000000-80-0-0.jpg",
+        "fans": 64854,
+        "release_date": "2013-06-17",
+        "record_type": "album"
+      },
+      {
+        "id": "12557222",
+        "title": "untitled unmastered.",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/78ec9720a63da136f5d7b96229b1d441/1000x1000-000000-80-0-0.jpg",
+        "fans": 93319,
+        "release_date": "2016-03-04",
+        "record_type": "album"
+      },
+      {
+        "id": "673968231",
+        "title": "GNX",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/82db4c0f8e9412cafb1cd765b076d58c/1000x1000-000000-80-0-0.jpg",
+        "fans": 65121,
+        "release_date": "2024-11-22",
+        "record_type": "album"
+      },
+      {
+        "id": "54768352",
+        "title": "King's Dead",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/50ea246eb3def547840f514e9e53c7d7/1000x1000-000000-80-0-0.jpg",
+        "fans": 12499,
+        "release_date": "2018-01-12",
+        "record_type": "single"
+      },
+      {
+        "id": "56065772",
+        "title": "Pray For Me",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/13869a0eae29bc107b9bf5f545c14095/1000x1000-000000-80-0-0.jpg",
+        "fans": 26973,
+        "release_date": "2018-02-02",
+        "record_type": "single"
+      },
+      {
+        "id": "582140732",
+        "title": "meet the grahams",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e9df1887a7b9baea47c5cc0427af4cdb/1000x1000-000000-80-0-0.jpg",
+        "fans": 6844,
+        "release_date": "2024-05-04",
+        "record_type": "single"
+      },
+      {
+        "id": "254593952",
+        "title": "family ties",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0681d0925e8463d1e7ad2377793cea81/1000x1000-000000-80-0-0.jpg",
+        "fans": 13752,
+        "release_date": "2021-08-27",
+        "record_type": "single"
+      },
+      {
+        "id": "49049112",
+        "title": "HUMBLE. (SKRILLEX REMIX)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/264b3b6ba639ab6a22c4c781c5f3cbba/1000x1000-000000-80-0-0.jpg",
+        "fans": 12620,
+        "release_date": "2017-09-29",
+        "record_type": "single"
+      },
+      {
+        "id": "449056765",
+        "title": "The Hillbillies",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0c1acf09bf13b55b6e5919f1c497b9a4/1000x1000-000000-80-0-0.jpg",
+        "fans": 4286,
+        "release_date": "2023-06-01",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "75491",
+    "name": "Lady Gaga",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/7565262f7661b0d762621a8d69ba6f49/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 8830397,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "253927",
+        "title": "The Fame",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cc24d60a998e1a296f0c22efa8ddffd2/1000x1000-000000-80-0-0.jpg",
+        "fans": 103299,
+        "release_date": "2008-11-24",
+        "record_type": "album"
+      },
+      {
+        "id": "8548989",
+        "title": "Cheek To Cheek (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/84a017eef6b55d499bea52ab8d336f86/1000x1000-000000-80-0-0.jpg",
+        "fans": 53374,
+        "release_date": "2014-09-23",
+        "record_type": "album"
+      },
+      {
+        "id": "648347821",
+        "title": "Harlequin",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ccb1df300d343dad1b47d4508b21cdee/1000x1000-000000-80-0-0.jpg",
+        "fans": 15759,
+        "release_date": "2024-09-27",
+        "record_type": "album"
+      },
+      {
+        "id": "722147851",
+        "title": "MAYHEM",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5f70ffc30c43410fc2a88ae10baa91c7/1000x1000-000000-80-0-0.jpg",
+        "fans": 47787,
+        "release_date": "2025-03-07",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "416239",
+    "name": "Imagine Dragons",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/1ba025c23cae3dee14b51152990285fc/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 9237761,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "352677107",
+        "title": "Night Visions (Expanded Edition / Super Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8e2cf73b166c5da05aa89525d2c1004d/1000x1000-000000-80-0-0.jpg",
+        "fans": 7674,
+        "release_date": "2022-09-09",
+        "record_type": "album"
+      },
+      {
+        "id": "77648602",
+        "title": "Origins (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/974997a0db8d1d0c2de1ebde4275997f/1000x1000-000000-80-0-0.jpg",
+        "fans": 222836,
+        "release_date": "2018-11-09",
+        "record_type": "album"
+      },
+      {
+        "id": "463982805",
+        "title": "Smoke + Mirrors Live (Live At The Air Canada Centre)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/3598b1899ef52588dd0d636f6d554d01/1000x1000-000000-80-0-0.jpg",
+        "fans": 1365,
+        "release_date": "2016-06-03",
+        "record_type": "album"
+      },
+      {
+        "id": "467100135",
+        "title": "Imagine Dragons Live in Vegas",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cc0dc7fbcbba2e64edeb091c7e339505/1000x1000-000000-80-0-0.jpg",
+        "fans": 28143,
+        "release_date": "2023-07-28",
+        "record_type": "album"
+      },
+      {
+        "id": "645083081",
+        "title": "Stars Will Align",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/268f908ed609c79afa14e11b3e4266a8/1000x1000-000000-80-0-0.jpg",
+        "fans": 1426,
+        "release_date": "2024-09-27",
+        "record_type": "single"
+      },
+      {
+        "id": "651770121",
+        "title": "Take Me to the Beach",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7c82a2c9f2948b24bd64971aacbd0ad5/1000x1000-000000-80-0-0.jpg",
+        "fans": 1138,
+        "release_date": "2024-10-11",
+        "record_type": "single"
+      },
+      {
+        "id": "702856941",
+        "title": "Monica (Demo)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/02f5bdff499c7d21c874096729260f0b/1000x1000-000000-80-0-0.jpg",
+        "fans": 521,
+        "release_date": "2025-01-27",
+        "record_type": "single"
+      },
+      {
+        "id": "565881991",
+        "title": "Eyes Closed",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/980041bb2c42a9e0bcb40487206a298a/1000x1000-000000-80-0-0.jpg",
+        "fans": 6078,
+        "release_date": "2024-04-03",
+        "record_type": "single"
+      },
+      {
+        "id": "453213315",
+        "title": "Symphony (Inner City Youth Orchestra of Los Angeles Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/676bd79db910362081d05488465ac0ea/1000x1000-000000-80-0-0.jpg",
+        "fans": 1291,
+        "release_date": "2023-06-23",
+        "record_type": "single"
+      },
+      {
+        "id": "695893151",
+        "title": "Dare U",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c490065ad406a8c82b0ecf4bf7072593/1000x1000-000000-80-0-0.jpg",
+        "fans": 599,
+        "release_date": "2025-01-16",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "1562681",
+    "name": "Ariana Grande",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/5fcde7fde7cde95fc36d4576afcfb49f/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 13185650,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "679617111",
+        "title": "Wicked: The Soundtrack",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a53d183b79003c64c0df5cdae5ebc266/1000x1000-000000-80-0-0.jpg",
+        "fans": 4367,
+        "release_date": "2024-12-06",
+        "record_type": "album"
+      },
+      {
+        "id": "556294552",
+        "title": "eternal sunshine",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9349b2fcb4bd060060a33f054a619e83/1000x1000-000000-80-0-0.jpg",
+        "fans": 45497,
+        "release_date": "2024-03-08",
+        "record_type": "album"
+      },
+      {
+        "id": "629712191",
+        "title": "My Everything (Tenth Anniversary Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/4b824ed393f5b6fff11d8be1dfa86831/1000x1000-000000-80-0-0.jpg",
+        "fans": 2604,
+        "release_date": "2024-08-22",
+        "record_type": "album"
+      },
+      {
+        "id": "208899972",
+        "title": "Positions (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ae761e611a4d248509d53bd08562c6cb/1000x1000-000000-80-0-0.jpg",
+        "fans": 45882,
+        "release_date": "2021-02-19",
+        "record_type": "album"
+      },
+      {
+        "id": "603492962",
+        "title": "the boy is mine (Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b1672bf98c796fc6a078977f402b75e6/1000x1000-000000-80-0-0.jpg",
+        "fans": 930,
+        "release_date": "2024-06-21",
+        "record_type": "single"
+      },
+      {
+        "id": "770377981",
+        "title": "twilight zone",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/218eee144570030da441236adb06f9f6/1000x1000-000000-80-0-0.jpg",
+        "fans": 1190,
+        "release_date": "2025-06-20",
+        "record_type": "single"
+      },
+      {
+        "id": "639134181",
+        "title": "we can't be friends (wait for your love) (acoustic live from jungle city studios)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/44b65217cff2076f7f72ae0a11cf7ad5/1000x1000-000000-80-0-0.jpg",
+        "fans": 770,
+        "release_date": "2024-09-08",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "160",
+    "name": "Shakira",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/69c569506a8ff6ab0edfecbd1adf94b0/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 11331555,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "1373817",
+        "title": "Live From Paris",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c0f5ca759d3ef5111c5bbe3ea9eaf192/1000x1000-000000-80-0-0.jpg",
+        "fans": 88563,
+        "release_date": "2011-12-05",
+        "record_type": "album"
+      },
+      {
+        "id": "71687",
+        "title": "Love In The Time Of Cholera",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/060885d91cfae83bdc0931d8119c889e/1000x1000-000000-80-0-0.jpg",
+        "fans": 1376,
+        "release_date": "2008-01-17",
+        "record_type": "album"
+      },
+      {
+        "id": "1422755",
+        "title": "Grandes Exitos",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/83a3bd39ee9bf539cb12c985df308f40/1000x1000-000000-80-0-0.jpg",
+        "fans": 70161,
+        "release_date": "2002-11-05",
+        "record_type": "album"
+      },
+      {
+        "id": "763994091",
+        "title": "Fijación Oral Volumen 1",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ca9c06a7551ad33edace4b2a7d2f5b83/1000x1000-000000-80-0-0.jpg",
+        "fans": 803,
+        "release_date": "2005-06-03",
+        "record_type": "album"
+      },
+      {
+        "id": "705134631",
+        "title": "Estoy Aquí",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/15614a7449caf29ae519e29a76071d4f/1000x1000-000000-80-0-0.jpg",
+        "fans": 728,
+        "release_date": "2025-01-30",
+        "record_type": "single"
+      },
+      {
+        "id": "489175765",
+        "title": "El Jefe",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6cfeddfd9199a52583fc9b47e859d99f/1000x1000-000000-80-0-0.jpg",
+        "fans": 4546,
+        "release_date": "2023-09-20",
+        "record_type": "single"
+      },
+      {
+        "id": "833469981",
+        "title": "Zoo (aus \"Zoomania 2\")",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a3f788e4f43dd2ff6f6c533edd7c4b65/1000x1000-000000-80-0-0.jpg",
+        "fans": 52,
+        "release_date": "2025-10-10",
+        "record_type": "single"
+      },
+      {
+        "id": "452956315",
+        "title": "Copa Vacía",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b99edf9f387c283c888ceaf6da16f89e/1000x1000-000000-80-0-0.jpg",
+        "fans": 3914,
+        "release_date": "2023-06-29",
+        "record_type": "single"
+      },
+      {
+        "id": "645478941",
+        "title": "Soltera",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a65e26ab33bd4cd8f649825146f8e162/1000x1000-000000-80-0-0.jpg",
+        "fans": 3518,
+        "release_date": "2024-09-25",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "119",
+    "name": "Metallica",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/056578a9c2007f69ce198c81875eca41/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 7930093,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "14581190",
+        "title": "Kill 'Em All (Remastered)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f6d4ff72804ee17684a9b7b79a906898/1000x1000-000000-80-0-0.jpg",
+        "fans": 77116,
+        "release_date": "2016-04-15",
+        "record_type": "album"
+      },
+      {
+        "id": "256250622",
+        "title": "Metallica (Remastered 2021)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/4f2093c9d25852c8f1937ae5a47b99a6/1000x1000-000000-80-0-0.jpg",
+        "fans": 31796,
+        "release_date": "1991-07-30",
+        "record_type": "album"
+      },
+      {
+        "id": "212396",
+        "title": "S&M",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/1c7495825f67d7b7547e63db632b4f26/1000x1000-000000-80-0-0.jpg",
+        "fans": 85790,
+        "release_date": "1999-11-23",
+        "record_type": "album"
+      },
+      {
+        "id": "288897342",
+        "title": "Live Shit: Binge & Purge",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/086d3a1a02e4a2a52d004ed99e5a16d8/1000x1000-000000-80-0-0.jpg",
+        "fans": 155,
+        "release_date": "2007-10-11",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "115",
+    "name": "AC/DC",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/ad61d6e0fa724d880db979c9ac8cc5e3/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 9702675,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "185526292",
+        "title": "POWER UP",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2d6082790e758f019ae5fb0d5d0855ab/1000x1000-000000-80-0-0.jpg",
+        "fans": 83579,
+        "release_date": "2020-11-13",
+        "record_type": "album"
+      },
+      {
+        "id": "9410110",
+        "title": "Black Ice",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/08d269ed8e82823c9b0e9cc61f4afbb7/1000x1000-000000-80-0-0.jpg",
+        "fans": 73214,
+        "release_date": "2008-10-17",
+        "record_type": "album"
+      },
+      {
+        "id": "9410160",
+        "title": "Let There Be Rock",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/57340d30b084ed406f86f1e40fc9d862/1000x1000-000000-80-0-0.jpg",
+        "fans": 75735,
+        "release_date": "1977-07-25",
+        "record_type": "album"
+      },
+      {
+        "id": "9410102",
+        "title": "Ballbreaker",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c7faad31541237c0b9ffc4ae1113aeb0/1000x1000-000000-80-0-0.jpg",
+        "fans": 46422,
+        "release_date": "2015-06-30",
+        "record_type": "album"
+      },
+      {
+        "id": "185436002",
+        "title": "Realize",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2d6082790e758f019ae5fb0d5d0855ab/1000x1000-000000-80-0-0.jpg",
+        "fans": 2669,
+        "release_date": "2020-11-11",
+        "record_type": "single"
+      },
+      {
+        "id": "177771072",
+        "title": "Shot In The Dark",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2d6082790e758f019ae5fb0d5d0855ab/1000x1000-000000-80-0-0.jpg",
+        "fans": 10749,
+        "release_date": "2020-10-07",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "415",
+    "name": "Nirvana",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/3ec5542ff520ee74e2befdaba32ef2ef/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 9839213,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "185283282",
+        "title": "Bleach (Deluxe Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5c4474eb462a904d3b3e0ac13213e836/1000x1000-000000-80-0-0.jpg",
+        "fans": 31308,
+        "release_date": "1989-06-15",
+        "record_type": "album"
+      },
+      {
+        "id": "119284",
+        "title": "From The Muddy Banks Of The Wishkah (Live)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/3ba199210c8e5cf9ff08fb109ee54865/1000x1000-000000-80-0-0.jpg",
+        "fans": 32840,
+        "release_date": "1996-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "92820412",
+        "title": "Live At The Paramount (Live)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/672159e255a5535b15bc4314e2ea4501/1000x1000-000000-80-0-0.jpg",
+        "fans": 13562,
+        "release_date": "2019-04-12",
+        "record_type": "album"
+      },
+      {
+        "id": "119282",
+        "title": "MTV Unplugged In New York",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/fe1082c5ef54876802146897e76b592e/1000x1000-000000-80-0-0.jpg",
+        "fans": 338529,
+        "release_date": "1994-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "265770392",
+        "title": "On A Plain / Lithium / Breed (Live)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/10e6b28ed3ec7c157844b3187d0ac2f4/1000x1000-000000-80-0-0.jpg",
+        "fans": 632,
+        "release_date": "2021-10-22",
+        "record_type": "single"
+      },
+      {
+        "id": "259098382",
+        "title": "Breed (Live In Amsterdam, Netherlands/1991)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/10e6b28ed3ec7c157844b3187d0ac2f4/1000x1000-000000-80-0-0.jpg",
+        "fans": 617,
+        "release_date": "2021-09-23",
+        "record_type": "single"
+      },
+      {
+        "id": "499516731",
+        "title": "In Utero 30th Live",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7b4b3ccd52e58bec9dc0c8ea1973b177/1000x1000-000000-80-0-0.jpg",
+        "fans": 1067,
+        "release_date": "2023-10-20",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "92",
+    "name": "Linkin Park",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/4886905210739af3438990897bad3a98/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 11850931,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "755662641",
+        "title": "From Zero (Deluxe Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/91043dc582be268d9f6aa3c8208f2b6c/1000x1000-000000-80-0-0.jpg",
+        "fans": 19638,
+        "release_date": "2025-05-16",
+        "record_type": "album"
+      },
+      {
+        "id": "424490227",
+        "title": "Meteora 20th Anniversary Edition",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f0970ff176aa59c727e8b8ca07684bbc/1000x1000-000000-80-0-0.jpg",
+        "fans": 28916,
+        "release_date": "2023-04-07",
+        "record_type": "album"
+      },
+      {
+        "id": "583192942",
+        "title": "Papercuts",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c8a47dcf0d6442eabf2d4a5d34b4941e/1000x1000-000000-80-0-0.jpg",
+        "fans": 7925,
+        "release_date": "2024-04-12",
+        "record_type": "album"
+      },
+      {
+        "id": "4850241",
+        "title": "Hybrid Theory Live Around the World",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2be91c04b7b56a4a6cd42a6f08bf1e42/1000x1000-000000-80-0-0.jpg",
+        "fans": 56209,
+        "release_date": "2012-05-31",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "412",
+    "name": "Queen",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/71eeb9e2eeb375df35a3c0654a5a01ab/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 12495750,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "8980335",
+        "title": "Queen Forever",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/383cfb0cf6c5476bb2066440a9ecf3f6/1000x1000-000000-80-0-0.jpg",
+        "fans": 115326,
+        "release_date": "2014-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "175651492",
+        "title": "Live Around The World (Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8d741cce7897d5b4b30234e2a728fd0f/1000x1000-000000-80-0-0.jpg",
+        "fans": 16563,
+        "release_date": "2020-10-02",
+        "record_type": "album"
+      },
+      {
+        "id": "793801471",
+        "title": "Slightly Mad",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/01995edbb3dd057db1a24c9993dd3421/1000x1000-000000-80-0-0.jpg",
+        "fans": 1054,
+        "release_date": "2025-08-01",
+        "record_type": "album"
+      },
+      {
+        "id": "6058411",
+        "title": "Hungarian Rhapsody (Live In Budapest / 1986)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2fbb2c4c52f26370c5a79f5e910fc78f/1000x1000-000000-80-0-0.jpg",
+        "fans": 41183,
+        "release_date": "2012-11-05",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "name": "The Beatles",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/fe9eb4463ea87452e84ed97e0c86b878/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 7892902,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "264255742",
+        "title": "Let It Be (Super Deluxe)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2acdd7fbc5f3f36f415c8ebe9d8c20cd/1000x1000-000000-80-0-0.jpg",
+        "fans": 11704,
+        "release_date": "2021-10-15",
+        "record_type": "album"
+      },
+      {
+        "id": "67272022",
+        "title": "On Air - Live At The BBC (Vol.2)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f373112f2894bda5888c4db7db104825/1000x1000-000000-80-0-0.jpg",
+        "fans": 10471,
+        "release_date": "2018-07-06",
+        "record_type": "album"
+      },
+      {
+        "id": "860363782",
+        "title": "Anthology Collection",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cda71e62442527b52d19ba0f2272cc76/1000x1000-000000-80-0-0.jpg",
+        "fans": 968,
+        "release_date": "2025-11-21",
+        "record_type": "album"
+      },
+      {
+        "id": "510095581",
+        "title": "The Beatles 1967 – 1970 (2023 Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/346169e46cb9869b52165dabfdd9605b/1000x1000-000000-80-0-0.jpg",
+        "fans": 8975,
+        "release_date": "2023-11-10",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "259",
+    "name": "Michael Jackson",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/97fae13b2b30e4aec2e8c9e0c7839d92/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 12394811,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "160560",
+        "title": "20th Century Masters: The Millennium Collection: Best of Michael Jackson",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a93c8fd9169687dade5b52a6cd6f450b/1000x1000-000000-80-0-0.jpg",
+        "fans": 2015,
+        "release_date": "2001-05-01",
+        "record_type": "album"
+      },
+      {
+        "id": "1206152",
+        "title": "BLOOD ON THE DANCE FLOOR/ HIStory In The Mix",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6ea8c01673dae0ed0ec81168a288a56d/1000x1000-000000-80-0-0.jpg",
+        "fans": 53956,
+        "release_date": "1997-05-19",
+        "record_type": "album"
+      },
+      {
+        "id": "7776833",
+        "title": "XSCAPE",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8d0164d7161ac43452ec58201e56e3a4/1000x1000-000000-80-0-0.jpg",
+        "fans": 252149,
+        "release_date": "2014-05-09",
+        "record_type": "album"
+      },
+      {
+        "id": "1372008",
+        "title": "The Essential Michael Jackson",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/041e3b8fc5ed298264b6e374b825b24f/1000x1000-000000-80-0-0.jpg",
+        "fans": 106948,
+        "release_date": "2005-07-18",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "1309",
+    "name": "JAY Z",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/90fab088c4d091618e7386f688803673/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 3522694,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "44267881",
+        "title": "4:44",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7f9a9352b29e338aaf3b7ce9c0b791c9/1000x1000-000000-80-0-0.jpg",
+        "fans": 30736,
+        "release_date": "2017-07-09",
+        "record_type": "album"
+      },
+      {
+        "id": "249678",
+        "title": "Vol. 3... Life And Times Of S. Carter",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0a349e3a00eb843fa5bda7970bb40a61/1000x1000-000000-80-0-0.jpg",
+        "fans": 13807,
+        "release_date": "2007-11-22",
+        "record_type": "album"
+      },
+      {
+        "id": "8009544",
+        "title": "The Dynasty: Roc La Familia 2000",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/852fd7c30e7de67d45701c77361fdec8/1000x1000-000000-80-0-0.jpg",
+        "fans": 2201,
+        "release_date": "2014-08-12",
+        "record_type": "album"
+      },
+      {
+        "id": "694909",
+        "title": "The Hits Collection Volume One (International Version Explicit)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/480b13a10b700c021cc840f7fa4cda8b/1000x1000-000000-80-0-0.jpg",
+        "fans": 7917,
+        "release_date": "2010-11-08",
+        "record_type": "album"
+      }
+    ]
+  },
+  {
+    "id": "230",
+    "name": "Kanye West",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/bb76c2ee3b068726ab4c37b0aabdb57a/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 4442956,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "624563281",
+        "title": "VULTURES 1",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cf8eacd91f5484666db893aa01c55f6b/1000x1000-000000-80-0-0.jpg",
+        "fans": 2421,
+        "release_date": "2024-02-09",
+        "record_type": "album"
+      },
+      {
+        "id": "238903",
+        "title": "Late Orchestration",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/10dd77aeff459438bfce0b8ef68d9b96/1000x1000-000000-80-0-0.jpg",
+        "fans": 19429,
+        "release_date": "2006-06-12",
+        "record_type": "album"
+      },
+      {
+        "id": "86994002",
+        "title": "Graduation",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8c6578a2099561992fb7544e6826f767/1000x1000-000000-80-0-0.jpg",
+        "fans": 67120,
+        "release_date": "2007-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "77941212",
+        "title": "ye",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/71d34b7f041d43ea821a9afaeab73666/1000x1000-000000-80-0-0.jpg",
+        "fans": 6132,
+        "release_date": "2018-06-06",
+        "record_type": "album"
+      },
+      {
+        "id": "601728212",
+        "title": "Gimme A Second 2",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/fa06608c22f43e0dd58dc60b1a4dfff5/1000x1000-000000-80-0-0.jpg",
+        "fans": 448,
+        "release_date": "2024-06-21",
+        "record_type": "single"
+      },
+      {
+        "id": "617800801",
+        "title": "No Apologies (Radio Edit)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/011a04db5f817c197e8e0e6f0e80b6aa/1000x1000-000000-80-0-0.jpg",
+        "fans": 18,
+        "release_date": "2024-07-11",
+        "record_type": "single"
+      },
+      {
+        "id": "624172811",
+        "title": "SLIDE",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/058a48f2674108867cc392d5bdc97fe9/1000x1000-000000-80-0-0.jpg",
+        "fans": 351,
+        "release_date": "2024-08-03",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "4495513",
+    "name": "Travis Scott",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/8d8316146026d7e6ce377e314536df62/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 3014285,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "124362732",
+        "title": "JACKBOYS",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d1ed81aebe34697130d8caf2459e0d72/1000x1000-000000-80-0-0.jpg",
+        "fans": 167893,
+        "release_date": "2019-12-27",
+        "record_type": "album"
+      },
+      {
+        "id": "53799832",
+        "title": "Huncho Jack, Jack Huncho",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6f18c8d5bdd7b675856c86163bed7f10/1000x1000-000000-80-0-0.jpg",
+        "fans": 105999,
+        "release_date": "2017-12-21",
+        "record_type": "album"
+      },
+      {
+        "id": "14024074",
+        "title": "Birds In The Trap Sing McKnight",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b4edc0fc32f430870375f8fb8f825ee7/1000x1000-000000-80-0-0.jpg",
+        "fans": 27954,
+        "release_date": "2016-09-09",
+        "record_type": "album"
+      },
+      {
+        "id": "632126401",
+        "title": "DAYS BEFORE RODEO",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b8be81921aa5990f1cd3b7499d4d6501/1000x1000-000000-80-0-0.jpg",
+        "fans": 21186,
+        "release_date": "2024-08-23",
+        "record_type": "album"
+      },
+      {
+        "id": "312185467",
+        "title": "Hold That Heat (feat. Travis Scott)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a475e8462ed73846e677636a163351a0/1000x1000-000000-80-0-0.jpg",
+        "fans": 2114,
+        "release_date": "2022-04-22",
+        "record_type": "single"
+      },
+      {
+        "id": "702360021",
+        "title": "4X4",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0f37592365f63e65cd7fa4d3c7f10c7c/1000x1000-000000-80-0-0.jpg",
+        "fans": 3111,
+        "release_date": "2025-01-28",
+        "record_type": "single"
+      },
+      {
+        "id": "466779565",
+        "title": "K-POP",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/49dd2965ab5ecaeb65061bc21d17075b/1000x1000-000000-80-0-0.jpg",
+        "fans": 6392,
+        "release_date": "2023-07-21",
+        "record_type": "single"
+      },
+      {
+        "id": "270534772",
+        "title": "ESCAPE PLAN / MAFIA",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ef2a1dd715dc245a38210ff8c427897d/1000x1000-000000-80-0-0.jpg",
+        "fans": 2653,
+        "release_date": "2021-11-02",
+        "record_type": "single"
+      },
+      {
+        "id": "615942482",
+        "title": "Active",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/678e2eec76ee9bd39c394da63d24b4b9/1000x1000-000000-80-0-0.jpg",
+        "fans": 1569,
+        "release_date": "2024-08-06",
+        "record_type": "single"
+      },
+      {
+        "id": "471748365",
+        "title": "MELTDOWN (feat. Drake)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6c91e64b7157f1332a4f6b0de9e4c714/1000x1000-000000-80-0-0.jpg",
+        "fans": 2186,
+        "release_date": "2023-07-27",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "10583405",
+    "name": "Bad Bunny",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/45aaf836629158d714432ae37e552ee7/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 7419088,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "499463651",
+        "title": "nadie sabe lo que va a pasar mañana",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f840891b70f6e240b8ecaec49346bd6a/1000x1000-000000-80-0-0.jpg",
+        "fans": 77667,
+        "release_date": "2023-10-13",
+        "record_type": "album"
+      },
+      {
+        "id": "82541262",
+        "title": "X 100PRE",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/72213221ed4529431857d42f6be61d56/1000x1000-000000-80-0-0.jpg",
+        "fans": 177165,
+        "release_date": "2018-12-23",
+        "record_type": "album"
+      },
+      {
+        "id": "101490842",
+        "title": "OASIS",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ef1cb84fc7b70a390d80af20768cf065/1000x1000-000000-80-0-0.jpg",
+        "fans": 159050,
+        "release_date": "2019-06-28",
+        "record_type": "album"
+      },
+      {
+        "id": "188972392",
+        "title": "EL ÚLTIMO TOUR DEL MUNDO",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6ea80078f0df08737a7471f3c4cf2afa/1000x1000-000000-80-0-0.jpg",
+        "fans": 166408,
+        "release_date": "2020-11-27",
+        "record_type": "album"
+      },
+      {
+        "id": "182383222",
+        "title": "DÁKITI",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/aa6aa7ac356ad9d6c578cccd1a62c394/1000x1000-000000-80-0-0.jpg",
+        "fans": 31380,
+        "release_date": "2020-10-30",
+        "record_type": "single"
+      },
+      {
+        "id": "388271527",
+        "title": "Gato de Noche",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7db2ad9c1b84dff597f4c5dc280f9abc/1000x1000-000000-80-0-0.jpg",
+        "fans": 6126,
+        "release_date": "2022-12-22",
+        "record_type": "single"
+      },
+      {
+        "id": "241712262",
+        "title": "De Museo",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9a41e43a2beed97bf10b80ace6038571/1000x1000-000000-80-0-0.jpg",
+        "fans": 14604,
+        "release_date": "2021-07-06",
+        "record_type": "single"
+      },
+      {
+        "id": "645248391",
+        "title": "Una Velita",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9db54ecb63f5905358205ee2b4bb2247/1000x1000-000000-80-0-0.jpg",
+        "fans": 1947,
+        "release_date": "2024-09-19",
+        "record_type": "single"
+      },
+      {
+        "id": "179646862",
+        "title": "Yo Perreo Sola (Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/521f3a5d003c08fac544866600e012e4/1000x1000-000000-80-0-0.jpg",
+        "fans": 5143,
+        "release_date": "2020-10-14",
+        "record_type": "single"
+      },
+      {
+        "id": "492712391",
+        "title": "UN PREVIEW",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2ea7d5529f511baf13e963dce21fc385/1000x1000-000000-80-0-0.jpg",
+        "fans": 4661,
+        "release_date": "2023-09-25",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "15166511",
+    "name": "Lil Nas X",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/0f5f0e176c544db5f89b5cd837e279aa/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 1699632,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "258772832",
+        "title": "MONTERO",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/18e6daf0a1c70c1346c44670ff70645d/1000x1000-000000-80-0-0.jpg",
+        "fans": 105338,
+        "release_date": "2021-09-17",
+        "record_type": "album"
+      },
+      {
+        "id": "245878832",
+        "title": "INDUSTRY BABY",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a65e86966cfd34b2aa292856136ef9ac/1000x1000-000000-80-0-0.jpg",
+        "fans": 48300,
+        "release_date": "2021-07-23",
+        "record_type": "single"
+      },
+      {
+        "id": "672951201",
+        "title": "need dat boy",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/523bb2d0ae3364bd9f9331c12c5e5231/1000x1000-000000-80-0-0.jpg",
+        "fans": 54,
+        "release_date": "2024-11-21",
+        "record_type": "single"
+      },
+      {
+        "id": "578881141",
+        "title": "Tennessee (feat. Lil Nas X)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9a55659648fdc9bf6b0e8b81889f2352/1000x1000-000000-80-0-0.jpg",
+        "fans": 135,
+        "release_date": "2024-05-03",
+        "record_type": "single"
+      },
+      {
+        "id": "358902247",
+        "title": "STAR WALKIN' (League of Legends Worlds Anthem)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cdbebf6fddc6f64aa059d41d0ab56996/1000x1000-000000-80-0-0.jpg",
+        "fans": 8761,
+        "release_date": "2025-01-10",
+        "record_type": "single"
+      },
+      {
+        "id": "729486011",
+        "title": "LEAN ON MY BODY",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/3e95a8f9126abfbbe5c9b312544c0612/1000x1000-000000-80-0-0.jpg",
+        "fans": 178,
+        "release_date": "2025-03-21",
+        "record_type": "single"
+      },
+      {
+        "id": "724133091",
+        "title": "BIG DUMMY!",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6224abaa5dcfdbb433102262eea5580f/1000x1000-000000-80-0-0.jpg",
+        "fans": 237,
+        "release_date": "2025-03-11",
+        "record_type": "single"
+      },
+      {
+        "id": "606216982",
+        "title": "HERE WE GO! (from the Netflix film \"Beverly Hills Cop: Axel F\")",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ee72d9179628ff571d6e5fe511c526b9/1000x1000-000000-80-0-0.jpg",
+        "fans": 115,
+        "release_date": "2024-06-27",
+        "record_type": "single"
+      },
+      {
+        "id": "230794712",
+        "title": "SUN GOES DOWN",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/de3fd5d5b3f36cce2f8e3f346fcb50a1/1000x1000-000000-80-0-0.jpg",
+        "fans": 7718,
+        "release_date": "2021-05-21",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "14456487",
+    "name": "Juice Wrld",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/924a4357edbf26fde6770e784196357c/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 2433948,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "676276191",
+        "title": "The Party Never Ends 2.0",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b6f749a8957e3c59b66fc6a457aab28b/1000x1000-000000-80-0-0.jpg",
+        "fans": 5556,
+        "release_date": "2024-11-30",
+        "record_type": "album"
+      },
+      {
+        "id": "165354302",
+        "title": "Legends Never Die",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7a03f611f0d25cb00d19e4e01623178f/1000x1000-000000-80-0-0.jpg",
+        "fans": 57790,
+        "release_date": "2020-08-07",
+        "record_type": "album"
+      },
+      {
+        "id": "443347525",
+        "title": "Goodbye & Good Riddance (5 Year Anniversary Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6810f2da3c0acae51342f6bba61e518a/1000x1000-000000-80-0-0.jpg",
+        "fans": 2128,
+        "release_date": "2023-05-18",
+        "record_type": "album"
+      },
+      {
+        "id": "271904792",
+        "title": "Goodbye & Good Riddance (Anniversary)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6ce190e9b4364b1a33df9daf9e18ad83/1000x1000-000000-80-0-0.jpg",
+        "fans": 12527,
+        "release_date": "2021-05-28",
+        "record_type": "album"
+      },
+      {
+        "id": "190271212",
+        "title": "Real Shit",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ec1d3b77b46a9b24aeffd2d7089ca25d/1000x1000-000000-80-0-0.jpg",
+        "fans": 5603,
+        "release_date": "2020-12-02",
+        "record_type": "single"
+      },
+      {
+        "id": "366065477",
+        "title": "Bye Bye",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8a5475e5f81973cc7495577bd3c240a2/1000x1000-000000-80-0-0.jpg",
+        "fans": 2698,
+        "release_date": "2022-10-14",
+        "record_type": "single"
+      },
+      {
+        "id": "420845277",
+        "title": "The Light",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/947621ee9127cf3993cd34127756b8f1/1000x1000-000000-80-0-0.jpg",
+        "fans": 2348,
+        "release_date": "2023-03-23",
+        "record_type": "single"
+      },
+      {
+        "id": "387111007",
+        "title": "Face 2 Face",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/63ce1621c663b3b028c057d4930f9857/1000x1000-000000-80-0-0.jpg",
+        "fans": 2671,
+        "release_date": "2022-12-15",
+        "record_type": "single"
+      },
+      {
+        "id": "670364511",
+        "title": "AGATS2 (Insecure)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8d7383059936405f1e13b40dee2866b5/1000x1000-000000-80-0-0.jpg",
+        "fans": 76,
+        "release_date": "2024-11-15",
+        "record_type": "single"
+      },
+      {
+        "id": "655454681",
+        "title": "The Pre-Party (Extended)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/df860a3ee94dddc7758ff18599d082e4/1000x1000-000000-80-0-0.jpg",
+        "fans": 2171,
+        "release_date": "2024-10-14",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "51204222",
+    "name": "The Kid Laroi",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/f1fe62d5eda1672dbf1058be35053c29/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 426763,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "247297962",
+        "title": "F*CK LOVE 3+: OVER YOU",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e306d320822388a809c1c6ce4708d353/1000x1000-000000-80-0-0.jpg",
+        "fans": 9983,
+        "release_date": "2021-07-27",
+        "record_type": "album"
+      },
+      {
+        "id": "509564691",
+        "title": "THE FIRST TIME",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/10adb38fa6ded265e61d7c95377e5484/1000x1000-000000-80-0-0.jpg",
+        "fans": 4804,
+        "release_date": "2023-11-09",
+        "record_type": "album"
+      },
+      {
+        "id": "398021667",
+        "title": "I Can't Go Back To The Way It Was (Intro)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/54893e8b59f14eb7d37790a7facfff4f/1000x1000-000000-80-0-0.jpg",
+        "fans": 454,
+        "release_date": "2023-01-19",
+        "record_type": "single"
+      },
+      {
+        "id": "509624111",
+        "title": "WHAT'S THE MOVE?",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/10adb38fa6ded265e61d7c95377e5484/1000x1000-000000-80-0-0.jpg",
+        "fans": 211,
+        "release_date": "2025-02-03",
+        "record_type": "single"
+      },
+      {
+        "id": "859189602",
+        "title": "A PERFECT WORLD",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b4efb39affdedb4152b2109a7ec36f63/1000x1000-000000-80-0-0.jpg",
+        "fans": 119,
+        "release_date": "2025-11-20",
+        "record_type": "single"
+      },
+      {
+        "id": "404633777",
+        "title": "KIDS ARE GROWING UP (PART 1)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8764964b29c1afb7f5432533a93e203e/1000x1000-000000-80-0-0.jpg",
+        "fans": 371,
+        "release_date": "2023-02-10",
+        "record_type": "single"
+      },
+      {
+        "id": "811107641",
+        "title": "SHE DON'T NEED TO KNOW",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0ef0c3ce4770f4a1667eb0ab25a41f41/1000x1000-000000-80-0-0.jpg",
+        "fans": 159,
+        "release_date": "2025-08-29",
+        "record_type": "single"
+      },
+      {
+        "id": "399684477",
+        "title": "LOVE AGAIN",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/471ddba9a5fe34a840c6c2aae117ab60/1000x1000-000000-80-0-0.jpg",
+        "fans": 1642,
+        "release_date": "2023-01-27",
+        "record_type": "single"
+      },
+      {
+        "id": "606222332",
+        "title": "GIRLS",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/1824b8cfdd5335a4b7bb60e9a21a22dc/1000x1000-000000-80-0-0.jpg",
+        "fans": 697,
+        "release_date": "2024-06-28",
+        "record_type": "single"
+      },
+      {
+        "id": "333146377",
+        "title": "Paris to Tokyo",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ecbcd18022c65c4ec8ab31c864738ac7/1000x1000-000000-80-0-0.jpg",
+        "fans": 1003,
+        "release_date": "2022-07-08",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "5014953",
+    "name": "Макс Корж",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/923011d7dcfd392247093bd1506ca9a3/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 306663,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "86872872",
+        "title": "Малый повзрослел, Ч. 1",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/19ab30161fa33322d3b9e43da4b8fb5d/1000x1000-000000-80-0-0.jpg",
+        "fans": 3295,
+        "release_date": "2016-11-28",
+        "record_type": "album"
+      },
+      {
+        "id": "281063111",
+        "title": "Психи попадают в топ",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7b666fc4ff6492833d674a7648c73ad1/1000x1000-000000-80-0-0.jpg",
+        "fans": 1857,
+        "release_date": "2021-12-17",
+        "record_type": "album"
+      },
+      {
+        "id": "86872812",
+        "title": "Жить в кайф",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/db13a4fa1877ad1c2837413446c257da/1000x1000-000000-80-0-0.jpg",
+        "fans": 3494,
+        "release_date": "2013-10-21",
+        "record_type": "album"
+      },
+      {
+        "id": "86872412",
+        "title": "Домашний (Полная версия)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d2413195887a89acf3c2846fbdab3946/1000x1000-000000-80-0-0.jpg",
+        "fans": 2083,
+        "release_date": "2017-06-27",
+        "record_type": "album"
+      },
+      {
+        "id": "107994772",
+        "title": "2 типа людей",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ad44fa4b3741782ffb2d16b96f26e916/1000x1000-000000-80-0-0.jpg",
+        "fans": 2573,
+        "release_date": "2019-08-22",
+        "record_type": "single"
+      },
+      {
+        "id": "419439527",
+        "title": "Лучший вайб (Розочка Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/26e47aaba4336bd10d9e22d667aa82d9/1000x1000-000000-80-0-0.jpg",
+        "fans": 19,
+        "release_date": "2023-03-20",
+        "record_type": "single"
+      },
+      {
+        "id": "324514947",
+        "title": "Свой дом",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7a2028360db83db9c384a0b9317a2126/1000x1000-000000-80-0-0.jpg",
+        "fans": 253,
+        "release_date": "2022-06-04",
+        "record_type": "single"
+      },
+      {
+        "id": "14048816",
+        "title": "Слово пацана (Bassquaid & ST Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/fbfaf67fd642d0ca3ea02e67466a4f16/1000x1000-000000-80-0-0.jpg",
+        "fans": 490,
+        "release_date": "2016-08-23",
+        "record_type": "single"
+      },
+      {
+        "id": "336391507",
+        "title": "Ты далеко",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8f2ccec1c249c1cb5b7129df41c94fd7/1000x1000-000000-80-0-0.jpg",
+        "fans": 137,
+        "release_date": "2022-07-16",
+        "record_type": "single"
+      },
+      {
+        "id": "235086012",
+        "title": "Аттестат",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/284dbe7a57fca28eb2d187770d5cd73b/1000x1000-000000-80-0-0.jpg",
+        "fans": 163,
+        "release_date": "2021-06-04",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "193167637",
+    "name": "Heronwater",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/0592e0114729b8bcd6cfc3286c17703b/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 1264,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "670331991",
+        "title": "ODYSSEY",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/1b6bf619512b268c6511ad0eff664e5b/1000x1000-000000-80-0-0.jpg",
+        "fans": 39,
+        "release_date": "2024-11-15",
+        "record_type": "album"
+      },
+      {
+        "id": "494001991",
+        "title": "DREAMS MONEY CAN BUY",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f26cab56345ba70184068b2249a8fc34/1000x1000-000000-80-0-0.jpg",
+        "fans": 75,
+        "release_date": "2023-09-29",
+        "record_type": "album"
+      },
+      {
+        "id": "368004497",
+        "title": "2 DAYS NO LEAN",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7c9a6f551bfd551dbce54add02ce062f/1000x1000-000000-80-0-0.jpg",
+        "fans": 50,
+        "release_date": "2022-06-03",
+        "record_type": "album"
+      },
+      {
+        "id": "865863282",
+        "title": "1000 BARS",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c43acfdc8b97ef8fe057ac0ed01a21b2/1000x1000-000000-80-0-0.jpg",
+        "fans": 21,
+        "release_date": "2025-11-28",
+        "record_type": "album"
+      },
+      {
+        "id": "393606767",
+        "title": "Не поздно ли",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c93aa775122cdec2827bfd426fe4ca22/1000x1000-000000-80-0-0.jpg",
+        "fans": 11,
+        "release_date": "2023-01-06",
+        "record_type": "single"
+      },
+      {
+        "id": "828094481",
+        "title": "ТАХО",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/50e5d2b80a0ade15a8e6015d2f54c503/1000x1000-000000-80-0-0.jpg",
+        "fans": 3,
+        "release_date": "2025-09-26",
+        "record_type": "single"
+      },
+      {
+        "id": "658363701",
+        "title": "Замер",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/faccda7bd5572eee6416db9dc7f25e03/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2024-10-18",
+        "record_type": "single"
+      },
+      {
+        "id": "667065851",
+        "title": "Сваровски",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/15c50837b4b97501fe933b0b590327e2/1000x1000-000000-80-0-0.jpg",
+        "fans": 2,
+        "release_date": "2024-11-08",
+        "record_type": "single"
+      },
+      {
+        "id": "740841631",
+        "title": "1ST DAY SMOKE",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ac9d6bd06b063202167969eb1ae4869c/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2025-04-11",
+        "record_type": "single"
+      },
+      {
+        "id": "434719247",
+        "title": "Эклер (prod. by Heronwater)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/099e7897a80b3096352ae1bb9b8341c7/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2022-10-21",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "12250622",
+    "name": "Zivert",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/b70e5ade40eb6f1ddf44ed6e749045ae/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 296005,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "264470502",
+        "title": "Vinyl #2",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0f85dce58eb9245de5489f7a87d2f1d2/1000x1000-000000-80-0-0.jpg",
+        "fans": 887,
+        "release_date": "2021-10-08",
+        "record_type": "album"
+      },
+      {
+        "id": "91587522",
+        "title": "Life (Remix Collection)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c774be37bdee2048a090fc6e68797b50/1000x1000-000000-80-0-0.jpg",
+        "fans": 883,
+        "release_date": "2019-03-29",
+        "record_type": "album"
+      },
+      {
+        "id": "108667282",
+        "title": "Vinyl #1",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6884cb3ef37ef9e216d8fe05e535dee8/1000x1000-000000-80-0-0.jpg",
+        "fans": 3764,
+        "release_date": "2019-09-27",
+        "record_type": "album"
+      },
+      {
+        "id": "623869631",
+        "title": "Трибьют Руки Вверх!",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/32e715c57d0d5430721e9434ace6c2ea/1000x1000-000000-80-0-0.jpg",
+        "fans": 89,
+        "release_date": "2024-08-02",
+        "record_type": "album"
+      },
+      {
+        "id": "182862222",
+        "title": "Многоточия (Radio Edit)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f47fb346c009ebebd779a70176deb751/1000x1000-000000-80-0-0.jpg",
+        "fans": 125,
+        "release_date": "2020-10-23",
+        "record_type": "single"
+      },
+      {
+        "id": "315682507",
+        "title": "Bestseller",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b20841ed23648b81607d83fb98f45bba/1000x1000-000000-80-0-0.jpg",
+        "fans": 77,
+        "release_date": "2021-03-19",
+        "record_type": "single"
+      },
+      {
+        "id": "528101642",
+        "title": "Твори добро",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/4849ba3216a78ffebc3f793e99643e84/1000x1000-000000-80-0-0.jpg",
+        "fans": 18,
+        "release_date": "2023-12-29",
+        "record_type": "single"
+      },
+      {
+        "id": "837425562",
+        "title": "неболей (Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0c310fa6d55e3377c12e6f32cf63122f/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2025-08-07",
+        "record_type": "single"
+      },
+      {
+        "id": "459362535",
+        "title": "недостаточно",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ab8285737121e68ed1188eda09794c88/1000x1000-000000-80-0-0.jpg",
+        "fans": 47,
+        "release_date": "2023-06-30",
+        "record_type": "single"
+      },
+      {
+        "id": "839594242",
+        "title": "БАНК",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/46b5a90d9a2decbfebd22765ee227c5e/1000x1000-000000-80-0-0.jpg",
+        "fans": 11,
+        "release_date": "2025-10-17",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "97322012",
+    "name": "Ваня Дмитриенко",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/f28771cbeb93f0af638dfb0007235f67/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 13679,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "656099611",
+        "title": "Параноик",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7b4cc18665bdc5bb73f4a8135ce12716/1000x1000-000000-80-0-0.jpg",
+        "fans": 9,
+        "release_date": "2023-02-17",
+        "record_type": "album"
+      },
+      {
+        "id": "761720141",
+        "title": "VK Акустика",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f62c2d1b61cd8adc08390a73b10c577b/1000x1000-000000-80-0-0.jpg",
+        "fans": 10,
+        "release_date": "2025-05-30",
+        "record_type": "album"
+      },
+      {
+        "id": "655351181",
+        "title": "Плакса (Саундтрек)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/32c3da375bd268c5c0d98e912f17ae45/1000x1000-000000-80-0-0.jpg",
+        "fans": 20,
+        "release_date": "2023-11-09",
+        "record_type": "album"
+      },
+      {
+        "id": "556394792",
+        "title": "Люди Будущего (Официальный Гимн Игр Будущего)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cf549afc4b4fc27d2bcb5d7b8f402e05/1000x1000-000000-80-0-0.jpg",
+        "fans": 9,
+        "release_date": "2024-03-06",
+        "record_type": "single"
+      },
+      {
+        "id": "445274585",
+        "title": "Школьная пора",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7c845ca65b35c94ef355df9c21356df8/1000x1000-000000-80-0-0.jpg",
+        "fans": 2,
+        "release_date": "2023-05-24",
+        "record_type": "single"
+      },
+      {
+        "id": "566518441",
+        "title": "Ты даже не представляешь (prod. by Barabanov)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a11096c45b2fe9538d2bb15e707c3da0/1000x1000-000000-80-0-0.jpg",
+        "fans": 16,
+        "release_date": "2024-04-05",
+        "record_type": "single"
+      },
+      {
+        "id": "829248531",
+        "title": "Силуэт (из к/ф «Алиса в Стране Чудес»)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/dfc147ae4276f7aa692ae444f8c5300f/1000x1000-000000-80-0-0.jpg",
+        "fans": 29,
+        "release_date": "2025-10-10",
+        "record_type": "single"
+      },
+      {
+        "id": "659300511",
+        "title": "ПРЯТКИ",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7bd5cb9f9dcabbe0a6ef11249f28e62f/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2023-11-08",
+        "record_type": "single"
+      },
+      {
+        "id": "667458961",
+        "title": "Вишнёвый",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/fb1d941259a4aa17bbe94c9066b61db5/1000x1000-000000-80-0-0.jpg",
+        "fans": 14,
+        "release_date": "2024-11-15",
+        "record_type": "single"
+      },
+      {
+        "id": "684208861",
+        "title": "Дождь",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/96a837490746209c2e14ab98acb44183/1000x1000-000000-80-0-0.jpg",
+        "fans": 0,
+        "release_date": "2023-10-20",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "5532315",
+    "name": "Егор Крид",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/c5b40a823c42ce34ea3240fdd82e60fe/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 231427,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "10566089",
+        "title": "Холостяк (Deluxe Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/def808e945f6276ea4b3e61450bbcd9c/1000x1000-000000-80-0-0.jpg",
+        "fans": 5347,
+        "release_date": "2015-06-15",
+        "record_type": "album"
+      },
+      {
+        "id": "563104722",
+        "title": "Что они знают?",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0b87a0e2981928b48dfc0bbfb9b1c793/1000x1000-000000-80-0-0.jpg",
+        "fans": 96,
+        "release_date": "2017-05-23",
+        "record_type": "album"
+      },
+      {
+        "id": "14378480",
+        "title": "Старлетка",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/3661e80a15a6710c0bb2302f943b9175/1000x1000-000000-80-0-0.jpg",
+        "fans": 733,
+        "release_date": "2016-10-25",
+        "record_type": "single"
+      },
+      {
+        "id": "86502542",
+        "title": "Время не пришло",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/37e9962edfb1b8c25d98d709b062085d/1000x1000-000000-80-0-0.jpg",
+        "fans": 1766,
+        "release_date": "2019-02-06",
+        "record_type": "single"
+      },
+      {
+        "id": "72494712",
+        "title": "Цвет настроения чёрный",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5a7819fc7f4a9bcc90a5fe4e09d68c51/1000x1000-000000-80-0-0.jpg",
+        "fans": 10419,
+        "release_date": "2018-09-14",
+        "record_type": "single"
+      },
+      {
+        "id": "511026281",
+        "title": "Была не была",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6e2077efc06360d55e2b7c914a52fbe6/1000x1000-000000-80-0-0.jpg",
+        "fans": 22,
+        "release_date": "2023-11-10",
+        "record_type": "single"
+      },
+      {
+        "id": "533891912",
+        "title": "Плачут Небеса",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cf6a789a3e1b5820ff06b56848edadf0/1000x1000-000000-80-0-0.jpg",
+        "fans": 21,
+        "release_date": "2024-01-12",
+        "record_type": "single"
+      },
+      {
+        "id": "15521492",
+        "title": "Если ты меня не любишь",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/039fdc32c2dc50aca4dcc86db278e30c/1000x1000-000000-80-0-0.jpg",
+        "fans": 3769,
+        "release_date": "2017-03-04",
+        "record_type": "single"
+      },
+      {
+        "id": "13359383",
+        "title": "Мне нравится",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a3192e59dfbc889568370972dde842f8/1000x1000-000000-80-0-0.jpg",
+        "fans": 2253,
+        "release_date": "2016-06-25",
+        "record_type": "single"
+      },
+      {
+        "id": "11809690",
+        "title": "Будильник",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6a6e589ab3d18ac53ae9ee66514fc6ed/1000x1000-000000-80-0-0.jpg",
+        "fans": 3691,
+        "release_date": "2015-12-01",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "10520799",
+    "name": "SALUKI",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/da657e6b5b81d3f7172b2f3738eb6cc7/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 14961,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "781245681",
+        "title": "Властелин Калек",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/da10fdef9b3847b0be3eadaf2a42fde1/1000x1000-000000-80-0-0.jpg",
+        "fans": 24,
+        "release_date": "2019-06-07",
+        "record_type": "album"
+      },
+      {
+        "id": "226772462",
+        "title": "STYD ILI SLAVA",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a07137687f8aa12ff1aa77d02c322a0b/1000x1000-000000-80-0-0.jpg",
+        "fans": 484,
+        "release_date": "2021-04-30",
+        "record_type": "album"
+      },
+      {
+        "id": "615790882",
+        "title": "BEACH ROCK HOTEL",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d9e40fb2ad377df58d64959401c3a0d6/1000x1000-000000-80-0-0.jpg",
+        "fans": 101,
+        "release_date": "2024-07-05",
+        "record_type": "album"
+      },
+      {
+        "id": "670619841",
+        "title": "BOLSHIE KURTKI",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cbdf6a6ea2cdfb59625035fc0fdba604/1000x1000-000000-80-0-0.jpg",
+        "fans": 160,
+        "release_date": "2024-11-15",
+        "record_type": "album"
+      },
+      {
+        "id": "468119705",
+        "title": "DIGITAL SPORTS",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/dbfd72fa56358da10802cd1623d605b0/1000x1000-000000-80-0-0.jpg",
+        "fans": 9,
+        "release_date": "2023-07-28",
+        "record_type": "single"
+      },
+      {
+        "id": "549931972",
+        "title": "VENTONYL",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b017ea7a1c3b7aa222684e99a692d7e6/1000x1000-000000-80-0-0.jpg",
+        "fans": 5,
+        "release_date": "2023-12-22",
+        "record_type": "single"
+      },
+      {
+        "id": "631593961",
+        "title": "OH BOY, BROKE BOY",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f6dfd42fce1415bbf6e0204551304719/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2020-12-17",
+        "record_type": "single"
+      },
+      {
+        "id": "350207957",
+        "title": "Огней",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/1ba3fb52d3725a59b08d370d7cec4a0e/1000x1000-000000-80-0-0.jpg",
+        "fans": 30,
+        "release_date": "2022-08-26",
+        "record_type": "single"
+      },
+      {
+        "id": "413859217",
+        "title": "LAGG OUT",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5a5ffea20ce010bbc9657002769e9a54/1000x1000-000000-80-0-0.jpg",
+        "fans": 17,
+        "release_date": "2023-03-03",
+        "record_type": "single"
+      },
+      {
+        "id": "633695581",
+        "title": "Лагерная",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/3e8983530d5109834b52d0ddcbb7ecdf/1000x1000-000000-80-0-0.jpg",
+        "fans": 15,
+        "release_date": "2024-08-23",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "8874422",
+    "name": "ЛСП",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/ee3602af806a89e777133c988c6bb808/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 133288,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "862847582",
+        "title": "Судный день",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/4f21c2970a93aef615c1eb1543751491/1000x1000-000000-80-0-0.jpg",
+        "fans": 39,
+        "release_date": "2025-11-28",
+        "record_type": "album"
+      },
+      {
+        "id": "496720611",
+        "title": "Несчастные люди",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b9db9e0f56bd847ab722bc2ff7c56e5a/1000x1000-000000-80-0-0.jpg",
+        "fans": 127,
+        "release_date": "2023-10-06",
+        "record_type": "album"
+      },
+      {
+        "id": "736947271",
+        "title": "Атака Кота",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a2f58e61d4cd724a6a544f19222a2f6f/1000x1000-000000-80-0-0.jpg",
+        "fans": 0,
+        "release_date": "2020-11-13",
+        "record_type": "single"
+      },
+      {
+        "id": "427022647",
+        "title": "Skate",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/1f726363be7634ee5b1675562a451f22/1000x1000-000000-80-0-0.jpg",
+        "fans": 4,
+        "release_date": "2022-06-17",
+        "record_type": "single"
+      },
+      {
+        "id": "554355212",
+        "title": "Оверсайз",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/4da2bd4617be75a179c3581cf3c37b93/1000x1000-000000-80-0-0.jpg",
+        "fans": 6,
+        "release_date": "2024-03-01",
+        "record_type": "single"
+      },
+      {
+        "id": "560777512",
+        "title": "Мрак",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d4173ee00406640316866eaa91eeb501/1000x1000-000000-80-0-0.jpg",
+        "fans": 7,
+        "release_date": "2022-11-04",
+        "record_type": "single"
+      },
+      {
+        "id": "812721431",
+        "title": "Одинокими",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/77fa56540a734b5a3713e5fcf6d4517a/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2025-08-29",
+        "record_type": "single"
+      },
+      {
+        "id": "461255655",
+        "title": "ХОРОШИЙ ПАРЕНЬ",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/87f77be3418aeb037166829756e3487e/1000x1000-000000-80-0-0.jpg",
+        "fans": 5,
+        "release_date": "2023-07-14",
+        "record_type": "single"
+      },
+      {
+        "id": "636831761",
+        "title": "СЕКРЕТАРША",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/305be00ec63d1372cc3fbe6afa444f5e/1000x1000-000000-80-0-0.jpg",
+        "fans": 10,
+        "release_date": "2024-08-30",
+        "record_type": "single"
+      },
+      {
+        "id": "750671361",
+        "title": "Расскажи мне о любви",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2557832eb076bb7a9af39028a0c082cc/1000x1000-000000-80-0-0.jpg",
+        "fans": 11,
+        "release_date": "2025-05-02",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "12615805",
+    "name": "HammAli & Navai",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/f8c9dcfa83ce0969ee18fdb6f3395b7d/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 293488,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "469659855",
+        "title": "Трибьют Валерии",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5d6d60b28e9c6363edaacfc7053dcec4/1000x1000-000000-80-0-0.jpg",
+        "fans": 156,
+        "release_date": "2023-07-28",
+        "record_type": "album"
+      },
+      {
+        "id": "219641762",
+        "title": "Kogda horoshemu cheloveku ploho",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9ca872420eeba45a18de8fb3e5aea2eb/1000x1000-000000-80-0-0.jpg",
+        "fans": 617,
+        "release_date": "2021-04-01",
+        "record_type": "album"
+      },
+      {
+        "id": "825193311",
+        "title": "JANAVI",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9d685dd60de79a93b8e3a3ea16790238/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2018-03-09",
+        "record_type": "album"
+      },
+      {
+        "id": "133810112",
+        "title": "Mne vse Monro",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/6d897df8f98cc783c3ab3546217f1621/1000x1000-000000-80-0-0.jpg",
+        "fans": 499,
+        "release_date": "2020-02-28",
+        "record_type": "single"
+      },
+      {
+        "id": "189201582",
+        "title": "Devochka tancuj",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/91a0a486f58ef387304c83b887792c0d/1000x1000-000000-80-0-0.jpg",
+        "fans": 313,
+        "release_date": "2020-11-27",
+        "record_type": "single"
+      },
+      {
+        "id": "241417992",
+        "title": "U okna",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e125c253f39905cfabc6ee70d69cdd39/1000x1000-000000-80-0-0.jpg",
+        "fans": 344,
+        "release_date": "2021-07-01",
+        "record_type": "single"
+      },
+      {
+        "id": "230814482",
+        "title": "Ptichka",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f4bdb496396ee2265ada5dd887b1afb7/1000x1000-000000-80-0-0.jpg",
+        "fans": 1183,
+        "release_date": "2021-05-17",
+        "record_type": "single"
+      },
+      {
+        "id": "279246972",
+        "title": "ona khochet byt modeliu",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/3fd24258aea7194251b66ad477ea3b7d/1000x1000-000000-80-0-0.jpg",
+        "fans": 139,
+        "release_date": "2021-12-10",
+        "record_type": "single"
+      },
+      {
+        "id": "509958121",
+        "title": "Если мир справедлив",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/abb5c7b3033ade943af9a80b6f9a53d5/1000x1000-000000-80-0-0.jpg",
+        "fans": 17,
+        "release_date": "2023-11-10",
+        "record_type": "single"
+      },
+      {
+        "id": "260980412",
+        "title": "BRILLIANTY VVS",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/7a89205e7cbd3f7ae4c2c14006af463c/1000x1000-000000-80-0-0.jpg",
+        "fans": 257,
+        "release_date": "2021-09-24",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "4315121",
+    "name": "Artik & Asti",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/36c84293cbd1cbe70502a9c3e286e174/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 248079,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "130081532",
+        "title": "7 (Part 2)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e4fc4d0bc5232ae71e2c6505658c9504/1000x1000-000000-80-0-0.jpg",
+        "fans": 2201,
+        "release_date": "2020-02-07",
+        "record_type": "album"
+      },
+      {
+        "id": "82246282",
+        "title": "LIVE at A2 Green Concert (Sankt-Petersburg / 16.06.18)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5ee016cf37336b1763b5df0eb7808545/1000x1000-000000-80-0-0.jpg",
+        "fans": 343,
+        "release_date": "2018-12-21",
+        "record_type": "album"
+      },
+      {
+        "id": "39882011",
+        "title": "Nomer 1",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c4de249cd73e6a6885efedf1ff9dcea3/1000x1000-000000-80-0-0.jpg",
+        "fans": 5099,
+        "release_date": "2017-04-21",
+        "record_type": "album"
+      },
+      {
+        "id": "12367058",
+        "title": "Zdes' I Seychas (Platinum Edition)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/627a407980d9e66a9e2dd47145e16a0c/1000x1000-000000-80-0-0.jpg",
+        "fans": 2208,
+        "release_date": "2016-02-12",
+        "record_type": "album"
+      },
+      {
+        "id": "455017895",
+        "title": "За горизонт",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/edb533b378b893ec4d7435d9b35c210c/1000x1000-000000-80-0-0.jpg",
+        "fans": 33,
+        "release_date": "2023-06-30",
+        "record_type": "single"
+      },
+      {
+        "id": "594603532",
+        "title": "Nobody Like You",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/644d96838ed205a13d89612d2979f86b/1000x1000-000000-80-0-0.jpg",
+        "fans": 25,
+        "release_date": "2024-05-31",
+        "record_type": "single"
+      },
+      {
+        "id": "108938632",
+        "title": "Pod gipnozom (Extended Version)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2ad2e75e861cff79c34acff8be033691/1000x1000-000000-80-0-0.jpg",
+        "fans": 530,
+        "release_date": "2019-08-30",
+        "record_type": "single"
+      },
+      {
+        "id": "122404832",
+        "title": "Polechu za toboyu",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e4b9e1a642b44834a9a33e8e5fc6f9d4/1000x1000-000000-80-0-0.jpg",
+        "fans": 357,
+        "release_date": "2019-12-13",
+        "record_type": "single"
+      },
+      {
+        "id": "402073287",
+        "title": "Кукла",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c07dec650071824a556f6a96fbbf4d46/1000x1000-000000-80-0-0.jpg",
+        "fans": 39,
+        "release_date": "2023-02-10",
+        "record_type": "single"
+      },
+      {
+        "id": "239869982",
+        "title": "MamaMiya",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ef58e4ac92672a4a37989927174ef609/1000x1000-000000-80-0-0.jpg",
+        "fans": 131,
+        "release_date": "2021-06-24",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "181958547",
+    "name": "ALBLAK 52",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/20574e9b8d2e31d0623ca7cecfc1f58a/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 1986,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "364076607",
+        "title": "On the Run",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ca27c015fab187df7a450fae0bdc058a/1000x1000-000000-80-0-0.jpg",
+        "fans": 32,
+        "release_date": "2022-10-07",
+        "record_type": "album"
+      },
+      {
+        "id": "856113172",
+        "title": "QUATTRO: La Famiglia",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5e92913b8581b35e507de1ea8cd4ad45/1000x1000-000000-80-0-0.jpg",
+        "fans": 30,
+        "release_date": "2025-11-14",
+        "record_type": "album"
+      },
+      {
+        "id": "598031002",
+        "title": "Streets Echo 2052",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e15fa8f824b2e2965705c753bbafbe4a/1000x1000-000000-80-0-0.jpg",
+        "fans": 101,
+        "release_date": "2024-06-07",
+        "record_type": "album"
+      },
+      {
+        "id": "461924865",
+        "title": "LONG LIVE 812",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/20574e9b8d2e31d0623ca7cecfc1f58a/1000x1000-000000-80-0-0.jpg",
+        "fans": 99,
+        "release_date": "2023-07-07",
+        "record_type": "album"
+      },
+      {
+        "id": "408577477",
+        "title": "Winter Shiettt 2",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/461ce17d97c075b7230db44d5faab3e7/1000x1000-000000-80-0-0.jpg",
+        "fans": 8,
+        "release_date": "2023-02-17",
+        "record_type": "single"
+      },
+      {
+        "id": "459747155",
+        "title": "+7(952)812",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/524eda928a8e2df123919f5a46c05c37/1000x1000-000000-80-0-0.jpg",
+        "fans": 4,
+        "release_date": "2023-06-30",
+        "record_type": "single"
+      },
+      {
+        "id": "551772032",
+        "title": "Как и мы",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c625093e8490aefad7d3e3319bb412a3/1000x1000-000000-80-0-0.jpg",
+        "fans": 9,
+        "release_date": "2024-02-23",
+        "record_type": "single"
+      },
+      {
+        "id": "572438871",
+        "title": "52 & HAUNTED",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d08be570ba0ec7e0ccee63f73a4972ed/1000x1000-000000-80-0-0.jpg",
+        "fans": 32,
+        "release_date": "2024-04-12",
+        "record_type": "single"
+      },
+      {
+        "id": "398649737",
+        "title": "ГРЯЗЬ",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8768482e55e235b933b1a5b389482540/1000x1000-000000-80-0-0.jpg",
+        "fans": 6,
+        "release_date": "2023-01-20",
+        "record_type": "single"
+      },
+      {
+        "id": "727390531",
+        "title": "Дышу",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b23076ded194c7e825a71b73a5487c3e/1000x1000-000000-80-0-0.jpg",
+        "fans": 4,
+        "release_date": "2025-03-14",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "4505880",
+    "name": "Кино",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/ec428d21f614b586a7b647f8da435913/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 312882,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "214747092",
+        "title": "Кино в Севкабеле",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f3cb5513ae5c6882d94bd0742efa7178/1000x1000-000000-80-0-0.jpg",
+        "fans": 1902,
+        "release_date": "2021-03-14",
+        "record_type": "album"
+      },
+      {
+        "id": "62145332",
+        "title": "Легенда",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/72854c811a50236b48b8998221bd764e/1000x1000-000000-80-0-0.jpg",
+        "fans": 12450,
+        "release_date": "2018-04-24",
+        "record_type": "album"
+      },
+      {
+        "id": "54718352",
+        "title": "Звезда по имени Солнце",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b4076a916063e924824664e18292fad2/1000x1000-000000-80-0-0.jpg",
+        "fans": 4995,
+        "release_date": "1989-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "54718362",
+        "title": "Последний герой",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/db588cbe37c78a037e8eeb382dff1753/1000x1000-000000-80-0-0.jpg",
+        "fans": 3802,
+        "release_date": "1989-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "80910822",
+        "title": "Атаман",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/163a48b4f77f67fba1bb35a11cdc03be/1000x1000-000000-80-0-0.jpg",
+        "fans": 742,
+        "release_date": "2018-12-04",
+        "record_type": "single"
+      },
+      {
+        "id": "820131601",
+        "title": "ДОЖДЬ ДЛЯ НАС (2025)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/79e784cbd11aa49288eec8b652b8363d/1000x1000-000000-80-0-0.jpg",
+        "fans": 18,
+        "release_date": "2025-09-12",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "808834",
+    "name": "Дима Билан",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/74c97991a68f919663d2c2085a6a36a4/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 70409,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "11443598",
+        "title": "Не молчи",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5578be8715d6907da3afa3efbeeba9c9/1000x1000-000000-80-0-0.jpg",
+        "fans": 1005,
+        "release_date": "2015-10-02",
+        "record_type": "album"
+      },
+      {
+        "id": "441735627",
+        "title": "Вторая жизнь",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c80c453097a75c1a8d59079e2a7de9ce/1000x1000-000000-80-0-0.jpg",
+        "fans": 22,
+        "release_date": "2020-12-15",
+        "record_type": "album"
+      },
+      {
+        "id": "444812055",
+        "title": "Мечтатель",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0f7ca2f91d01110080956871a3fb2926/1000x1000-000000-80-0-0.jpg",
+        "fans": 30,
+        "release_date": "2011-05-25",
+        "record_type": "album"
+      },
+      {
+        "id": "444811735",
+        "title": "Believe",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f7a5b846dea55248a52c47302fc4dd57/1000x1000-000000-80-0-0.jpg",
+        "fans": 18,
+        "release_date": "2009-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "448521335",
+        "title": "Песня двух романтиков",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c3281e2d0fabaa27564219978a52faca/1000x1000-000000-80-0-0.jpg",
+        "fans": 16,
+        "release_date": "2023-06-02",
+        "record_type": "single"
+      },
+      {
+        "id": "382511367",
+        "title": "Секрет на двоих",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/462933ded1528323dd30932e59c7d399/1000x1000-000000-80-0-0.jpg",
+        "fans": 33,
+        "release_date": "2022-12-02",
+        "record_type": "single"
+      },
+      {
+        "id": "651917941",
+        "title": "Капкан",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f52f315c8cc0f916021f56a1b469e1ba/1000x1000-000000-80-0-0.jpg",
+        "fans": 7,
+        "release_date": "2024-10-04",
+        "record_type": "single"
+      },
+      {
+        "id": "406828867",
+        "title": "Гладиатор",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/bcb9146a6b62c7bd12c0884552c5a8fb/1000x1000-000000-80-0-0.jpg",
+        "fans": 15,
+        "release_date": "2023-02-13",
+        "record_type": "single"
+      },
+      {
+        "id": "664484041",
+        "title": "Добро пожаловать в рай (OST «Дайте шоу»)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8737e63996d3c7b0002e43d7c1957861/1000x1000-000000-80-0-0.jpg",
+        "fans": 4,
+        "release_date": "2024-11-01",
+        "record_type": "single"
+      },
+      {
+        "id": "278669572",
+        "title": "Ночь счастливых надежд",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/29063529343c036418f720e6f7ffd860/1000x1000-000000-80-0-0.jpg",
+        "fans": 38,
+        "release_date": "2021-12-07",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "4369158",
+    "name": "Алла Пугачёва",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/dc1e17aaa07889deae230c20eef28fdf/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 16300,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "12780366",
+        "title": "Пришла и говорю",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5404ae85117b59fd27bff7dfd8443f17/1000x1000-000000-80-0-0.jpg",
+        "fans": 99,
+        "release_date": "1987-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "546289262",
+        "title": "P.S.",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a1187f4b1afe3428d8aef220d46c63e5/1000x1000-000000-80-0-0.jpg",
+        "fans": 75,
+        "release_date": "2024-03-01",
+        "record_type": "album"
+      },
+      {
+        "id": "13739254",
+        "title": "Золотые песни",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/dc1e17aaa07889deae230c20eef28fdf/1000x1000-000000-80-0-0.jpg",
+        "fans": 995,
+        "release_date": "2000-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "13882924",
+        "title": "Речной трамвайчик",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/bc7e54603b20a4d4284f783ada96281c/1000x1000-000000-80-0-0.jpg",
+        "fans": 329,
+        "release_date": "2001-01-01",
+        "record_type": "album"
+      },
+      {
+        "id": "564313702",
+        "title": "Береги",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/41740def69241f517536dc1fc7cd4096/1000x1000-000000-80-0-0.jpg",
+        "fans": 5,
+        "release_date": "2024-03-29",
+        "record_type": "single"
+      },
+      {
+        "id": "582856432",
+        "title": "Ложный стыд",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/fb572ae45df777f32eb2624220650fce/1000x1000-000000-80-0-0.jpg",
+        "fans": 6,
+        "release_date": "2024-05-21",
+        "record_type": "single"
+      },
+      {
+        "id": "14318024",
+        "title": "Не звони",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b9484dacf57df8b33a154743b1317ced/1000x1000-000000-80-0-0.jpg",
+        "fans": 16,
+        "release_date": "2016-10-18",
+        "record_type": "single"
+      },
+      {
+        "id": "12837760",
+        "title": "Песни из кинофильма \"Отважный Ширак\" (Из к/ф \"Отважный Ширак\")",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/866f0752d2ea150dcbdfd40b94ace734/1000x1000-000000-80-0-0.jpg",
+        "fans": 32,
+        "release_date": "2016-03-30",
+        "record_type": "single"
+      },
+      {
+        "id": "584087172",
+        "title": "Не высовывайся, дочка",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/719985f810c2c45ebf4e33c5ec090e9a/1000x1000-000000-80-0-0.jpg",
+        "fans": 3,
+        "release_date": "2024-05-31",
+        "record_type": "single"
+      },
+      {
+        "id": "590269372",
+        "title": "Не беспокойся за меня",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/8eff14ca87fa405d6e8980fa2aba581e/1000x1000-000000-80-0-0.jpg",
+        "fans": 5,
+        "release_date": "2024-03-15",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "7446926",
+    "name": "FEDUK",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/6e09d9b1b937c5d70c0b3b23c0851a87/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 60351,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "845887552",
+        "title": "Весёлая музыка",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c326c413900c9d0000832130a3fa99bc/1000x1000-000000-80-0-0.jpg",
+        "fans": 19,
+        "release_date": "2025-10-31",
+        "record_type": "album"
+      },
+      {
+        "id": "157453732",
+        "title": "Ghetto Space",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/ae0ea84236e73722eb09936af9d2ea97/1000x1000-000000-80-0-0.jpg",
+        "fans": 22,
+        "release_date": "2014-02-10",
+        "record_type": "album"
+      },
+      {
+        "id": "157453512",
+        "title": "F&Q",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e2cdff32ad0724bf4e97aa42bb68a381/1000x1000-000000-80-0-0.jpg",
+        "fans": 85,
+        "release_date": "2017-06-23",
+        "record_type": "album"
+      },
+      {
+        "id": "157452582",
+        "title": "Nash ostrov",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/96563a4595a31380b7d56475a4945462/1000x1000-000000-80-0-0.jpg",
+        "fans": 13,
+        "release_date": "2015-06-06",
+        "record_type": "album"
+      },
+      {
+        "id": "761524851",
+        "title": "Outdoor",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/5f9be89e3ef5aa28171eca189d7f5a97/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2025-05-23",
+        "record_type": "single"
+      },
+      {
+        "id": "508351971",
+        "title": "Кабы не было тебя",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/fc7b8bcac416e15a692d0aa53755744d/1000x1000-000000-80-0-0.jpg",
+        "fans": 20,
+        "release_date": "2023-11-03",
+        "record_type": "single"
+      },
+      {
+        "id": "744129831",
+        "title": "Париж",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c5892997a22de772e162093d7f1f0215/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2025-04-18",
+        "record_type": "single"
+      },
+      {
+        "id": "521244522",
+        "title": "На ресницах (Зима)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/223be377d41edba3cb611ff1c158e4fc/1000x1000-000000-80-0-0.jpg",
+        "fans": 4,
+        "release_date": "2023-12-08",
+        "record_type": "single"
+      },
+      {
+        "id": "640931391",
+        "title": "SNOVA",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/27a081bed1f5f0164169b49abe36b2eb/1000x1000-000000-80-0-0.jpg",
+        "fans": 4,
+        "release_date": "2024-09-13",
+        "record_type": "single"
+      },
+      {
+        "id": "667945351",
+        "title": "Никто не любит быть один",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2645c69c5b5c02d04e241f16f6eba32a/1000x1000-000000-80-0-0.jpg",
+        "fans": 1,
+        "release_date": "2023-07-14",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "74526042",
+    "name": "Toxi$",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/c17de4d4941e38152358b512e9756c74/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 3974,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "331017927",
+        "title": "MIND UP!",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/0b7778d741104ed6b7916cbf56f4eec8/1000x1000-000000-80-0-0.jpg",
+        "fans": 23,
+        "release_date": "2022-07-08",
+        "record_type": "album"
+      },
+      {
+        "id": "663053651",
+        "title": "Inner World",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f04c7fcd232669236dbb95f6e890f522/1000x1000-000000-80-0-0.jpg",
+        "fans": 0,
+        "release_date": "2020-12-04",
+        "record_type": "album"
+      },
+      {
+        "id": "852106062",
+        "title": "SLAANG",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/a1e8e1fe6000fdd0a77dc3f18e872d67/1000x1000-000000-80-0-0.jpg",
+        "fans": 37,
+        "release_date": "2025-11-07",
+        "record_type": "album"
+      },
+      {
+        "id": "518500272",
+        "title": "HOTSHOT",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b25390e4df596cef7d9a07782b42313f/1000x1000-000000-80-0-0.jpg",
+        "fans": 74,
+        "release_date": "2023-12-01",
+        "record_type": "album"
+      },
+      {
+        "id": "648707011",
+        "title": "CowBoys",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2c946e5fb5451a2fb417c73833d98308/1000x1000-000000-80-0-0.jpg",
+        "fans": 7,
+        "release_date": "2024-09-27",
+        "record_type": "single"
+      },
+      {
+        "id": "446701995",
+        "title": "НИКОГДАБЫ (Remix)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/3e01e1432408d4270ba3d78ec34d48ce/1000x1000-000000-80-0-0.jpg",
+        "fans": 12,
+        "release_date": "2023-05-28",
+        "record_type": "single"
+      },
+      {
+        "id": "630044051",
+        "title": "ТРЯСИ (Sped Up)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f2479684ac5db84d436304f5a8ff1d72/1000x1000-000000-80-0-0.jpg",
+        "fans": 6,
+        "release_date": "2024-08-16",
+        "record_type": "single"
+      },
+      {
+        "id": "652573451",
+        "title": "КИПИШ",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2da18e4ae50caaba7365171c7724382c/1000x1000-000000-80-0-0.jpg",
+        "fans": 2,
+        "release_date": "2023-03-03",
+        "record_type": "single"
+      },
+      {
+        "id": "771793571",
+        "title": "СИГНАЛ",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/4421dbbfdecdaca620d1edb2ca3eccb0/1000x1000-000000-80-0-0.jpg",
+        "fans": 4,
+        "release_date": "2025-06-13",
+        "record_type": "single"
+      },
+      {
+        "id": "379719857",
+        "title": "НЕ ТУСИМ",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d850a2982f64512440c283a43b63cf8b/1000x1000-000000-80-0-0.jpg",
+        "fans": 2,
+        "release_date": "2022-11-25",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "4942575",
+    "name": "Markul",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/ae0cd9b77f8cfac84df30c9a322ea896/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 77775,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "779606931",
+        "title": "Tranzit",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/53bac89b1c388259f170e44d43502aee/1000x1000-000000-80-0-0.jpg",
+        "fans": 6,
+        "release_date": "2017-03-16",
+        "record_type": "album"
+      },
+      {
+        "id": "265891412",
+        "title": "Sense Of Human",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/cae6c45a23d5d62d93e6dccf338c2b62/1000x1000-000000-80-0-0.jpg",
+        "fans": 1091,
+        "release_date": "2021-10-15",
+        "record_type": "album"
+      },
+      {
+        "id": "778280441",
+        "title": "Great Depression",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d48aab850f8420e3a076b4a3926388f1/1000x1000-000000-80-0-0.jpg",
+        "fans": 23,
+        "release_date": "2018-10-16",
+        "record_type": "album"
+      },
+      {
+        "id": "675743111",
+        "title": "MAKE DEPRESSION GREAT AGAIN",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/b7d3ebc2301262015ad45530c8a510d5/1000x1000-000000-80-0-0.jpg",
+        "fans": 133,
+        "release_date": "2024-11-22",
+        "record_type": "album"
+      },
+      {
+        "id": "137977342",
+        "title": "X-Ray",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/12fa3078e42ca1cc8f0457bc48f9d33b/1000x1000-000000-80-0-0.jpg",
+        "fans": 117,
+        "release_date": "2019-09-26",
+        "record_type": "single"
+      },
+      {
+        "id": "345260387",
+        "title": "Конечная станция (Live)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e64d71ab971b5955bc3deaac8f20ae92/1000x1000-000000-80-0-0.jpg",
+        "fans": 9,
+        "release_date": "2022-07-13",
+        "record_type": "single"
+      },
+      {
+        "id": "159029342",
+        "title": "Phantom",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/d0966c827944190a84373e6721318d20/1000x1000-000000-80-0-0.jpg",
+        "fans": 183,
+        "release_date": "2020-07-10",
+        "record_type": "single"
+      },
+      {
+        "id": "376593537",
+        "title": "Ниоткуда",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/43ed896acfc01054acdaa3629c0e3951/1000x1000-000000-80-0-0.jpg",
+        "fans": 35,
+        "release_date": "2022-12-02",
+        "record_type": "single"
+      },
+      {
+        "id": "513967352",
+        "title": "Зал ожидания",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/f2cedf7ce24f7e639951361f488ff084/1000x1000-000000-80-0-0.jpg",
+        "fans": 17,
+        "release_date": "2023-11-17",
+        "record_type": "single"
+      },
+      {
+        "id": "624015341",
+        "title": "Ветрено / Холодно",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/c7c246d3a61d5946f8b2a6956383d0d4/1000x1000-000000-80-0-0.jpg",
+        "fans": 11,
+        "release_date": "2024-08-02",
+        "record_type": "single"
+      }
+    ]
+  },
+  {
+    "id": "5569223",
+    "name": "JONY",
+    "picture_xl": "https://cdn-images.dzcdn.net/images/artist/6a11dbc169be453540e31996f40b569c/1000x1000-000000-80-0-0.jpg",
+    "nb_fan": 198998,
+    "type": "artist",
+    "albumlist": [
+      {
+        "id": "234196722",
+        "title": "Spisok tvoikh mysley",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/78767ecac8f74e4b49dbf3655846f364/1000x1000-000000-80-0-0.jpg",
+        "fans": 2366,
+        "release_date": "2019-06-21",
+        "record_type": "album"
+      },
+      {
+        "id": "335051127",
+        "title": "Лунная ночь",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/939ec5bc2b4dba5d54c89548cce5f0f2/1000x1000-000000-80-0-0.jpg",
+        "fans": 174,
+        "release_date": "2022-07-15",
+        "record_type": "single"
+      },
+      {
+        "id": "282548362",
+        "title": "Na sirenevoi lune (Leonid Agutin Сover)",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/31510d0474d6d35973893a221c24affc/1000x1000-000000-80-0-0.jpg",
+        "fans": 245,
+        "release_date": "2021-12-24",
+        "record_type": "single"
+      },
+      {
+        "id": "268966322",
+        "title": "Naverno, ty menya ne pomnish",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/808745975c96310c56fe05d9ee9e756e/1000x1000-000000-80-0-0.jpg",
+        "fans": 327,
+        "release_date": "2021-10-29",
+        "record_type": "single"
+      },
+      {
+        "id": "234198592",
+        "title": "Kamin",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2983509b0e7f8fc6c739ebba4ca5ed12/1000x1000-000000-80-0-0.jpg",
+        "fans": 1344,
+        "release_date": "2020-03-27",
+        "record_type": "single"
+      },
+      {
+        "id": "234296882",
+        "title": "Frendzona",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/2ea77931044fb3efad38d5a0d09d8999/1000x1000-000000-80-0-0.jpg",
+        "fans": 60,
+        "release_date": "2018-12-12",
+        "record_type": "single"
+      },
+      {
+        "id": "243840192",
+        "title": "Padayu - Pojmaj",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/94e42bef7a8d5f02291d92b541866456/1000x1000-000000-80-0-0.jpg",
+        "fans": 148,
+        "release_date": "2021-02-19",
+        "record_type": "single"
+      },
+      {
+        "id": "234198752",
+        "title": "Ty besposcadna",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/e3b6846d5988124d26322152b05147c0/1000x1000-000000-80-0-0.jpg",
+        "fans": 295,
+        "release_date": "2020-05-15",
+        "record_type": "single"
+      },
+      {
+        "id": "234198982",
+        "title": "Kometa",
+        "cover_xl": "https://cdn-images.dzcdn.net/images/cover/9802fa81441448bcb193e57afb6a0554/1000x1000-000000-80-0-0.jpg",
+        "fans": 422,
+        "release_date": "2019-09-18",
+        "record_type": "single"
+      }
+    ]
+  }
+]
