@@ -2,86 +2,145 @@ const TRACK_PRIVATE_SYMBOL = Symbol("TRACK_PRIVATE");
 
 class Track {
   #id;
-  #name;
+  #title;
+  #rank;
+  #preview;
+  #type;
+  #contributors;
   #artist;
   #album;
-  #preview_url;
-  #popularity;
 
-  constructor(symbol, name, artist, album, preview_url, popularity) {
+  constructor(symbol, title, rank, preview, contributors, artist, album) {
     if (symbol !== TRACK_PRIVATE_SYMBOL) {
       throw new Error("Track: use Track.create() instead of new Track()");
     }
     this.#id = new Date().getTime();
-    this.#name = name;
-    this.#artist = artist;
-    this.#album = album;
-    this.#preview_url = preview_url;
-    this.#popularity = popularity;
+    this.#title = title;
+    this.#rank = rank;
+    this.#preview = preview;
+    this.#type = type;
+    this.#contributors = [...contributors];
+    this.#artist = { ...artist };
+    this.#album = { ...album };
   }
 
-  static create(name, artist, album, preview_url, popularity = 0) {
-    if (!name || !artist || !preview_url) {
-      throw new Error("Track must have name, artist and preview_url fields");
-    }
-
-    if (!album) {
-      album = name;
-    }
+  static create(title, rank, preview, contributors, artist, album) {
 
     return new Track(
       TRACK_PRIVATE_SYMBOL,
-      name,
+      title,
+      rank,
+      preview,
+      contributors,
       artist,
-      album,
-      preview_url,
-      popularity
+      album
     );
+  }
+
+  static validate(obj) {
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) {
+      return false;
+    }
+
+    if (typeof obj.title !== 'string') {
+      return false;
+    }
+
+    if (!Number.isInteger(obj.rank) || obj.rank < 0) {
+      return false;
+    }
+
+    if (typeof obj.preview !== 'string') {
+      return false;
+    }
+
+    if (obj.type !== 'track') {
+      return false;
+    }
+
+    if (!Array.isArray(obj.contributors)) {
+      return false;
+    }
+    for (const contr of obj.contributors) {
+      if (
+        !contr ||
+        typeof contr !== 'object' ||
+        typeof contr.id !== 'string' ||
+        typeof contr.name !== 'string'
+      ) {
+        return false;
+      }
+    }
+
+    if (
+      !obj.artist ||
+      typeof obj.artist !== 'object' ||
+      Array.isArray(obj.artist) ||
+      typeof obj.artist.id !== 'string' ||
+      typeof obj.artist.name !== 'string' ||
+      typeof obj.artist.picture_xl !== 'string'
+    ) {
+      return false;
+    }
+
+    if (
+      !obj.album ||
+      typeof obj.album !== 'object' ||
+      Array.isArray(obj.album) ||
+      (typeof obj.album.id !== 'string' && typeof obj.album.id !== 'number') ||
+      typeof obj.album.cover_xl !== 'string' ||
+      obj.album.cover_xl.trim() === ''
+    ) {
+      return false;
+    }
+
+    // 9. Объект артиста должен быть внутри массива contributors
+    const artistInContributors = obj.contributors.some(contr =>
+      contr.id === obj.artist.id && contr.name === obj.artist.name
+    );
+    if (!artistInContributors) {
+      return false;
+    }
+
+    // ✅ Все проверки пройдены
+    return true;
   }
 
   getId() {
     return this.#id;
   }
-  getName() {
-    return this.#name;
+  getTitle() {
+    return this.#title;
+  }
+  getRank() {
+    return this.#rank;
+  }
+  getPreview() {
+    return this.#preview;
+  }
+  getType() {
+    return this.#type;
+  }
+  getContributors() {
+    return [...this.#contributors];
   }
   getArtist() {
-    return this.#artist;
+    return { ...this.#artist };
   }
   getAlbum() {
-    return this.#album;
-  }
-  getPreviewUrl() {
-    return this.#preview_url;
-  }
-  getPopularity() {
-    return this.#popularity;
-  }
-
-  static validate(data) {
-    const items = Array.isArray(data) ? data : [data];
-
-    if (
-      !items.every(
-        (item) => item.id && item.name && item.artist && item.preview_url
-      )
-    ) {
-      throw new Error(
-        "Track must have id, name, artist and preview_url fields"
-      );
-    }
-
-    return true;
+    return { ...this.#album };
   }
 
   toDTO() {
     return {
       id: this.#id,
-      name: this.#name,
-      artist: this.#artist,
-      album: this.#album,
-      preview_url: this.#preview_url,
-      popularity: this.#popularity,
+      title: this.#title,
+      rank: this.#rank,
+      preview: this.#preview,
+      type: this.#type,
+      contributors: [...this.#contributors],
+      artist: { ...this.#artist },
+      album: { ...this.#album },
     };
   }
 }

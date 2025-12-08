@@ -6,6 +6,6 @@ const Genre = require("../models/");
 const { createSearch } = require("../../utils");
 const { tracksData } = require("../../data/repositories/trackRepository");
 
-const search = createSearch(tracksData, ["name"]);
+const search = createSearch(tracksData, ["title"]);
 
 module.exports = { search };
