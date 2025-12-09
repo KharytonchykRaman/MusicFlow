@@ -25,7 +25,6 @@ class Track {
   }
 
   static create(title, rank, preview, contributors, artist, album) {
-
     return new Track(
       TRACK_PRIVATE_SYMBOL,
       title,
@@ -37,97 +36,30 @@ class Track {
     );
   }
 
-  static validate(obj) {
-    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) {
-      return false;
-    }
+  static validate(obj) {}
 
-    if (typeof obj.title !== 'string') {
-      return false;
-    }
-
-    if (!Number.isInteger(obj.rank) || obj.rank < 0) {
-      return false;
-    }
-
-    if (typeof obj.preview !== 'string') {
-      return false;
-    }
-
-    if (obj.type !== 'track') {
-      return false;
-    }
-
-    if (!Array.isArray(obj.contributors)) {
-      return false;
-    }
-    for (const contr of obj.contributors) {
-      if (
-        !contr ||
-        typeof contr !== 'object' ||
-        typeof contr.id !== 'string' ||
-        typeof contr.name !== 'string'
-      ) {
-        return false;
-      }
-    }
-
-    if (
-      !obj.artist ||
-      typeof obj.artist !== 'object' ||
-      Array.isArray(obj.artist) ||
-      typeof obj.artist.id !== 'string' ||
-      typeof obj.artist.name !== 'string' ||
-      typeof obj.artist.picture_xl !== 'string'
-    ) {
-      return false;
-    }
-
-    if (
-      !obj.album ||
-      typeof obj.album !== 'object' ||
-      Array.isArray(obj.album) ||
-      (typeof obj.album.id !== 'string' && typeof obj.album.id !== 'number') ||
-      typeof obj.album.cover_xl !== 'string' ||
-      obj.album.cover_xl.trim() === ''
-    ) {
-      return false;
-    }
-
-    // 9. Объект артиста должен быть внутри массива contributors
-    const artistInContributors = obj.contributors.some(contr =>
-      contr.id === obj.artist.id && contr.name === obj.artist.name
-    );
-    if (!artistInContributors) {
-      return false;
-    }
-
-    // ✅ Все проверки пройдены
-    return true;
-  }
-
-  getId() {
+  get id() {
     return this.#id;
   }
-  getTitle() {
+  get title() {
     return this.#title;
   }
-  getRank() {
+  get rank() {
     return this.#rank;
   }
-  getPreview() {
+  get preview() {
     return this.#preview;
   }
-  getType() {
+  get type() {
     return this.#type;
   }
-  getContributors() {
+  get contributors() {
     return [...this.#contributors];
   }
-  getArtist() {
+  get artist() {
     return { ...this.#artist };
   }
-  getAlbum() {
+  get album() {
     return { ...this.#album };
   }
 
