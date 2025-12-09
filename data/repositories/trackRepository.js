@@ -1,3 +1,3 @@
-// const tracksData = ...
+const tracksData = [];
 
 module.exports = { tracksData };
