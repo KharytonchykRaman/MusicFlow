@@ -11,29 +11,15 @@ const PLAYLIST_LENGTH = 20;
 
 const getHomePageData = () => {
   const result = {
-    genres: {},
-    artists: {},
-    albums: {},
-    playlists: {},
+    artists: [],
+    albums: [],
+    playlists: [],
   };
 
-  const popularGenres = Genre.getPopularGenres();
+  const popularArtists = await Artist.getPopularArtists(10);
+  const popularArtistsCompacted = artistService.getArtistsCompact(popularArtists);
 
-  for (const genre of popularGenres) {
-    result.genres[genre.name] = genreService.getPopularTracks(
-      genre.id,
-      PLAYLIST_LENGTH
-    );
-  }
-
-  const popularArtists = Artist.getPopularArtists();
-
-  for (const artist of popularArtists) {
-    result.artists[artist.name] = artistService.getPopularTracks(
-      artist.id,
-      PLAYLIST_LENGTH
-    );
-  }
+  result.artists = popularArtistsCompacted;   
 
   const popularAlbums = Album.getPopularAlbums();
 

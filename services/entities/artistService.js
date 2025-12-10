@@ -6,8 +6,10 @@ const Genre = require("../models/");
 const { createSearch } = require("../../utils");
 const { artistsData } = require("../../data/repositories/artistRepository");
 
-const getPopularTracks = (artistId, limit = 20) => {};
+function getArtistsCompact(artists) {
+    return artists.map(({ albumlist, ...rest }) => ({ rest }));
+}
 
 const search = createSearch(artistsData, ["name"]);
 
-module.exports = { getPopularTracks, search };
+module.exports = { getArtistsCompact, search };

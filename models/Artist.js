@@ -1,4 +1,5 @@
 const ARTIST_PRIVATE_SYMBOL = Symbol('ARTIST_PRIVATE');
+const { getArtists } = require("../data/repositories/artistRepository");
 
 class Artist {
     #id;
@@ -31,6 +32,13 @@ class Artist {
             albumlist
         );
     }
+
+
+    static async getPopularArtists(limit = 20) {
+        const artists = await getArtists();
+        const sorted = artists.sort((a, b) => b.nb_fan - a.nb_fan);
+        return sorted.slice(0, limit);
+      }
 
     static validate(data) {
     }
@@ -70,3 +78,5 @@ class Artist {
         };
     }
 }
+
+module.exports = Artist;
