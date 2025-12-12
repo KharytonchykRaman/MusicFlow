@@ -1,4 +1,5 @@
 const ALBUM_PRIVATE_SYMBOL = Symbol("ALBUM_PRIVATE");
+const { getAlbums } = require("../data/repositories/albumRepository");
 
 class Album {
   #id;
@@ -73,6 +74,12 @@ class Album {
       contributors,
       tracklist
     );
+  }
+
+  static async getPopularAlbums(limit = 20) {
+    const albums = await getAlbums();
+    const sorted = albums.sort((a, b) => b.fans - a.fans);
+    return sorted.slice(0, limit);
   }
 
   get id() {

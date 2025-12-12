@@ -6,18 +6,29 @@ const logger = async (data, isError = false) => {
     if (isError) {
       await fs.appendFile(LOGS_FILE_PATH, `\n\n\n`, { encoding: "utf-8" });
     }
-    await fs.appendFile(LOGS_FILE_PATH, `\n\n\n${JSON.stringify(data, null, 2)}\n\n\n`, {
-      encoding: "utf-8",
-    });
-
+    await fs.appendFile(
+      LOGS_FILE_PATH,
+      `\n\n\n${JSON.stringify(data, null, 2)}\n\n\n`,
+      {
+        encoding: "utf-8",
+      }
+    );
   } catch (err) {
     console.error("Ошибка при записи логов:", err);
   }
 };
 
-const createSearch = (collection, searchableFields = ["name"]) => {
-  return (query, limit = 20) => {
+const createAsyncSearch = (getCollectionAsync, searchableFields = ["name"]) => {
+  return async (query, limit = 20) => {
     if (!query || typeof query !== "string") {
+      return [];
+    }
+
+    let collection;
+    try {
+      collection = await getCollectionAsync();
+    } catch (error) {
+      logger(`Failed to fetch collection for search: ${error}`, true);
       return [];
     }
 
@@ -25,16 +36,17 @@ const createSearch = (collection, searchableFields = ["name"]) => {
 
     const result = collection.filter((item) => {
       return searchableFields.some((field) => {
-        return item[field] && item[field].toString().toLowerCase().includes(q);
+        return item[field].toString().toLowerCase().includes(q);
       });
     });
+
     return result.slice(0, limit);
   };
 };
 
-const pipe = (func) => { };
+const pipe = (func) => {};
 
-const compose = (func) => { };
+const compose = (func) => {};
 
 function curry(func) {
   return function curried(...args) {
@@ -48,4 +60,4 @@ function curry(func) {
   };
 }
 
-module.exports = { logger, pipe, compose, curry, createSearch };
+module.exports = { logger, pipe, compose, curry, createAsyncSearch };

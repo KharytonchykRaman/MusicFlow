@@ -3,11 +3,13 @@ const Album = require("../../models/Album");
 const Artist = require("../../models/Artist");
 const Playlist = require("../../models/Playlist");
 const Genre = require("../../models/Genre");
-const { createSearch } = require("../../utils");
-const { playlistsData } = require("../../data/repositories/playlistRepository");
+const { createAsyncSearch } = require("../../utils");
+const { getPlaylists } = require("../../data/repositories/playlistRepository");
 
-const getTracks = (playlistId) => {};
+function getPlaylistsCompact(playlists) {
+  return playlists.map(({ tracklist, ...rest }) => ({ rest }));
+}
 
-const search = createSearch(playlistsData, ["name"]);
+const searchPlaylists = createAsyncSearch(getPlaylists, ["title", "label"]);
 
-module.exports = { getTracks, search };
+module.exports = { getPlaylistsCompact, searchPlaylists };
