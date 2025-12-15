@@ -7,7 +7,7 @@ const { createAsyncSearch } = require("../../utils");
 const { getAlbums } = require("../../data/repositories/albumRepository");
 
 function getAlbumsCompact(albums) {
-  return albums.map(({ tracklist, ...rest }) => ({ rest }));
+  return albums.map(({ tracklist, ...rest }) => rest);
 }
 
 const searchAlbums = createAsyncSearch(getAlbums, ["title", "label"]);

@@ -5,14 +5,16 @@ const { logger } = require("../../utils");
 const getArtists = async () => {
   try {
     const data = await fs.readFile(
-      path.join("..", "mocked", "artists.json"),
+      path.join(__dirname, "..", "mocked", "artists.json"),
       "utf8"
     );
     const artists = JSON.parse(data);
     return artists;
   } catch (error) {
     logger(JSON.stringify(error), true);
-    return [];
+    const newError = new Error('Can not read file: artists.json');
+    newError.status = 500;
+    throw newError;
   }
 };
 

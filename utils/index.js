@@ -8,7 +8,7 @@ const logger = async (data, isError = false) => {
     }
     await fs.appendFile(
       LOGS_FILE_PATH,
-      `\n\n\n${JSON.stringify(data, null, 2)}\n\n\n`,
+      `${JSON.stringify(data, null, 2)}\n`,
       {
         encoding: "utf-8",
       }
@@ -18,7 +18,7 @@ const logger = async (data, isError = false) => {
   }
 };
 
-const createAsyncSearch = (getCollectionAsync, searchableFields = ["name"]) => {
+const createAsyncSearch = (getCollectionAsync, searchableFields = ["name", "title", "label"]) => {
   return async (query, limit = 20) => {
     if (!query || typeof query !== "string") {
       return [];
@@ -36,7 +36,7 @@ const createAsyncSearch = (getCollectionAsync, searchableFields = ["name"]) => {
 
     const result = collection.filter((item) => {
       return searchableFields.some((field) => {
-        return item[field].toString().toLowerCase().includes(q);
+        return item[field] && item[field].toString().toLowerCase().includes(q);
       });
     });
 
@@ -44,9 +44,9 @@ const createAsyncSearch = (getCollectionAsync, searchableFields = ["name"]) => {
   };
 };
 
-const pipe = (func) => {};
+const pipe = (func) => { };
 
-const compose = (func) => {};
+const compose = (func) => { };
 
 function curry(func) {
   return function curried(...args) {

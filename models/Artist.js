@@ -4,30 +4,30 @@ const { getArtists } = require("../data/repositories/artistRepository");
 class Artist {
   #id;
   #name;
-  #picture_xl;
-  #nb_fan;
+  #picture;
+  #fans;
   #type;
   #albumlist;
 
-  constructor(symbol, name, picture_xl, nb_fan, type, albumlist) {
+  constructor(symbol, name, picture, fans, type, albumlist) {
     if (symbol !== ARTIST_PRIVATE_SYMBOL) {
       throw new Error("Artist: use Artist.create() instead of new Artist()");
     }
 
     this.#id = new Date().getTime();
     this.#name = name;
-    this.#picture_xl = picture_xl;
-    this.#nb_fan = nb_fan;
+    this.#picture = picture;
+    this.#fans = fans;
     this.#type = type;
-    this.#albumlist = [...albumlist];
+    this.#albumlist = structuredClone(albumlist);
   }
 
-  static create(name, picture_xl, nb_fan, type, albumlist) {
+  static create(name, picture, fans, type, albumlist) {
     return new Artist(
       ARTIST_PRIVATE_SYMBOL,
       name,
-      picture_xl,
-      nb_fan,
+      picture,
+      fans,
       type,
       albumlist
     );
@@ -35,11 +35,11 @@ class Artist {
 
   static async getPopularArtists(limit = 20) {
     const artists = await getArtists();
-    const sorted = artists.sort((a, b) => b.nb_fan - a.nb_fan);
+    const sorted = artists.sort((a, b) => b.fans - a.fans);
     return sorted.slice(0, limit);
   }
 
-  static validate(data) {}
+  static validate(data) { }
 
   get id() {
     return this.#id;
@@ -49,12 +49,12 @@ class Artist {
     return this.#name;
   }
 
-  get picture_xl() {
-    return this.#picture_xl;
+  get picture() {
+    return this.#picture;
   }
 
-  get nb_fan() {
-    return this.#nb_fan;
+  get fans() {
+    return this.#fans;
   }
 
   get type() {
@@ -62,17 +62,17 @@ class Artist {
   }
 
   get albumlist() {
-    return [...this.#albumlist];
+    return structuredClone(this.#albumlist);
   }
 
   toDTO() {
     return {
       id: this.#id,
       name: this.#name,
-      picture_xl: this.#picture_xl,
-      nb_fan: this.#nb_fan,
+      picture: this.#picture,
+      fans: this.#fans,
       type: this.#type,
-      albumlist: [...this.#albumlist],
+      albumlist: structuredClone(this.#albumlist),
     };
   }
 }

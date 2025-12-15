@@ -19,7 +19,7 @@ class Track {
     this.#rank = rank;
     this.#preview = preview;
     this.#type = type;
-    this.#contributors = [...contributors];
+    this.#contributors = structuredClone(contributors);
     this.#artist = { ...artist };
     this.#album = { ...album };
   }
@@ -54,7 +54,7 @@ class Track {
     return this.#type;
   }
   get contributors() {
-    return [...this.#contributors];
+    return structuredClone(this.#contributors);
   }
   get artist() {
     return { ...this.#artist };
@@ -70,7 +70,7 @@ class Track {
       rank: this.#rank,
       preview: this.#preview,
       type: this.#type,
-      contributors: [...this.#contributors],
+      contributors: structuredClone(this.#contributors),
       artist: { ...this.#artist },
       album: { ...this.#album },
     };

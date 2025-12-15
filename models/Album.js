@@ -4,7 +4,7 @@ const { getAlbums } = require("../data/repositories/albumRepository");
 class Album {
   #id;
   #title;
-  #cover_xl;
+  #cover;
   #label;
   #nb_tracks;
   #fans;
@@ -12,13 +12,13 @@ class Album {
   #record_type;
   #type;
   #genres;
-  #contributors;
+  #artists;
   #tracklist;
 
   constructor(
     symbol,
     title,
-    cover_xl,
+    cover,
     label,
     nb_tracks,
     fans,
@@ -26,7 +26,7 @@ class Album {
     record_type,
     type,
     genres,
-    contributors,
+    artists,
     tracklist
   ) {
     if (symbol !== ALBUM_PRIVATE_SYMBOL) {
@@ -35,21 +35,21 @@ class Album {
 
     this.#id = new Date().getTime();
     this.#title = title;
-    this.#cover_xl = cover_xl;
+    this.#cover = cover;
     this.#label = label;
     this.#nb_tracks = nb_tracks;
     this.#fans = fans;
     this.#release_date = release_date;
     this.#record_type = record_type;
     this.#type = type;
-    this.#genres = [...genres];
-    this.#contributors = [...contributors];
-    this.#tracklist = [...tracklist];
+    this.#genres = structuredClone(genres);
+    this.#artists = structuredClone(artists);
+    this.#tracklist = structuredClone(tracklist);
   }
 
   static create(
     title,
-    cover_xl,
+    cover,
     label,
     nb_tracks,
     fans,
@@ -57,13 +57,13 @@ class Album {
     record_type,
     type,
     genres,
-    contributors,
+    artists,
     tracklist
   ) {
     return new Album(
       ALBUM_PRIVATE_SYMBOL,
       title,
-      cover_xl,
+      cover,
       label,
       nb_tracks,
       fans,
@@ -71,7 +71,7 @@ class Album {
       record_type,
       type,
       genres,
-      contributors,
+      artists,
       tracklist
     );
   }
@@ -90,8 +90,8 @@ class Album {
     return this.#title;
   }
 
-  get cover_xl() {
-    return this.#cover_xl;
+  get cover() {
+    return this.#cover;
   }
 
   get label() {
@@ -119,15 +119,15 @@ class Album {
   }
 
   get genres() {
-    return [...this.#genres];
+    return structuredClone(this.#genres);
   }
 
-  get contributors() {
-    return [...this.#contributors];
+  get artists() {
+    return structuredClone(this.#artists);
   }
 
   get tracklist() {
-    return [...this.#tracklist];
+    return structuredClone(this.#tracklist);
   }
 
   static validate(data) {}
@@ -136,16 +136,16 @@ class Album {
     return {
       id: this.#id,
       title: this.#title,
-      cover_xl: this.#cover_xl,
+      cover: this.#cover,
       label: this.#label,
       nb_tracks: this.#nb_tracks,
       fans: this.#fans,
       release_date: this.#release_date,
       record_type: this.#record_type,
       type: this.#type,
-      genres: [...this.#genres],
-      contributors: [...this.#contributors],
-      tracklist: [...this.#tracklist],
+      genres: structuredClone(this.#genres),
+      artists: structuredClone(this.#artists),
+      tracklist: structuredClone(this.#tracklist),
     };
   }
 }

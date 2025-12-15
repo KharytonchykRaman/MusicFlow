@@ -1,8 +1,8 @@
 const homeService = require("../../services/interactions/homeService");
 
-const home = (req, res) => {
+const home = async (req, res) => {
   try {
-    const homePageData = homeService.getHomePageData();
+    const homePageData = await homeService.getHomePageData();
 
     res.json({ status: "success", data: homePageData });
   } catch (error) {
