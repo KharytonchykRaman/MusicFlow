@@ -33,12 +33,6 @@ class Artist {
     );
   }
 
-  static async getPopularArtists(limit = 20) {
-    const artists = await getArtists();
-    const sorted = artists.sort((a, b) => b.fans - a.fans);
-    return sorted.slice(0, limit);
-  }
-
   static validate(data) { }
 
   get id() {

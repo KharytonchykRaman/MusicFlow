@@ -8,4 +8,12 @@ const { getTracks } = require("../../data/repositories/trackRepository");
 
 const searchTracks = createAsyncSearch(getTracks, ["title"]);
 
-module.exports = { searchTracks };
+function sortByRank(tracks) {
+  const result = structuredClone(tracks);
+
+  result.sort((tr1, tr2) => tr2.rank - tr1.rank);
+
+  return result;
+}
+
+module.exports = { searchTracks, sortByRank };

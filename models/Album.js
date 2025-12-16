@@ -76,12 +76,6 @@ class Album {
     );
   }
 
-  static async getPopularAlbums(limit = 20) {
-    const albums = await getAlbums();
-    const sorted = albums.sort((a, b) => b.fans - a.fans);
-    return sorted.slice(0, limit);
-  }
-
   get id() {
     return this.#id;
   }
