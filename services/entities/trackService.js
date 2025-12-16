@@ -4,8 +4,8 @@ const Artist = require("../../models/Artist");
 const Playlist = require("../../models/Playlist");
 const Genre = require("../../models/Genre");
 const { createAsyncSearch } = require("../../utils");
-const { tracksData } = require("../../data/repositories/trackRepository");
+const { getTracks } = require("../../data/repositories/trackRepository");
 
-const search = createAsyncSearch(tracksData, ["title"]);
+const searchTracks = createAsyncSearch(getTracks, ["title"]);
 
-module.exports = { search };
+module.exports = { searchTracks };

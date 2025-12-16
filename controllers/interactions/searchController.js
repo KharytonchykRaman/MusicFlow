@@ -1,9 +1,15 @@
 const searchService = require("../../services/interactions/searchService");
 
-const search = (req, res) => {
+const search = async (req, res) => {
   try {
     const { q } = req.query;
-    const searchedData = searchService.search(q);
+    const trackLimit = 20;
+    const playlistLimit = 10;
+    const searchedData = await searchService.search(
+      q,
+      trackLimit,
+      playlistLimit
+    );
 
     res.json({ status: "success", data: searchedData });
   } catch (error) {
