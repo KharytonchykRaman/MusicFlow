@@ -1,5 +1,4 @@
 const ARTIST_PRIVATE_SYMBOL = Symbol("ARTIST_PRIVATE");
-const { getArtists } = require("../data/repositories/artistRepository");
 
 class Artist {
   #id;

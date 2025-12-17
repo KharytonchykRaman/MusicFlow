@@ -23,11 +23,11 @@ const getHomePageData = async () => {
 
   result.albums = popularAlbumsCompacted;
 
-  // const popularPlaylists = Playlist.getPopularPlaylists(10);
-  // const popularPlaylistsCompacted =
-  //   playlistService.getPlaylistsCompact(popularPlaylists);
+  const popularPlaylists = await playlistService.getPopularPlaylists(10);
+  const popularPlaylistsCompacted =
+    playlistService.getPlaylistsCompact(popularPlaylists);
 
-  // result.playlists = popularPlaylistsCompacted;
+  result.playlists = popularPlaylistsCompacted;
 
   return result;
 };

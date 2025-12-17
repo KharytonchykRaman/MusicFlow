@@ -1,5 +1,4 @@
 const ALBUM_PRIVATE_SYMBOL = Symbol("ALBUM_PRIVATE");
-const { getAlbums } = require("../data/repositories/albumRepository");
 
 class Album {
   #id;
