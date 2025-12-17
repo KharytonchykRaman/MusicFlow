@@ -16,7 +16,7 @@ const logger = async (data, isError = false) => {
   } catch (err) {
     console.error("Ошибка при записи логов:", err);
   }
-};
+};  
 
 const createAsyncSearch = (getCollectionAsync, searchableFields = ["name", "title", "label"]) => {
   return async (query, limit = 20) => {
@@ -28,7 +28,7 @@ const createAsyncSearch = (getCollectionAsync, searchableFields = ["name", "titl
     try {
       collection = await getCollectionAsync();
     } catch (error) {
-      logger(`Failed to fetch collection for search: ${error}`, true);
+      logger(`Failed to fetch collection for search: ${error.message}`, true);
       return [];
     }
 

@@ -14,6 +14,7 @@ class Playlist {
 
   constructor(
     symbol,
+    id,
     title,
     cover,
     label,
@@ -21,7 +22,6 @@ class Playlist {
     visibility,
     nb_tracks,
     fans,
-    type,
     tracklist
   ) {
     if (symbol !== PLAYLIST_PRIVATE_SYMBOL) {
@@ -30,7 +30,7 @@ class Playlist {
       );
     }
 
-    this.#id = new Date().getTime();
+    this.#id = id;
     this.#title = title;
     this.#cover = cover;
     this.#label = label;
@@ -38,11 +38,12 @@ class Playlist {
     this.#visibility = visibility;
     this.#nb_tracks = nb_tracks;
     this.#fans = fans;
-    this.#type = type;
+    this.#type = "Playlist";
     this.#tracklist = structuredClone(tracklist);
   }
 
   static create(
+    id,
     title,
     cover,
     label,
@@ -50,11 +51,11 @@ class Playlist {
     visibility,
     nb_tracks,
     fans,
-    type,
     tracklist
   ) {
     return new Playlist(
       ALBUM_PRIVATE_SYMBOL,
+      id,
       title,
       cover,
       label,
@@ -62,7 +63,6 @@ class Playlist {
       visibility,
       nb_tracks,
       fans,
-      type,
       tracklist
     );
   }

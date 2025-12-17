@@ -16,6 +16,7 @@ class Album {
 
   constructor(
     symbol,
+    id,
     title,
     cover,
     label,
@@ -23,7 +24,6 @@ class Album {
     fans,
     release_date,
     record_type,
-    type,
     genres,
     artists,
     tracklist
@@ -32,7 +32,7 @@ class Album {
       throw new Error("Album: use Album.create() instead of new Album()");
     }
 
-    this.#id = new Date().getTime();
+    this.#id = id;
     this.#title = title;
     this.#cover = cover;
     this.#label = label;
@@ -40,13 +40,14 @@ class Album {
     this.#fans = fans;
     this.#release_date = release_date;
     this.#record_type = record_type;
-    this.#type = type;
+    this.#type = "Album";
     this.#genres = structuredClone(genres);
     this.#artists = structuredClone(artists);
     this.#tracklist = structuredClone(tracklist);
   }
 
   static create(
+    id,
     title,
     cover,
     label,
@@ -54,13 +55,13 @@ class Album {
     fans,
     release_date,
     record_type,
-    type,
     genres,
     artists,
     tracklist
   ) {
     return new Album(
       ALBUM_PRIVATE_SYMBOL,
+      id,
       title,
       cover,
       label,
@@ -68,7 +69,6 @@ class Album {
       fans,
       release_date,
       record_type,
-      type,
       genres,
       artists,
       tracklist

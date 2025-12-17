@@ -10,23 +10,24 @@ class Track {
   #artist;
   #album;
 
-  constructor(symbol, title, rank, preview, contributors, artist, album) {
+  constructor(symbol, id, title, rank, preview, contributors, artist, album) {
     if (symbol !== TRACK_PRIVATE_SYMBOL) {
       throw new Error("Track: use Track.create() instead of new Track()");
     }
-    this.#id = new Date().getTime();
+    this.#id = id;
     this.#title = title;
     this.#rank = rank;
     this.#preview = preview;
-    this.#type = type;
+    this.#type = "Track";
     this.#contributors = structuredClone(contributors);
     this.#artist = { ...artist };
     this.#album = { ...album };
   }
 
-  static create(title, rank, preview, contributors, artist, album) {
+  static create(id, title, rank, preview, contributors, artist, album) {
     return new Track(
       TRACK_PRIVATE_SYMBOL,
+      id,
       title,
       rank,
       preview,

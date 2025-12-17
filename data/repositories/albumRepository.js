@@ -11,7 +11,7 @@ const getAlbums = async () => {
     const albums = JSON.parse(data);
     return albums;
   } catch (error) {
-    logger(JSON.stringify(error), true);
+    logger(error.message, true);
     const newError = new Error('Can not read file: albums.json');
     newError.status = 500;
     throw newError;
