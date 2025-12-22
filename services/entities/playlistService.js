@@ -1,5 +1,3 @@
-const Playlist = require("../../models/Playlist");
-const { createAsyncSearch } = require("../../utils");
 const repository = require("../../data/repositories/playlistRepository");
 
 function toPlaylistDTOCompact(raw) {
@@ -28,12 +26,6 @@ function sortByFans(playlists) {
 
   return result;
 }
-
-// sort by fans + toDTO
-const searchPlaylists = createAsyncSearch(repository.getPlaylists, [
-  "title",
-  "label",
-]);
 
 async function getSearchedPlaylists(q, limit) {
   const rawSearchedPlaylists = await repository.findSearchedPlaylists(q, limit);

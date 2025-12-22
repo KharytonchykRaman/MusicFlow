@@ -10,15 +10,12 @@ const getHomePageData = async () => {
   };
 
   const popularArtists = await artistService.getPopularArtists(10);
-  const popularArtistsCompacted =
-    artistService.getArtistsCompact(popularArtists);
 
-  result.artists = popularArtistsCompacted;
+  result.artists = popularArtists;
 
   const popularAlbums = await albumService.getPopularAlbums(10);
-  const popularAlbumsCompacted = albumService.getAlbumsCompact(popularAlbums);
 
-  result.albums = popularAlbumsCompacted;
+  result.albums = popularAlbums;
 
   const popularPlaylists = await playlistService.getPopularPlaylists(10);
 

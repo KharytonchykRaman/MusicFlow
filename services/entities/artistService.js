@@ -1,19 +1,18 @@
-const Track = require("../../models/Track");
-const Album = require("../../models/Album");
-const Artist = require("../../models/Artist");
-const Playlist = require("../../models/Playlist");
-const Genre = require("../../models/Genre");
-const { createAsyncSearch } = require("../../utils");
-const { getArtists } = require("../../data/repositories/artistRepository");
+const repository = require("../../data/repositories/artistRepository");
 
-function getArtistsCompact(artists) {
-  return artists.map(({ albumlist, ...rest }) => rest);
+function toArtistDTOCompact(raw) {
+  return {
+    id: raw.id,
+    name: raw.name,
+    picture: raw.picture,
+    fans: raw.fans,
+    type: raw.type,
+  };
 }
 
-async function getPopularArtists(limit = 20) {
-  const artists = await getArtists();
-  const sorted = artists.sort((a, b) => b.fans - a.fans);
-  return sorted.slice(0, limit);
+async function getPopularArtists(limit = 10) {
+  const rawArtists = await repository.findArtistsSortedByFans(limit);
+  return rawArtists.map((ar) => toArtistDTOCompact(ar));
 }
 
 function sortByFans(artists) {
@@ -24,11 +23,18 @@ function sortByFans(artists) {
   return result;
 }
 
-const searchArtists = createAsyncSearch(getArtists, ["name"]);
+async function getSearchedArtists(q, limit) {
+  const rawSearchedArtists = await repository.findSearchedArtists(q, limit);
+
+  const artistsDTO = rawSearchedArtists.map((ar) => toArtistDTOCompact(ar));
+
+  const sorted = sortByFans(artistsDTO);
+
+  return sorted;
+}
 
 module.exports = {
-  getArtistsCompact,
-  searchArtists,
+  getSearchedArtists,
   getPopularArtists,
   sortByFans,
 };

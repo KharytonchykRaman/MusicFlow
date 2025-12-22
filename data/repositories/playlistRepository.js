@@ -75,7 +75,6 @@ async function savePlaylist(playlist) {
 module.exports = {
   getPlaylists,
   savePlaylist,
-  getPlaylistsFromFile,
   findPublicPlaylistsSortedByFans,
   findSearchedPlaylists,
 };
