@@ -4,8 +4,7 @@ const playlistService = require("../entities/playlistService");
 const albumService = require("../entities/albumService");
 
 const search = async (q, trackLimit = 20, playlistLimit = 10) => {
-  const tracks = await trackService.searchTracks(q, trackLimit);
-  const sortedTracks = trackService.sortByRank(tracks);
+  const tracks = await trackService.getSearchedTracks(q, trackLimit);
 
   const artists = await artistService.getSearchedArtists(q, playlistLimit);
 
@@ -14,7 +13,7 @@ const search = async (q, trackLimit = 20, playlistLimit = 10) => {
   const albums = await albumService.getSearchedAlbums(q, playlistLimit);
 
   const result = {
-    tracks: sortedTracks,
+    tracks: tracks,
     artists: artists,
     albums: albums,
     playlists: playlists,

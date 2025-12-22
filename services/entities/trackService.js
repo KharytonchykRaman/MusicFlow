@@ -1,12 +1,9 @@
-const Track = require("../../models/Track");
-const Album = require("../../models/Album");
-const Artist = require("../../models/Artist");
-const Playlist = require("../../models/Playlist");
-const Genre = require("../../models/Genre");
-const { createAsyncSearch } = require("../../utils");
-const { getTracks } = require("../../data/repositories/trackRepository");
+const repository = require("../../data/repositories/trackRepository");
 
-const searchTracks = createAsyncSearch(getTracks, ["title"]);
+async function getPopularTracks(limit = 10) {
+  const rawTracks = await repository.findTracksSortedByRank(limit);
+  return rawTracks;
+}
 
 function sortByRank(tracks) {
   const result = structuredClone(tracks);
@@ -16,4 +13,17 @@ function sortByRank(tracks) {
   return result;
 }
 
-module.exports = { searchTracks, sortByRank };
+async function getSearchedTracks(q, limit) {
+  const rawSearchedTracks = await repository.findSearchedTracks(q, limit);
+
+  const sorted = sortByRank(rawSearchedTracks);
+
+  return sorted;
+}
+
+module.exports = {
+  getPopularTracks,
+  sortByRank,
+  getSearchedTracks,
+};
+
