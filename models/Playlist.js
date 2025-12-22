@@ -54,7 +54,7 @@ class Playlist {
     tracklist
   ) {
     return new Playlist(
-      ALBUM_PRIVATE_SYMBOL,
+      PLAYLIST_PRIVATE_SYMBOL,
       id,
       title,
       cover,
@@ -121,6 +121,20 @@ class Playlist {
       fans: this.#fans,
       type: this.#type,
       tracklist: structuredClone(this.#tracklist),
+    };
+  }
+
+  toDTOCompact() {
+    return {
+      id: this.#id,
+      title: this.#title,
+      cover: this.#cover,
+      label: this.#label,
+      userId: this.#userId,
+      visibility: this.#visibility,
+      nb_tracks: this.#nb_tracks,
+      fans: this.#fans,
+      type: this.#type,
     };
   }
 }

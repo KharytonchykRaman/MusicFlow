@@ -1,9 +1,8 @@
 const fs = require("fs").promises;
 const path = require("path");
 
-const { logger } = require("../../utils");
-const { playlists } = require("./index");
 const Playlist = require("../../models/Playlist");
+const { createAsyncSearch } = require("../../utils");
 
 const PLAYLIST_FILE_PATH = path.join(
   __dirname,
@@ -12,73 +11,71 @@ const PLAYLIST_FILE_PATH = path.join(
   "playlists.json"
 );
 
+let cachedPlaylists = null;
+
 async function getPlaylistsFromFile() {
-  try {
-    const data = await fs.readFile(PLAYLIST_FILE_PATH, "utf8");
-    const playlistsFromFile = JSON.parse(data);
-    return playlistsFromFile;
-  } catch (error) {
-    logger(error.message, true);
-    const newError = new Error("Can not read file: playlists.json");
-    newError.status = 500;
-    throw newError;
-  }
+  const data = await fs.readFile(PLAYLIST_FILE_PATH, "utf8");
+  return JSON.parse(data);
+}
+
+async function cachePlaylists() {
+  const playlistsFromFile = await getPlaylistsFromFile();
+  cachedPlaylists = playlistsFromFile.map((pl) =>
+    Playlist.create(
+      pl.id,
+      pl.title,
+      pl.cover,
+      pl.label,
+      pl.userId,
+      pl.visibility,
+      pl.nb_tracks,
+      pl.fans,
+      pl.tracklist
+    )
+  );
 }
 
 const getPlaylists = async () => {
-  try {
-    const playlistsFromFile = await getPlaylistsFromFile();
-    const result = playlistsFromFile.map((pl) =>
-      Playlist.create(
-        pl.id,
-        pl.title,
-        pl.cover,
-        pl.label,
-        pl.userId,
-        pl.visibility,
-        pl.nb_tracks,
-        pl.fans,
-        pl.tracklist
-      )
-    );
-    return result;
-  } catch (error) {
-    throw error;
+  if (cachedPlaylists === null) {
+    await cachePlaylists();
   }
+  return cachedPlaylists;
 };
 
-async function savePlaylist(playlist) {
-  try {
-    const playlistsFromFile = await getPlaylistsFromFile();
-    try {
-      const playlistDTO = playlist.toDTO();
+const findSearchedPlaylists = createAsyncSearch(getPlaylistsFromFile, ["title", "label"]);
 
-      const exists = playlistsFromFile.some((p) => p.id === playlistDTO.id);
-      if (exists) {
-        const newError = new Error(
-          `Playlist with id ${playlistDTO.id} already exists`
-        );
-        newError.status = 400;
-        throw newError;
-      }
-
-      playlistsFromFile.push(playlistDTO);
-
-      await fs.writeFile(
-        PLAYLIST_FILE_PATH,
-        JSON.stringify(playlistsFromFile, null, 2)
-      );
-
-      playlists.push(playlist);
-    } catch (error) {
-      logger(error.message, true);
-      const newError = new Error(`Error saving playlist: ${error.message}`);
-      newError.status = 500;
-      throw newError;
-    }
-  } catch (error) {
-    throw error;
-  }
+async function findPublicPlaylistsSortedByFans(limit) {
+  const playlistsFromFile = await getPlaylistsFromFile();
+  return playlistsFromFile
+    .filter((p) => p.visibility === "public")
+    .sort((a, b) => b.fans - a.fans)
+    .slice(0, limit);
 }
 
-module.exports = { getPlaylists, savePlaylist, getPlaylistsFromFile };
+async function savePlaylist(playlist) {
+  const playlistsFromFile = await getPlaylistsFromFile();
+
+  if (playlistsFromFile.some((p) => p.id === playlist.id)) {
+    const err = new Error(`Playlist with id ${playlist.id} already exists`);
+    err.status = 400;
+    throw err;
+  }
+
+  const playlistDTO = playlist.toDTO();
+  playlistsFromFile.push(playlistDTO);
+
+  await fs.writeFile(
+    PLAYLIST_FILE_PATH,
+    JSON.stringify(playlistsFromFile, null, 2)
+  );
+
+  cachedPlaylists.push(playlist);
+}
+
+module.exports = {
+  getPlaylists,
+  savePlaylist,
+  getPlaylistsFromFile,
+  findPublicPlaylistsSortedByFans,
+  findSearchedPlaylists,
+};

@@ -1,6 +1,3 @@
-const Album = require("../../models/Album");
-const Artist = require("../../models/Artist");
-const Playlist = require("../../models/Playlist");
 const albumService = require("../entities/albumService");
 const artistService = require("../entities/artistService");
 const playlistService = require("../entities/playlistService");
@@ -24,10 +21,8 @@ const getHomePageData = async () => {
   result.albums = popularAlbumsCompacted;
 
   const popularPlaylists = await playlistService.getPopularPlaylists(10);
-  const popularPlaylistsCompacted =
-    playlistService.getPlaylistsCompact(popularPlaylists);
 
-  result.playlists = popularPlaylistsCompacted;
+  result.playlists = popularPlaylists;
 
   return result;
 };

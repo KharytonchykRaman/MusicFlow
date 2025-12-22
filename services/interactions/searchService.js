@@ -11,9 +11,7 @@ const search = async (q, trackLimit = 20, playlistLimit = 10) => {
   artists = artistService.getArtistsCompact(artists);
   const sortedArtists = artistService.sortByFans(artists);
 
-  let playlists = await playlistService.searchPlaylists(q, playlistLimit);
-  playlists = playlistService.getPlaylistsCompact(playlists);
-  const sortedPlaylists = playlistService.sortByFans(playlists);
+  let playlists = await playlistService.getSearchedPlaylists(q, playlistLimit);
 
   let albums = await albumService.searchAlbums(q, playlistLimit);
   albums = albumService.getAlbumsCompact(albums);
@@ -23,7 +21,7 @@ const search = async (q, trackLimit = 20, playlistLimit = 10) => {
     tracks: sortedTracks,
     artists: sortedArtists,
     albums: sortedAlbums,
-    playlists: sortedPlaylists,
+    playlists: playlists,
   };
 
   return result;
