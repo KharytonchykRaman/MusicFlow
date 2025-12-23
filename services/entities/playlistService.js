@@ -12,14 +12,6 @@ function toPlaylistDTOCompact(raw) {
     fans: raw.fans,
     type: raw.type,
   };
-  #id;
-  #title;
-  #rank;
-  #preview;
-  #type;
-  #contributors;
-  #artist;
-  #album;
 }
 
 async function getPopularPlaylists(limit = 10) {

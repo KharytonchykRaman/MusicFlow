@@ -62,8 +62,8 @@ async function saveTrack(track) {
 }
 
 module.exports = {
-  getPlaylists,
-  savePlaylist,
-  findPublicPlaylistsSortedByFans,
-  findSearchedPlaylists,
+  getTracks,
+  saveTrack,
+  findTracksSortedByRank,
+  findSearchedTracks,
 };

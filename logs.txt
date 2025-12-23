@@ -103,3 +103,8 @@
 "GET - /.well-known/appspecific/com.chrome.devtools.json time: 22.12.2025, 17:44:59\n"
 "GET - /api/search?q=eminem time: 22.12.2025, 17:57:23\n"
 "GET - /.well-known/appspecific/com.chrome.devtools.json time: 22.12.2025, 17:57:23\n"
+"GET - / time: 23.12.2025, 19:03:25\n"
+"GET - /public/css/style.css time: 23.12.2025, 19:03:25\n"
+"GET - /favicon.ico time: 23.12.2025, 19:03:25\n"
+"GET - /api/search?q=eminem time: 23.12.2025, 19:03:31\n"
+"GET - /api/home time: 23.12.2025, 19:03:40\n"
