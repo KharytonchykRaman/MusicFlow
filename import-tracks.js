@@ -86,12 +86,14 @@ function request(method, hostname, path) {
   });
 }
 
-function simplifyArtist(artist) {
-  return {
-    id: Number(artist.id),
-    name: artist.name,
-    picture: artist.picture_xl,
-  };
+function cleanArtist(artist) {
+  const { albumlist, ...rest } = artist;
+  return rest;
+}
+
+function cleanAlbum(album) {
+  const { tracklist, ...rest } = album;
+  return rest;
 }
 
 function simplifyContributor(contributor) {
@@ -161,7 +163,6 @@ async function processArtist(artistId) {
     name: artistRes.name,
     picture: artistRes.picture_xl,
     fans: artistRes.nb_fan,
-    type: "artist",
   };
 
   await sleep(DELAY_MS);
@@ -192,16 +193,9 @@ async function processArtist(artistId) {
       return false;
     }
 
-    const simplifiedAlbum = {
-      id: Number(item.id),
-      title: item.title,
-      cover: item.cover_xl,
-      fans: item.fans,
-      release_date: item.release_date,
-      record_type: item.record_type,
-    };
+    const albumId = Number(item.id);
 
-    albumlist.push(simplifiedAlbum);
+    albumlist.push(albumId);
     addedTitles.add(newTitle);
     return true;
   };
@@ -237,7 +231,6 @@ async function processAlbum(albumId) {
     fans: albumRes.fans,
     release_date: albumRes.release_date,
     record_type: albumRes.record_type,
-    type: "album",
   };
 
   if (albumRes.genres && albumRes.genres.data) {
@@ -245,7 +238,7 @@ async function processAlbum(albumId) {
   }
 
   if (albumRes.contributors) {
-    album.artists = albumRes.contributors.map(simplifyArtist);
+    album.artists = albumRes.contributors.map(simplifyContributor);
   }
 
   await sleep(DELAY_MS);
@@ -260,12 +253,7 @@ async function processAlbum(albumId) {
     for (const track of tracksRes.data) {
       if (!track.readable) continue;
 
-      tracklist.push({
-        id: Number(track.id),
-        title: track.title,
-        track_position: track.track_position,
-        rank: track.rank,
-      });
+      tracklist.push(Number(track.id));
     }
   }
   (album.nb_tracks = tracklist.length), (album.tracklist = tracklist);
@@ -281,7 +269,7 @@ async function processTrack(trackId) {
     title: trackRes.title,
     rank: trackRes.rank,
     preview: trackRes.preview,
-    type: "track",
+    track_position: trackRes.track_position,
   };
 
   if (trackRes.contributors) {
@@ -289,14 +277,15 @@ async function processTrack(trackId) {
   }
 
   if (trackRes.artist) {
-    track.artist = simplifyArtist(trackRes.artist);
+    track.artist = simplifyContributor(trackRes.artist);
   }
 
-  if (trackRes.album) {
-    track.album = {
-      id: Number(trackRes.album.id),
-      cover: trackRes.album.cover_xl,
-    };
+  if (trackRes.album?.id) {
+    track.albumId = Number(trackRes.album.id);
+  }
+
+  if (trackRes.album.cover_xl) {
+    track.cover = trackRes.album.cover_xl;
   }
 
   await sleep(DELAY_MS);
@@ -322,30 +311,30 @@ async function main() {
         const artist = await processArtist(artistId);
         artists.push(artist);
 
-        for (const album of artist.albumlist) {
-          if (seenAlbums.has(album.id)) continue;
-          seenAlbums.add(album.id);
+        for (const albumId of artist.albumlist) {
+          if (seenAlbums.has(albumId)) continue;
+          seenAlbums.add(albumId);
 
           try {
-            const fullAlbum = await processAlbum(album.id);
+            const fullAlbum = await processAlbum(albumId);
 
             if (!fullAlbum) continue;
 
             albums.push(fullAlbum);
 
-            for (const track of fullAlbum.tracklist) {
-              if (seenTracks.has(track.id)) continue;
-              seenTracks.add(track.id);
+            for (const trackId of fullAlbum.tracklist) {
+              if (seenTracks.has(trackId)) continue;
+              seenTracks.add(trackId);
 
               try {
-                const fullTrack = await processTrack(track.id);
+                const fullTrack = await processTrack(trackId);
                 tracks.push(fullTrack);
               } catch (e) {
-                console.warn(`Пропущен трек ${track.id}`);
+                console.warn(`Пропущен трек ${trackId}`);
               }
             }
           } catch (e) {
-            console.warn(`Пропущен альбом ${album.id}`);
+            console.warn(`Пропущен альбом ${albumId}`);
           }
         }
       } catch (e) {
@@ -353,9 +342,13 @@ async function main() {
       }
     }
 
-    fs.writeFileSync("artists.json", JSON.stringify(artists, null, 2));
-    fs.writeFileSync("albums.json", JSON.stringify(albums, null, 2));
-    fs.writeFileSync("tracks.json", JSON.stringify(tracks, null, 2));
+    const cleanArtists = artists.map(({ albumlist, ...rest }) => rest);
+    const cleanAlbums = albums.map(({ tracklist, ...rest }) => rest);
+    const cleanTracks = tracks;
+
+    fs.writeFileSync("artists.json", JSON.stringify(cleanArtists, null, 2));
+    fs.writeFileSync("albums.json", JSON.stringify(cleanAlbums, null, 2));
+    fs.writeFileSync("tracks.json", JSON.stringify(cleanTracks, null, 2));
 
     console.log(`   Артисты: ${artists.length}`);
     console.log(`   Альбомы: ${albums.length}`);
