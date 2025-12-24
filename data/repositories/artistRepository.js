@@ -10,7 +10,7 @@ async function getArtistsFromFile() {
   return JSON.parse(data);
 }
 
-const findSearchedPlaylists = createAsyncSearch(getArtistsFromFile, ["name"]);
+const findSearchedArtists = createAsyncSearch(getArtistsFromFile, ["name"]);
 
 async function findArtistsSortedByFans(limit) {
   const artistsFromFile = await getArtistsFromFile();
@@ -37,5 +37,5 @@ async function saveArtist(artist) {
 module.exports = {
   saveArtist,
   findArtistsSortedByFans,
-  findSearchedPlaylists,
+  findSearchedArtists,
 };

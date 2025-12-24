@@ -1,7 +1,6 @@
 const fs = require("fs").promises;
 const path = require("path");
 
-const Playlist = require("../../models/Playlist");
 const { createAsyncSearch } = require("../../utils");
 
 const PLAYLIST_FILE_PATH = path.join(
@@ -11,38 +10,15 @@ const PLAYLIST_FILE_PATH = path.join(
   "playlists.json"
 );
 
-let cachedPlaylists = null;
-
 async function getPlaylistsFromFile() {
   const data = await fs.readFile(PLAYLIST_FILE_PATH, "utf8");
   return JSON.parse(data);
 }
 
-async function cachePlaylists() {
-  const playlistsFromFile = await getPlaylistsFromFile();
-  cachedPlaylists = playlistsFromFile.map((pl) =>
-    Playlist.create(
-      pl.id,
-      pl.title,
-      pl.cover,
-      pl.label,
-      pl.userId,
-      pl.visibility,
-      pl.nb_tracks,
-      pl.fans,
-      pl.tracklist
-    )
-  );
-}
-
-const getPlaylists = async () => {
-  if (cachedPlaylists === null) {
-    await cachePlaylists();
-  }
-  return cachedPlaylists;
-};
-
-const findSearchedPlaylists = createAsyncSearch(getPlaylistsFromFile, ["title", "label"]);
+const findSearchedPlaylists = createAsyncSearch(getPlaylistsFromFile, [
+  "title",
+  "label",
+]);
 
 async function findPublicPlaylistsSortedByFans(limit) {
   const playlistsFromFile = await getPlaylistsFromFile();
@@ -61,19 +37,15 @@ async function savePlaylist(playlist) {
     throw err;
   }
 
-  const playlistDTO = playlist.toDTO();
-  playlistsFromFile.push(playlistDTO);
+  playlistsFromFile.push(playlist);
 
   await fs.writeFile(
     PLAYLIST_FILE_PATH,
     JSON.stringify(playlistsFromFile, null, 2)
   );
-
-  cachedPlaylists.push(playlist);
 }
 
 module.exports = {
-  getPlaylists,
   savePlaylist,
   findPublicPlaylistsSortedByFans,
   findSearchedPlaylists,

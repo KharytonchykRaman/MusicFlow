@@ -1,22 +1,8 @@
 const repository = require("../../data/repositories/playlistRepository");
 
-function toPlaylistDTOCompact(raw) {
-  return {
-    id: raw.id,
-    title: raw.title,
-    cover: raw.cover,
-    label: raw.label,
-    userId: raw.userId,
-    visibility: raw.visibility,
-    nb_tracks: raw.nb_tracks,
-    fans: raw.fans,
-    type: raw.type,
-  };
-}
-
 async function getPopularPlaylists(limit = 10) {
   const rawPlaylists = await repository.findPublicPlaylistsSortedByFans(limit);
-  return rawPlaylists.map((p) => toPlaylistDTOCompact(p));
+  return rawPlaylists;
 }
 
 function sortByFans(playlists) {
@@ -30,9 +16,7 @@ function sortByFans(playlists) {
 async function getSearchedPlaylists(q, limit) {
   const rawSearchedPlaylists = await repository.findSearchedPlaylists(q, limit);
 
-  const playlistsDTO = rawSearchedPlaylists.map((p) => toPlaylistDTOCompact(p));
-
-  const sorted = sortByFans(playlistsDTO);
+  const sorted = sortByFans(rawSearchedPlaylists);
 
   return sorted;
 }

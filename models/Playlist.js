@@ -9,8 +9,7 @@ class Playlist {
   #visibility;
   #nb_tracks;
   #fans;
-  #type;
-  #tracklist;
+  #trackIds;
 
   constructor(
     symbol,
@@ -22,7 +21,7 @@ class Playlist {
     visibility,
     nb_tracks,
     fans,
-    tracklist
+    trackIds
   ) {
     if (symbol !== PLAYLIST_PRIVATE_SYMBOL) {
       throw new Error(
@@ -38,8 +37,7 @@ class Playlist {
     this.#visibility = visibility;
     this.#nb_tracks = nb_tracks;
     this.#fans = fans;
-    this.#type = "Playlist";
-    this.#tracklist = structuredClone(tracklist);
+    this.#trackIds = [...trackIds];
   }
 
   static create(
@@ -51,7 +49,7 @@ class Playlist {
     visibility,
     nb_tracks,
     fans,
-    tracklist
+    trackIds
   ) {
     return new Playlist(
       PLAYLIST_PRIVATE_SYMBOL,
@@ -63,7 +61,7 @@ class Playlist {
       visibility,
       nb_tracks,
       fans,
-      tracklist
+      trackIds
     );
   }
 
@@ -99,12 +97,8 @@ class Playlist {
     return this.#fans;
   }
 
-  get type() {
-    return this.#type;
-  }
-
-  get tracklist() {
-    return structuredClone(this.#tracklist);
+  get trackIds() {
+    return [...this.#trackIds];
   }
 
   static validate(data) {}
@@ -119,22 +113,7 @@ class Playlist {
       visibility: this.#visibility,
       nb_tracks: this.#nb_tracks,
       fans: this.#fans,
-      type: this.#type,
-      tracklist: structuredClone(this.#tracklist),
-    };
-  }
-
-  toDTOCompact() {
-    return {
-      id: this.#id,
-      title: this.#title,
-      cover: this.#cover,
-      label: this.#label,
-      userId: this.#userId,
-      visibility: this.#visibility,
-      nb_tracks: this.#nb_tracks,
-      fans: this.#fans,
-      type: this.#type,
+      trackIds: [...this.#trackIds],
     };
   }
 }

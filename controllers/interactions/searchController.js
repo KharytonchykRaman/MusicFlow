@@ -14,7 +14,7 @@ const search = async (req, res) => {
     res.json({ status: "success", data: searchedData });
   } catch (error) {
     const status = error.status || 500;
-    res.status(status).json({ status: "error", message: error });
+    res.status(status).json({ status: "error", message: error.message });
   }
 };
 
