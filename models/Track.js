@@ -5,12 +5,24 @@ class Track {
   #title;
   #rank;
   #preview;
-  #type;
+  #track_position;
   #contributors;
   #artist;
-  #album;
+  #albumId;
+  #cover;
 
-  constructor(symbol, id, title, rank, preview, contributors, artist, album) {
+  constructor(
+    symbol,
+    id,
+    title,
+    rank,
+    preview,
+    track_position,
+    contributors,
+    artist,
+    albumId,
+    cover
+  ) {
     if (symbol !== TRACK_PRIVATE_SYMBOL) {
       throw new Error("Track: use Track.create() instead of new Track()");
     }
@@ -18,22 +30,35 @@ class Track {
     this.#title = title;
     this.#rank = rank;
     this.#preview = preview;
-    this.#type = "Track";
+    this.#track_position = track_position;
     this.#contributors = structuredClone(contributors);
     this.#artist = { ...artist };
-    this.#album = { ...album };
+    this.#albumId = albumId;
+    this.#cover = cover;
   }
 
-  static create(id, title, rank, preview, contributors, artist, album) {
+  static create(
+    id,
+    title,
+    rank,
+    preview,
+    track_position,
+    contributors,
+    artist,
+    albumId,
+    cover
+  ) {
     return new Track(
       TRACK_PRIVATE_SYMBOL,
       id,
       title,
       rank,
       preview,
+      track_position,
       contributors,
       artist,
-      album
+      albumId,
+      cover
     );
   }
 
@@ -51,8 +76,8 @@ class Track {
   get preview() {
     return this.#preview;
   }
-  get type() {
-    return this.#type;
+  get track_position() {
+    return this.#track_position;
   }
   get contributors() {
     return structuredClone(this.#contributors);
@@ -60,8 +85,11 @@ class Track {
   get artist() {
     return { ...this.#artist };
   }
-  get album() {
-    return { ...this.#album };
+  get albumId() {
+    return this.#albumId;
+  }
+  get cover() {
+    return this.#cover;
   }
 
   toDTO() {
@@ -70,10 +98,11 @@ class Track {
       title: this.#title,
       rank: this.#rank,
       preview: this.#preview,
-      type: this.#type,
+      track_position: this.#track_position,
       contributors: structuredClone(this.#contributors),
       artist: { ...this.#artist },
-      album: { ...this.#album },
+      albumId: this.#albumId,
+      cover: this.#cover,
     };
   }
 }
