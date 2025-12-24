@@ -21,7 +21,9 @@ async function saveTrack(track) {
   const tracksData = await getTracksFromFile();
 
   if (tracksData.some((tr) => tr.id === track.id)) {
-    throw new Error(`Track with id ${track.id} already exists`);
+    const err = new Error(`Track with id ${track.id} already exists`);
+    err.status = 400;
+    throw err;
   }
 
   tracksData.push(track);

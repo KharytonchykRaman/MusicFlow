@@ -1,18 +1,8 @@
 const repository = require("../../data/repositories/artistRepository");
 
-function toArtistDTOCompact(raw) {
-  return {
-    id: raw.id,
-    name: raw.name,
-    picture: raw.picture,
-    fans: raw.fans,
-    type: raw.type,
-  };
-}
-
 async function getPopularArtists(limit = 10) {
   const rawArtists = await repository.findArtistsSortedByFans(limit);
-  return rawArtists.map((ar) => toArtistDTOCompact(ar));
+  return rawArtists;
 }
 
 function sortByFans(artists) {
@@ -26,9 +16,7 @@ function sortByFans(artists) {
 async function getSearchedArtists(q, limit) {
   const rawSearchedArtists = await repository.findSearchedArtists(q, limit);
 
-  const artistsDTO = rawSearchedArtists.map((ar) => toArtistDTOCompact(ar));
-
-  const sorted = sortByFans(artistsDTO);
+  const sorted = sortByFans(rawSearchedArtists);
 
   return sorted;
 }

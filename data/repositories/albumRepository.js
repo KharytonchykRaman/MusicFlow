@@ -24,7 +24,9 @@ async function saveAlbum(album) {
   const albumsData = await getAlbumsFromFile();
 
   if (albumsData.some((al) => al.id === album.id)) {
-    throw new Error(`Album with id ${album.id} already exists`);
+    const err = new Error(`Album with id ${album.id} already exists`);
+    err.status = 400;
+    throw err;
   }
 
   albumsData.push(album);
