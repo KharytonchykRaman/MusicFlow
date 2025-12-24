@@ -1,41 +1,14 @@
 const fs = require("fs").promises;
 const path = require("path");
 
-const Album = require("../../models/Album");
 const { createAsyncSearch } = require("../../utils");
 
 const ALBUM_FILE_PATH = path.join(__dirname, "..", "mocked", "albums.json");
-
-let cachedAlbums = null;
 
 async function getAlbumsFromFile() {
   const data = await fs.readFile(ALBUM_FILE_PATH, "utf8");
   return JSON.parse(data);
 }
-
-async function cacheAlbums() {
-  const albumsFromFile = await getAlbumsFromFile();
-  cachedAlbums = albumsFromFile.map((al) =>
-    Album.create(
-      al.id,
-      al.title,
-      al.cover,
-      al.label,
-      al.userId,
-      al.visibility,
-      al.nb_tracks,
-      al.fans,
-      al.tracklist
-    )
-  );
-}
-
-const getAlbums = async () => {
-  if (cachedAlbums === null) {
-    await cacheAlbums();
-  }
-  return cachedAlbums;
-};
 
 const findSearchedAlbums = createAsyncSearch(getAlbumsFromFile, [
   "title",
@@ -43,29 +16,23 @@ const findSearchedAlbums = createAsyncSearch(getAlbumsFromFile, [
 ]);
 
 async function findAlbumsSortedByFans(limit) {
-  const albumsFromFile = await getAlbumsFromFile();
-  return albumsFromFile.sort((a, b) => b.fans - a.fans).slice(0, limit);
+  const albumsData = await getAlbumsFromFile();
+  return albumsData.sort((a, b) => b.fans - a.fans).slice(0, limit);
 }
 
 async function saveAlbum(album) {
-  const albumsFromFile = await getAlbumsFromFile();
+  const albumsData = await getAlbumsFromFile();
 
-  if (albumsFromFile.some((al) => al.id === album.id)) {
-    const err = new Error(`Album with id ${album.id} already exists`);
-    err.status = 400;
-    throw err;
+  if (albumsData.some((al) => al.id === album.id)) {
+    throw new Error(`Album with id ${album.id} already exists`);
   }
 
-  const albumDTO = album.toDTO();
-  albumsFromFile.push(albumDTO);
+  albumsData.push(album);
 
-  await fs.writeFile(ALBUM_FILE_PATH, JSON.stringify(albumsFromFile, null, 2));
-
-  cachedAlbums.push(album);
+  await fs.writeFile(ALBUM_FILE_PATH, JSON.stringify(albumsData, null, 2));
 }
 
 module.exports = {
-  getAlbums,
   findSearchedAlbums,
   findAlbumsSortedByFans,
   saveAlbum,

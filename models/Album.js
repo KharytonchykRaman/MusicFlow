@@ -5,14 +5,12 @@ class Album {
   #title;
   #cover;
   #label;
-  #nb_tracks;
   #fans;
   #release_date;
   #record_type;
-  #type;
   #genres;
   #artists;
-  #tracklist;
+  #nb_tracks;
 
   constructor(
     symbol,
@@ -20,13 +18,12 @@ class Album {
     title,
     cover,
     label,
-    nb_tracks,
     fans,
     release_date,
     record_type,
     genres,
     artists,
-    tracklist
+    nb_tracks
   ) {
     if (symbol !== ALBUM_PRIVATE_SYMBOL) {
       throw new Error("Album: use Album.create() instead of new Album()");
@@ -36,14 +33,12 @@ class Album {
     this.#title = title;
     this.#cover = cover;
     this.#label = label;
-    this.#nb_tracks = nb_tracks;
     this.#fans = fans;
     this.#release_date = release_date;
     this.#record_type = record_type;
-    this.#type = "Album";
     this.#genres = structuredClone(genres);
     this.#artists = structuredClone(artists);
-    this.#tracklist = structuredClone(tracklist);
+    this.#nb_tracks = nb_tracks;
   }
 
   static create(
@@ -51,13 +46,12 @@ class Album {
     title,
     cover,
     label,
-    nb_tracks,
     fans,
     release_date,
     record_type,
     genres,
     artists,
-    tracklist
+    nb_tracks
   ) {
     return new Album(
       ALBUM_PRIVATE_SYMBOL,
@@ -65,13 +59,12 @@ class Album {
       title,
       cover,
       label,
-      nb_tracks,
       fans,
       release_date,
       record_type,
       genres,
       artists,
-      tracklist
+      nb_tracks
     );
   }
 
@@ -91,10 +84,6 @@ class Album {
     return this.#label;
   }
 
-  get nb_tracks() {
-    return this.#nb_tracks;
-  }
-
   get fans() {
     return this.#fans;
   }
@@ -107,10 +96,6 @@ class Album {
     return this.#record_type;
   }
 
-  get type() {
-    return this.#type;
-  }
-
   get genres() {
     return structuredClone(this.#genres);
   }
@@ -119,8 +104,8 @@ class Album {
     return structuredClone(this.#artists);
   }
 
-  get tracklist() {
-    return structuredClone(this.#tracklist);
+  get nb_tracks() {
+    return this.#nb_tracks;
   }
 
   static validate(data) {}
@@ -131,14 +116,12 @@ class Album {
       title: this.#title,
       cover: this.#cover,
       label: this.#label,
-      nb_tracks: this.#nb_tracks,
       fans: this.#fans,
       release_date: this.#release_date,
       record_type: this.#record_type,
-      type: this.#type,
       genres: structuredClone(this.#genres),
       artists: structuredClone(this.#artists),
-      tracklist: structuredClone(this.#tracklist),
+      nb_tracks: this.#nb_tracks,
     };
   }
 }
