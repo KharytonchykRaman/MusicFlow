@@ -34,8 +34,15 @@ async function saveAlbum(album) {
   await fs.writeFile(ALBUM_FILE_PATH, JSON.stringify(albumsData, null, 2));
 }
 
+async function findAlbumById(id) {
+  const albumsData = await getAlbumsFromFile();
+
+  return albumsData.find((al) => al.id === id);
+}
+
 module.exports = {
   findSearchedAlbums,
   findAlbumsSortedByFans,
   saveAlbum,
+  findAlbumById,
 };

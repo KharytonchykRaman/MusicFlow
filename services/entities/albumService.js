@@ -21,8 +21,19 @@ async function getSearchedAlbums(q, limit) {
   return sorted;
 }
 
+async function getAlbumById(id) {
+  const numId = Number(id);
+  const rawAlbum = await repository.findAlbumById(numId);
+  if (!rawAlbum) {
+    const newError = new Error(`Album with id ${id} not found`);
+    throw newError;
+  }
+  return rawAlbum;
+}
+
 module.exports = {
   getSearchedAlbums,
   getPopularAlbums,
   sortByFans,
+  getAlbumById,
 };

@@ -31,8 +31,15 @@ async function saveTrack(track) {
   await fs.writeFile(TRACK_FILE_PATH, JSON.stringify(tracksData, null, 2));
 }
 
+async function findTracksByAlbumId(albumId) {
+  const tracksData = await getTracksFromFile();
+
+  return tracksData.filter((tr) => tr.albumId === albumId);
+}
+
 module.exports = {
   saveTrack,
   findTracksSortedByRank,
   findSearchedTracks,
+  findTracksByAlbumId,
 };
