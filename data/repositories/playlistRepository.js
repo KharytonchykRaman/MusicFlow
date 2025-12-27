@@ -45,8 +45,15 @@ async function savePlaylist(playlist) {
   );
 }
 
+async function findPlaylistById(playlistId) {
+  const playlistsFromFile = await getPlaylistsFromFile();
+
+  return playlistsFromFile.find((pl) => pl.id === playlistId);
+}
+
 module.exports = {
   savePlaylist,
   findPublicPlaylistsSortedByFans,
   findSearchedPlaylists,
+  findPlaylistById,
 };

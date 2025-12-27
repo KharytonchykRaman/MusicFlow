@@ -5,3 +5,7 @@
 "GET - /api/album/673968231 time: 27.12.2025, 04:36:43\n"
 "GET - /api/album/673968231 time: 27.12.2025, 04:38:36\n"
 "GET - /api/artist/13 time: 27.12.2025, 04:38:43\n"
+"GET - /api/artist/13 time: 27.12.2025, 05:22:18\n"
+"GET - /api/playlist/1 time: 27.12.2025, 05:22:26\n"
+"GET - /api/playlist/1.1 time: 27.12.2025, 05:22:33\n"
+"GET - /api/playlist/1.1 time: 27.12.2025, 05:26:16\n"

@@ -42,6 +42,13 @@ async function getTracksByGenreId(genreId) {
   return result;
 }
 
+async function getTrackById(id) {
+  const numId = Number(id);
+  const result = await repository.findTrackById(numId);
+
+  return result;
+}
+
 module.exports = {
   getPopularTracks,
   sortByRank,
@@ -49,4 +56,5 @@ module.exports = {
   getTracksByAlbumId,
   getTracksByArtistId,
   getTracksByGenreId,
+  getTrackById,
 };

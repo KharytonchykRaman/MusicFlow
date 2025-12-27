@@ -49,6 +49,12 @@ async function findTracksByGenreId(genreId) {
   return tracksData.filter((tr) => tr.genres.some((g) => g.id === genreId));
 }
 
+async function findTrackById(trackId) {
+  const tracksData = await getTracksFromFile();
+
+  return tracksData.find((tr) => tr.id === trackId);
+}
+
 module.exports = {
   saveTrack,
   findTracksSortedByRank,
@@ -56,4 +62,5 @@ module.exports = {
   findTracksByAlbumId,
   findTracksByArtistId,
   findTracksByGenreId,
+  findTrackById,
 };

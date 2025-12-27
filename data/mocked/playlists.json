@@ -1,6 +1,6 @@
 [
   {
-    "id": "pl_001",
+    "id": 1.1,
     "title": "Chill Vibes Only",
     "cover": "https://example.com/covers/chill.jpg",
     "label": "Focus & Relax",
@@ -10,7 +10,7 @@
     "fans": 1240,
     "type": "playlist",
     "tracklist": [
-      "track_001", "track_002", "track_003", "track_004", "track_005"
+      991355952, 3217406831, 1573100742
     ]
   },
   {

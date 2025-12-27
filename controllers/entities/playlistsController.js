@@ -1,7 +1,18 @@
-const { createSearch } = require("../../utils");
+const trackService = require("../../services/entities/trackService");
+const playlistService = require("../../services/entities/playlistService");
 
-// const tracks =
+async function getPlaylist(req, res) {
+  try {
+    const { id } = req.params;
 
-const search = createSearch(playlists, ["name"]);
+    const playlist = await playlistService.getPlaylistById(id);
 
-module.exports = { search };
+    const result = await playlistService.fillPlaylist(playlist);
+    res.json(result);
+  } catch (err) {
+    const status = err.status || 500;
+    res.status(status).json({ status: "error", message: err.message });
+  }
+}
+
+module.exports = { getPlaylist };
