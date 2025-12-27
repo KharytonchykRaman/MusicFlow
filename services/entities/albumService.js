@@ -31,9 +31,17 @@ async function getAlbumById(id) {
   return rawAlbum;
 }
 
+async function getAlbumsByArtistId(artistId) {
+  const numId = Number(artistId);
+  const result = await repository.findAlbumsByArtistId(numId);
+
+  return result;
+}
+
 module.exports = {
   getSearchedAlbums,
   getPopularAlbums,
   sortByFans,
   getAlbumById,
+  getAlbumsByArtistId,
 };

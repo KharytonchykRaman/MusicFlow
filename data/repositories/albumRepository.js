@@ -40,9 +40,16 @@ async function findAlbumById(id) {
   return albumsData.find((al) => al.id === id);
 }
 
+async function findAlbumsByArtistId(artistId) {
+  const albumsData = await getAlbumsFromFile();
+
+  return albumsData.filter((al) => al.artists.some((ar) => ar.id === artistId));
+}
+
 module.exports = {
   findSearchedAlbums,
   findAlbumsSortedByFans,
   saveAlbum,
   findAlbumById,
+  findAlbumsByArtistId,
 };

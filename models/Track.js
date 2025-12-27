@@ -10,6 +10,7 @@ class Track {
   #artist;
   #albumId;
   #cover;
+  #genres;
 
   constructor(
     symbol,
@@ -21,7 +22,8 @@ class Track {
     contributors,
     artist,
     albumId,
-    cover
+    cover,
+    genres
   ) {
     if (symbol !== TRACK_PRIVATE_SYMBOL) {
       throw new Error("Track: use Track.create() instead of new Track()");
@@ -35,6 +37,7 @@ class Track {
     this.#artist = { ...artist };
     this.#albumId = albumId;
     this.#cover = cover;
+    this.#genres = structuredClone(genres);
   }
 
   static create(
@@ -46,7 +49,8 @@ class Track {
     contributors,
     artist,
     albumId,
-    cover
+    cover,
+    genres
   ) {
     return new Track(
       TRACK_PRIVATE_SYMBOL,
@@ -58,7 +62,8 @@ class Track {
       contributors,
       artist,
       albumId,
-      cover
+      cover,
+      genres
     );
   }
 
@@ -91,6 +96,9 @@ class Track {
   get cover() {
     return this.#cover;
   }
+  get genres() {
+    return structuredClone(this.#genres);
+  }
 
   toDTO() {
     return {
@@ -103,6 +111,7 @@ class Track {
       artist: { ...this.#artist },
       albumId: this.#albumId,
       cover: this.#cover,
+      genres: structuredClone(this.#genres),
     };
   }
 }

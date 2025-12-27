@@ -21,8 +21,19 @@ async function getSearchedArtists(q, limit) {
   return sorted;
 }
 
+async function getArtistById(id) {
+  const numId = Number(id);
+  const rawArtist = await repository.findArtistById(numId);
+  if (!rawArtist) {
+    const newError = new Error(`Artist with id ${id} not found`);
+    throw newError;
+  }
+  return rawArtist;
+}
+
 module.exports = {
   getSearchedArtists,
   getPopularArtists,
   sortByFans,
+  getArtistById,
 };

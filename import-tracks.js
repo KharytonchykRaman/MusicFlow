@@ -1,5 +1,6 @@
 const https = require("https");
 const fs = require("fs");
+const path = require("path");
 
 const ARTISTS_TO_FETCH = [
   "Eminem",
@@ -358,4 +359,29 @@ async function main() {
   }
 }
 
-main();
+// main();
+
+const albums = JSON.parse(
+  fs.readFileSync(
+    path.join(__dirname, "data", "mocked", "albums.json"),
+    "utf-8"
+  )
+);
+
+const tracks = JSON.parse(
+  fs.readFileSync(
+    path.join(__dirname, "data", "mocked", "tracks.json"),
+    "utf-8"
+  )
+);
+
+for (const tr of tracks) {
+  const album = albums.find((al) => al.id === tr.albumId);
+
+  tr.genres = album.genres;
+}
+
+fs.writeFileSync(
+  path.join(__dirname, "data", "mocked", "tracks.json"),
+  JSON.stringify(tracks, null, 2)
+);

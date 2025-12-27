@@ -22,8 +22,22 @@ async function getSearchedTracks(q, limit) {
 }
 
 async function getTracksByAlbumId(albumId) {
-  const numId = Number(albumId)
+  const numId = Number(albumId);
   const result = await repository.findTracksByAlbumId(numId);
+
+  return result;
+}
+
+async function getTracksByArtistId(artistId) {
+  const numId = Number(artistId);
+  const result = await repository.findTracksByArtistId(numId);
+
+  return result;
+}
+
+async function getTracksByGenreId(genreId) {
+  const numId = Number(genreId);
+  const result = await repository.findTracksByGenreId(numId);
 
   return result;
 }
@@ -32,5 +46,7 @@ module.exports = {
   getPopularTracks,
   sortByRank,
   getSearchedTracks,
-  getTracksByAlbumId
+  getTracksByAlbumId,
+  getTracksByArtistId,
+  getTracksByGenreId,
 };

@@ -34,8 +34,15 @@ async function saveArtist(artist) {
   );
 }
 
+async function findArtistById(id) {
+  const artistsFromFile = await getArtistsFromFile();
+
+  return artistsFromFile.find((ar) => ar.id === id);
+}
+
 module.exports = {
   saveArtist,
   findArtistsSortedByFans,
   findSearchedArtists,
+  findArtistById,
 };
