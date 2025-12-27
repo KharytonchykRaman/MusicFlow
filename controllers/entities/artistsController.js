@@ -2,14 +2,14 @@ const artistService = require("../../services/entities/artistService");
 const albumService = require("../../services/entities/albumService");
 const trackService = require("../../services/entities/trackService");
 
-async function getAlbums(req, res) {
+async function getArtist(req, res) {
   try {
     const { id } = req.params;
 
-    await artistService.getArtistById(id);
+    const artist = await artistService.getArtistById(id);
 
     const albums = await albumService.getAlbumsByArtistId(id);
-    res.json(albums);
+    res.json({ ...artist, albums });
   } catch (err) {
     const status = err.status || 500;
     res.status(status).json({ status: "error", message: err.message });
@@ -30,4 +30,4 @@ async function getTracks(req, res) {
   }
 }
 
-module.exports = { getAlbums, getTracks };
+module.exports = { getArtist, getTracks };

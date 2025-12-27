@@ -11,12 +11,12 @@ router.get("/home", (req, res) => homeController.home(req, res));
 
 router.get("/search", (req, res) => searchController.search(req, res));
 
-router.get("/albums/:id/tracks", (req, res) =>
-  albumsController.getTracks(req, res)
+router.get("/album/:id", (req, res) =>
+  albumsController.getAlbum(req, res)
 );
 
-router.get("/artists/:id/albums", (req, res) =>
-  artistsController.getAlbums(req, res)
+router.get("/artist/:id", (req, res) =>
+  artistsController.getArtist(req, res)
 );
 
 router.get("/artists/:id/tracks", (req, res) =>
