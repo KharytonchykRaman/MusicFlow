@@ -1,52 +1,44 @@
-const ARTIST_PRIVATE_SYMBOL = Symbol("ARTIST_PRIVATE");
+const { DataTypes } = require("sequelize");
+const sequelize = require("../database");
 
-class Artist {
-  #id;
-  #name;
-  #picture;
-  #fans;
-
-  constructor(symbol, id, name, picture) {
-    if (symbol !== ARTIST_PRIVATE_SYMBOL) {
-      throw new Error("Artist: use Artist.create() instead of new Artist()");
-    }
-
-    this.#id = id;
-    this.#name = name;
-    this.#picture = picture;
-    this.#fans = fans;
+const Artist = sequelize.define(
+  "Artist",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: { notEmpty: true },
+    },
+    picture: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    fans: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      validate: { min: 0 },
+    },
+  },
+  {
+    timestamps: true,
+    tableName: "artists",
   }
+);
 
-  static create(id, name, picture, fans) {
-    return new Artist(ARTIST_PRIVATE_SYMBOL, id, name, picture, fans);
-  }
-
-  static validate(data) {}
-
-  get id() {
-    return this.#id;
-  }
-
-  get name() {
-    return this.#name;
-  }
-
-  get picture() {
-    return this.#picture;
-  }
-
-  get fans() {
-    return this.#fans;
-  }
-
-  toDTO() {
-    return {
-      id: this.#id,
-      name: this.#name,
-      picture: this.#picture,
-      fans: this.#fans,
-    };
-  }
-}
+Artist.prototype.toDTO = function () {
+  return {
+    id: this.id,
+    name: this.name,
+    picture: this.picture,
+    fans: this.fans,
+  };
+};
 
 module.exports = Artist;

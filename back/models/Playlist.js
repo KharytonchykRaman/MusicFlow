@@ -1,121 +1,66 @@
-const PLAYLIST_PRIVATE_SYMBOL = Symbol("PLAYLIST_PRIVATE");
+// models/Playlist.js
+const { DataTypes } = require("sequelize");
+const sequelize = require("../database");
 
-class Playlist {
-  #id;
-  #title;
-  #cover;
-  #label;
-  #userId;
-  #visibility;
-  #nb_tracks;
-  #fans;
-  #trackIds;
-
-  constructor(
-    symbol,
-    id,
-    title,
-    cover,
-    label,
-    userId,
-    visibility,
-    nb_tracks,
-    fans,
-    trackIds
-  ) {
-    if (symbol !== PLAYLIST_PRIVATE_SYMBOL) {
-      throw new Error(
-        "Playlist: use Playlist.create() instead of new Playlist()"
-      );
-    }
-
-    this.#id = id;
-    this.#title = title;
-    this.#cover = cover;
-    this.#label = label;
-    this.#userId = userId;
-    this.#visibility = visibility;
-    this.#nb_tracks = nb_tracks;
-    this.#fans = fans;
-    this.#trackIds = [...trackIds];
+const Playlist = sequelize.define(
+  "Playlist",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { notEmpty: true },
+    },
+    cover: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    label: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    visibility: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true, // true = public, false = private
+    },
+    nb_tracks: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
+    fans: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
+  },
+  {
+    timestamps: true,
+    tableName: "playlists",
   }
+);
 
-  static create(
-    id,
-    title,
-    cover,
-    label,
-    userId,
-    visibility,
-    nb_tracks,
-    fans,
-    trackIds
-  ) {
-    return new Playlist(
-      PLAYLIST_PRIVATE_SYMBOL,
-      id,
-      title,
-      cover,
-      label,
-      userId,
-      visibility,
-      nb_tracks,
-      fans,
-      trackIds
-    );
-  }
+Playlist.prototype.toDTO = async function () {
+  const tracks = await this.getTracks({
+    through: { attributes: ["track_position"] }, // если нужно сохранить порядок
+  });
 
-  get id() {
-    return this.#id;
-  }
-
-  get title() {
-    return this.#title;
-  }
-
-  get cover() {
-    return this.#cover;
-  }
-
-  get label() {
-    return this.#label;
-  }
-
-  get userId() {
-    return this.#userId;
-  }
-
-  get visibility() {
-    return this.#visibility;
-  }
-
-  get nb_tracks() {
-    return this.#nb_tracks;
-  }
-
-  get fans() {
-    return this.#fans;
-  }
-
-  get trackIds() {
-    return [...this.#trackIds];
-  }
-
-  static validate(data) {}
-
-  toDTO() {
-    return {
-      id: this.#id,
-      title: this.#title,
-      cover: this.#cover,
-      label: this.#label,
-      userId: this.#userId,
-      visibility: this.#visibility,
-      nb_tracks: this.#nb_tracks,
-      fans: this.#fans,
-      trackIds: [...this.#trackIds],
-    };
-  }
-}
+  return {
+    id: this.id,
+    title: this.title,
+    cover: this.cover,
+    label: this.label,
+    userId: this.userId,
+    visibility: this.visibility,
+    nb_tracks: this.nb_tracks,
+    fans: this.fans,
+    trackIds: tracks.map(t => t.id),
+  };
+};
 
 module.exports = Playlist;

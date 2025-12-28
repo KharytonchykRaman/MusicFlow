@@ -87,16 +87,6 @@ function request(method, hostname, path) {
   });
 }
 
-function cleanArtist(artist) {
-  const { albumlist, ...rest } = artist;
-  return rest;
-}
-
-function cleanAlbum(album) {
-  const { tracklist, ...rest } = album;
-  return rest;
-}
-
 function simplifyContributor(contributor) {
   return {
     id: Number(contributor.id),

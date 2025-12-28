@@ -1,119 +1,67 @@
-const TRACK_PRIVATE_SYMBOL = Symbol("TRACK_PRIVATE");
+// models/Track.js
+const { DataTypes } = require("sequelize");
+const sequelize = require("../database");
 
-class Track {
-  #id;
-  #title;
-  #rank;
-  #preview;
-  #track_position;
-  #contributors;
-  #artist;
-  #albumId;
-  #cover;
-  #genres;
+const Track = sequelize.define(
+  "Track",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { notEmpty: true },
+    },
+    rank: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    preview: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    track_position: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: { min: 1 },
+    },
+    // contributors пока не моделируем как отдельную сущность → храним как JSON
+    contributors: {
+      type: DataTypes.JSON,
+      allowNull: false,
+      defaultValue: [],
+    },
+    cover: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+  },
+  {
+    timestamps: true,
+    tableName: "tracks",
+  }
+);
 
-  constructor(
-    symbol,
-    id,
-    title,
-    rank,
-    preview,
-    track_position,
-    contributors,
-    artist,
-    albumId,
-    cover,
-    genres
-  ) {
-    if (symbol !== TRACK_PRIVATE_SYMBOL) {
-      throw new Error("Track: use Track.create() instead of new Track()");
-    }
-    this.#id = id;
-    this.#title = title;
-    this.#rank = rank;
-    this.#preview = preview;
-    this.#track_position = track_position;
-    this.#contributors = structuredClone(contributors);
-    this.#artist = { ...artist };
-    this.#albumId = albumId;
-    this.#cover = cover;
-    this.#genres = structuredClone(genres);
-  }
+Track.prototype.toDTO = async function () {
+  const album = await this.getAlbum();
+  const artists = await this.getArtists();
+  const genres = []; // если нужно — можно добавить связь Track-Genre позже
 
-  static create(
-    id,
-    title,
-    rank,
-    preview,
-    track_position,
-    contributors,
-    artist,
-    albumId,
-    cover,
-    genres
-  ) {
-    return new Track(
-      TRACK_PRIVATE_SYMBOL,
-      id,
-      title,
-      rank,
-      preview,
-      track_position,
-      contributors,
-      artist,
-      albumId,
-      cover,
-      genres
-    );
-  }
-
-  static validate(obj) {}
-
-  get id() {
-    return this.#id;
-  }
-  get title() {
-    return this.#title;
-  }
-  get rank() {
-    return this.#rank;
-  }
-  get preview() {
-    return this.#preview;
-  }
-  get track_position() {
-    return this.#track_position;
-  }
-  get contributors() {
-    return structuredClone(this.#contributors);
-  }
-  get artist() {
-    return { ...this.#artist };
-  }
-  get albumId() {
-    return this.#albumId;
-  }
-  get cover() {
-    return this.#cover;
-  }
-  get genres() {
-    return structuredClone(this.#genres);
-  }
-
-  toDTO() {
-    return {
-      id: this.#id,
-      title: this.#title,
-      rank: this.#rank,
-      preview: this.#preview,
-      track_position: this.#track_position,
-      contributors: structuredClone(this.#contributors),
-      artist: { ...this.#artist },
-      albumId: this.#albumId,
-      cover: this.#cover,
-      genres: structuredClone(this.#genres),
-    };
-  }
-}
+  return {
+    id: this.id,
+    title: this.title,
+    rank: this.rank,
+    preview: this.preview,
+    track_position: this.track_position,
+    contributors: this.contributors,
+    albumId: album ? album.id : null,
+    cover: this.cover || (album ? album.cover : null),
+    artists: artists.map(a => a.toDTO()),
+    // genres: genres.map(g => g.toDTO()),
+  };
+};
 
 module.exports = Track;

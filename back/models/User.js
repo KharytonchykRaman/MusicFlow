@@ -1,102 +1,65 @@
-const USER_PRIVATE_SYMBOL = Symbol("USER_PRIVATE");
+// models/User.js
+const { DataTypes } = require("sequelize");
+const sequelize = require("../database");
+const bcrypt = require("bcrypt"); // опционально, если добавите пароли позже
 
-class User {
-  #id;
-  #email;
-  #username;
-  #likedTrackIDs;
-  #likedAlbumIDs;
-  #followedArtistIDs;
-  #likedPlaylistIDs;
-  #createdPlaylistIDs;
+const User = sequelize.define(
+  "User",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: { isEmail: true },
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: { notEmpty: true },
+    },
+    // Пароль можно добавить позже
+    // password: { type: DataTypes.STRING, allowNull: true }
+  },
+  {
+    timestamps: true,
+    tableName: "users",
+  }
+);
 
-  constructor(
-    symbol,
-    id,
-    email,
-    username,
-    likedTrackIDs = [],
-    likedAlbumIDs = [],
-    followedArtistIDs = [],
-    likedPlaylistIDs = [],
-    createdPlaylistIDs = []
-  ) {
-    if (symbol !== USER_PRIVATE_SYMBOL) {
-      throw new Error("User: use User.create() instead of new User()");
-    }
-    this.#id = id;
-    this.#email = email;
-    this.#username = username;
-    this.#likedTrackIDs = [...likedTrackIDs];
-    this.#likedAlbumIDs = [...likedAlbumIDs];
-    this.#followedArtistIDs = [...followedArtistIDs];
-    this.#likedPlaylistIDs = [...likedPlaylistIDs];
-    this.#createdPlaylistIDs = [...createdPlaylistIDs];
-  }
+// Связи "избранное" реализуем через многие-ко-многим
+// Но для простоты в toDTO() будем использовать отдельные таблицы
 
-  static create(
-    id,
-    email,
-    username,
-    likedTrackIDs,
-    likedAlbumIDs,
-    followedArtistIDs,
-    likedPlaylistIDs,
-    createdPlaylistIDs
-  ) {
-    return new User(
-      USER_PRIVATE_SYMBOL,
-      id,
-      email,
-      username,
-      likedTrackIDs,
-      likedAlbumIDs,
-      followedArtistIDs,
-      likedPlaylistIDs,
-      createdPlaylistIDs
-    );
-  }
+User.prototype.toDTO = async function () {
+  const [
+    likedTracks,
+    likedAlbums,
+    followedArtists,
+    likedPlaylists,
+    createdPlaylists,
+  ] = await Promise.all([
+    this.getLikedTracks(),
+    this.getLikedAlbums(),
+    this.getFollowedArtists(),
+    this.getLikedPlaylists(),
+    this.getPlaylists(), // created playlists
+  ]);
 
-  get id() {
-    return this.#id;
-  }
-  get email() {
-    return this.#email;
-  }
-  get username() {
-    return this.#username;
-  }
-
-  get likedTrackIDs() {
-    return [...this.#likedTrackIDs];
-  }
-  get likedAlbumIDs() {
-    return [...this.#likedAlbumIDs];
-  }
-  get followedArtistIDs() {
-    return [...this.#followedArtistIDs];
-  }
-  get likedPlaylistIDs() {
-    return [...this.#likedPlaylistIDs];
-  }
-  get createdPlaylistIDs() {
-    return [...this.#createdPlaylistIDs];
-  }
-
-  toDTO() {
-    return {
-      id: this.#id,
-      email: this.#email,
-      username: this.#username,
-      likedTrackIDs: [...this.#likedTrackIDs],
-      likedAlbumIDs: [...this.#likedAlbumIDs],
-      followedArtistIDs: [...this.#followedArtistIDs],
-      likedPlaylistIDs: [...this.#likedPlaylistIDs],
-      createdPlaylistIDs: [...this.#createdPlaylistIDs],
-    };
-  }
-
-  static validate(data) {}
-}
+  return {
+    id: this.id,
+    email: this.email,
+    username: this.username,
+    likedTrackIDs: likedTracks.map(t => t.id),
+    likedAlbumIDs: likedAlbums.map(a => a.id),
+    followedArtistIDs: followedArtists.map(a => a.id),
+    likedPlaylistIDs: likedPlaylists.map(p => p.id),
+    createdPlaylistIDs: createdPlaylists.map(p => p.id),
+  };
+};
 
 module.exports = User;
