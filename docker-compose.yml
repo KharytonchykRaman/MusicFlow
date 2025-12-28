@@ -1,12 +1,27 @@
-version: '3.8'
-
 services:
   app:
-    build: .
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+      target: base
+    develop:
+      watch:
+        - action: sync
+          path: back
+          target: app/src
+          ignore:
+            - node_modules/
+            - data/
+            - RES/
+        - action: rebuild
+          path: package.json
+    command: npm start
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DB_STORAGE: /app/data/database.sqlite # Путь внутри контейнера
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
-    environment:
-      - NODE_ENV=development
-    command: npm run dev
+      # 🔽 ВАЖНО: Персистентность файла БД
+      - ./back/data:/app/data

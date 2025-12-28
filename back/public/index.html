@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Flow</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9L12 2L21 9V20H3V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Что хочешь включить?">
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-primary">Узнать больше о Premium</button>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 8C18 6.4087 17.3679 4.88754 16.2426 3.75736C15.1125 2.63206 13.5913 2 12 2C10.4087 2 8.88754 2.63206 7.75736 3.75736C6.63206 4.88754 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 22C12.5523 22 13.0826 21.779 13.4772 21.3844C13.8718 20.9898 14.0929 20.4595 14.0929 19.9072C14.0929 19.3549 13.8718 18.8246 13.4772 18.43C13.0826 18.0354 12.5523 17.8144 12 17.8144C11.4477 17.8144 10.9174 18.0354 10.5228 18.43C10.1282 18.8246 9.90714 19.3549 9.90714 19.9072C9.90714 20.4595 10.1282 20.9898 10.5228 21.3844C10.9174 21.779 11.4477 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 11C11.211 11 13 9.211 13 7C13 4.789 11.211 3 9 3C6.789 3 5 4.789 5 7C5 9.211 6.789 11 9 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23 21V19C22.9993 18.1137 22.7049 17.2526 22.1691 16.5523C21.6333 15.852 20.8874 15.3549 20 15.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 7C16 9.211 17.789 11 20 11C22.211 11 24 9.211 24 7C24 4.789 22.211 3 20 3C17.789 3 16 4.789 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="user-icon">Q</div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">
+                        <span>Моя медиатека</span>
+                        <div>
+                            <span class="nav-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 6V12M12 12V18M12 12H18M12 12H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                            <span class="nav-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 8L22 12M22 12L18 16M22 12H2M18 8L14 12M14 12L18 16M14 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="sidebar-item active">
+                        <div class="sidebar-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18V6M9 6L15 12M9 6L15 12M15 12V18M15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="sidebar-item-title">Плейлисты</div>
+                            <div class="sidebar-item-subtitle">977 треков</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 18C15.866 18 19 14.866 19 11C19 7.13401 15.866 4 12 4C8.13401 4 5 7.13401 5 11C5 14.866 8.13401 18 12 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 4V2M12 18V20M4 12H2M20 12H22M16 16L18 18M6 6L8 8M6 18L8 16M16 6L18 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="sidebar-item-title">Подкасты</div>
+                            <div class="sidebar-item-subtitle">Скачанные выпуски</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 20H5C3.89543 20 3 19.1046 3 18V6C3 4.89543 3.89543 4 5 4H19C20.1046 4 21 4.89543 21 6V18C21 19.1046 20.1046 20 19 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 8H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 16H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="sidebar-item-title">Альбомы</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-title">
+                        <span>Недавние</span>
+                        <span class="nav-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="sidebar-item-title">Любимые треки</div>
+                            <div class="sidebar-item-subtitle">Плейлист • 977 треков</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12C21 16.4183 16.4183 21 12 21C7.58172 21 3 16.4183 3 12C3 7.58172 7.58172 3 12 3C16.4183 3 21 7.58172 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="sidebar-item-title">Мои выпуски</div>
+                            <div class="sidebar-item-subtitle">Плейлист • Скачанные выпуски</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://placehold.co/48x48" class="sidebar-item-icon">
+                        <div>
+                            <div class="sidebar-item-title">Juice WRLD</div>
+                            <div class="sidebar-item-subtitle">Исполнитель</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://placehold.co/48x48" class="sidebar-item-icon">
+                        <div>
+                            <div class="sidebar-item-title">Eminem</div>
+                            <div class="sidebar-item-subtitle">Исполнитель</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://placehold.co/48x48" class="sidebar-item-icon">
+                        <div>
+                            <div class="sidebar-item-title">ЛСП</div>
+                            <div class="sidebar-item-subtitle">Исполнитель</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://placehold.co/48x48" class="sidebar-item-icon">
+                        <div>
+                            <div class="sidebar-item-title">Unreleased juice wrld (comp...</div>
+                            <div class="sidebar-item-subtitle">Плейлист • luke</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://placehold.co/48x48" class="sidebar-item-icon">
+                        <div>
+                            <div class="sidebar-item-title">SALUKI</div>
+                            <div class="sidebar-item-subtitle">Исполнитель</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://placehold.co/48x48" class="sidebar-item-icon">
+                        <div>
+                            <div class="sidebar-item-title">Death Race For Love (Bonus ...</div>
+                            <div class="sidebar-item-subtitle">Альбом • Juice WRLD</div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="https://placehold.co/48x48" class="sidebar-item-icon">
+                        <div>
+                            <div class="sidebar-item-title">Heronwater</div>
+                            <div class="sidebar-item-subtitle">Исполнитель</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Area -->
+            <div class="main-area">
+                <div class="content">
+                    <!-- Content Header -->
+                    <div class="content-header">
+                        <div class="tab active">Все</div>
+                        <div class="tab">Музыка</div>
+                        <div class="tab">Подкасты</div>
+                        <div class="tab">Аудиокниги</div>
+                    </div>
+
+                    <!-- Featured Playlists -->
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #e91e63, #9c27b0);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Любимые треки</div>
+                            <div class="card-subtitle">Плейлист • 977 треков</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #2196F3, #3F51B5);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Твои любимые треки за 2025</div>
+                            <div class="card-subtitle">Плейлист</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #FF9800, #FF5722);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">1000 BARS</div>
+                            <div class="card-subtitle">Плейлист</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #4CAF50, #8BC34A);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">тёмный принц</div>
+                            <div class="card-subtitle">Плейлист</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #673AB7, #3F51B5);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">shadowraze</div>
+                            <div class="card-subtitle">Плейлист</div>
+                        </div>
+                    </div>
+
+                    <!-- Only For You -->
+                    <div class="section-title">
+                        <span>Только для тебя, qvel_noname_</span>
+                        <span>Показать все</span>
+                    </div>
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #e91e63, #9c27b0);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">ОТКРЫТИЯ НЕДЕЛИ</div>
+                            <div class="card-subtitle">Исследуй скрытые сокровища и...</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #2196F3, #3F51B5);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Микс дня #1</div>
+                            <div class="card-subtitle">T-Fest, MORGENSHTERN,...</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #FF9800, #FF5722);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Микс дня #2</div>
+                            <div class="card-subtitle">The Kid LAROI, Juice WRLD,...</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #4CAF50, #8BC34A);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Микс дня #3</div>
+                            <div class="card-subtitle">Toxi$, Aarne, Heronwater и не...</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #673AB7, #3F51B5);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Микс дня #4</div>
+                            <div class="card-subtitle">Travis Scott, Post Malone и...</div>
+                        </div>
+                    </div>
+
+                    <!-- Listen Next -->
+                    <div class="section-title">
+                        <span>Слушаем дальше?</span>
+                        <span>Показать все</span>
+                    </div>
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #e91e63, #9c27b0);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Dark Castle</div>
+                            <div class="card-subtitle">Various Artists</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #2196F3, #3F51B5);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Skyline</div>
+                            <div class="card-subtitle">Various Artists</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #FF9800, #FF5722);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Mystery House</div>
+                            <div class="card-subtitle">Various Artists</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #4CAF50, #8BC34A);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Silhouette</div>
+                            <div class="card-subtitle">Various Artists</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-img" style="background: linear-gradient(45deg, #673AB7, #3F51B5);">
+                                <div class="card-play">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-title">Dreamscape</div>
+                            <div class="card-subtitle">Various Artists</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="right-sidebar">
+                    <div class="track-info">
+                        <div class="track-img"></div>
+                        <div class="track-details">
+                            <h2>777</h2>
+                            <p>SALUKI</p>
+                            <div class="track-actions">
+                                <div class="action-btn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5V19L19 12L8 5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="action-btn active">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M21 12C21 16.4183 16.4183 21 12 21C7.58172 21 3 16.4183 3 12C3 7.58172 7.58172 3 12 3C16.4183 3 21 7.58172 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="action-btn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                                        <circle cx="12" cy="5" r="1" fill="currentColor"/>
+                                        <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="credits">
+                        <div class="credits-title">
+                            <span>Сведения</span>
+                            <span>Показать все</span>
+                        </div>
+                        <div class="credit-item">
+                            <div class="credit-title">SALUKI</div>
+                            <div class="credit-role">Основной Исполнитель, Продюсер</div>
+                        </div>
+                        <div class="credit-item">
+                            <div class="credit-title">Арсений Несатый</div>
+                            <div class="credit-role">Композитор</div>
+                        </div>
+                        <div class="credit-item">
+                            <div class="credit-title">Степан Озеров</div>
+                            <div class="credit-role">Композитор</div>
+                        </div>
+                        <div class="credit-item">
+                            <div class="credit-title">Антон Ермаков</div>
+                            <div class="credit-role">Композитор</div>
+                        </div>
+                        <div class="credit-item">
+                            <div class="credit-title">Марк Романов</div>
+                            <div class="credit-role">Композитор</div>
+                        </div>
+                        <div class="credit-item">
+                            <div class="credit-title">Егор Крид</div>
+                            <div class="credit-role">Композитор</div>
+                        </div>
+                        <div class="credit-item">
+                            <div class="credit-title">Максим Савченко</div>
+                            <div class="credit-role">Композитор</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player -->
+        <div class="player">
+            <div class="player-left">
+                <div class="player-track-img"></div>
+                <div class="player-track-info">
+                    <h4>777</h4>
+                    <p>SALUKI</p>
+                </div>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="player-center">
+                <div class="player-controls">
+                    <button class="control-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 20L9 12L19 4V20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="play-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 5V19L19 12L8 5Z" fill="black"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 4L15 12L5 20V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="progress">
+                    <span class="time">1:53</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="time">3:14</span>
+                </div>
+            </div>
+            <div class="player-right">
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 13C10 13 10 16 13 16C16 16 16 13 16 13C16 13 16 10 13 10C10 10 10 13 10 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 16L19 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 8L5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 16L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 8L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 5H4C3.46957 5 2.96086 5.21071 2.58579 5.58579C2.21071 5.96086 2 6.46957 2 7V17C2 17.5304 2.21071 18.0391 2.58579 18.4142C2.96086 18.7893 3.46957 19 4 19H14C14.5304 19 15.0391 18.7893 15.4142 18.4142C15.7893 18.0391 16 17.5304 16 17V7C16 6.46957 15.7893 5.96086 15.4142 5.58579C15.0391 5.21071 14.5304 5 14 5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 12H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 8H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 16H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 12H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 5C11 4.46957 11.2107 3.96086 11.5858 3.58579C11.9609 3.21071 12.4696 3 13 3C13.5304 3 14.0391 3.21071 14.4142 3.58579C14.7893 3.96086 15 4.46957 15 5V7M15 19V17C15 16.4696 14.7893 15.9609 14.4142 15.5858C14.0391 15.2107 13.5304 15 13 15C12.4696 15 11.9609 15.2107 11.5858 15.5858C11.2107 15.9609 11 16.4696 11 17V19M15 7V15M11 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="volume-control">
+                    <div class="nav-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 5C11 4.46957 11.2107 3.96086 11.5858 3.58579C11.9609 3.21071 12.4696 3 13 3C13.5304 3 14.0391 3.21071 14.4142 3.58579C14.7893 3.96086 15 4.46957 15 5V7M15 19V17C15 16.4696 14.7893 15.9609 14.4142 15.5858C14.0391 15.2107 13.5304 15 13 15C12.4696 15 11.9609 15.2107 11.5858 15.5858C11.2107 15.9609 11 16.4696 11 17V19M15 7V15M11 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="volume-bar">
+                        <div class="volume-fill"></div>
+                    </div>
+                </div>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 16H20M4 12H20M4 8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
