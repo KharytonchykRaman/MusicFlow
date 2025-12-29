@@ -22,7 +22,7 @@ const Genre = sequelize.define(
   }
 );
 
-Genre.prototype.toDTO = function () {
+Genre.prototype.toFull = function () {
   return {
     id: this.id,
     name: this.name,

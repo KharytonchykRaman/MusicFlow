@@ -32,19 +32,19 @@ const Artist = sequelize.define(
   }
 );
 
-Artist.prototype.toDTO = function () {
+Artist.prototype.toCompact = function () {
+  return {
+    id: this.id,
+    name: this.name,
+  };
+};
+
+Artist.prototype.toFull = function () {
   return {
     id: this.id,
     name: this.name,
     picture: this.picture,
     fans: this.fans,
-  };
-};
-
-Artist.prototype.toAlbumArtist = function () {
-  return {
-    id: this.id,
-    name: this.name,
   };
 };
 

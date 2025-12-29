@@ -1,4 +1,3 @@
-// models/Track.js
 const { DataTypes } = require("sequelize");
 const sequelize = require("../database");
 
@@ -28,12 +27,6 @@ const Track = sequelize.define(
       allowNull: false,
       validate: { min: 1 },
     },
-    // contributors пока не моделируем как отдельную сущность → храним как JSON
-    contributors: {
-      type: DataTypes.JSON,
-      allowNull: false,
-      defaultValue: [],
-    },
     cover: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -45,10 +38,14 @@ const Track = sequelize.define(
   }
 );
 
-Track.prototype.toDTO = async function () {
-  const album = await this.getAlbum();
-  const artists = await this.getArtists();
-  const genres = []; // если нужно — можно добавить связь Track-Genre позже
+Track.prototype.toFull = function () {
+  if (!this.artists) {
+    const newError = new Error(
+      "Track.toFull(): artists not loaded. Use include: [{ model: Artist, as: 'artists' }] in query."
+    );
+    newError.status = 500;
+    throw newError;
+  }
 
   return {
     id: this.id,
@@ -56,11 +53,9 @@ Track.prototype.toDTO = async function () {
     rank: this.rank,
     preview: this.preview,
     track_position: this.track_position,
-    contributors: this.contributors,
-    albumId: album ? album.id : null,
-    cover: this.cover || (album ? album.cover : null),
-    artists: artists.map(a => a.toDTO()),
-    // genres: genres.map(g => g.toDTO()),
+    cover: this.cover,
+    albumId: this.albumId,
+    artists: this.artists.map((a) => a.toFull()),
   };
 };
 

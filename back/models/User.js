@@ -1,7 +1,5 @@
-// models/User.js
 const { DataTypes } = require("sequelize");
 const sequelize = require("../database");
-const bcrypt = require("bcrypt"); // опционально, если добавите пароли позже
 
 const User = sequelize.define(
   "User",
@@ -23,8 +21,6 @@ const User = sequelize.define(
       unique: true,
       validate: { notEmpty: true },
     },
-    // Пароль можно добавить позже
-    // password: { type: DataTypes.STRING, allowNull: true }
   },
   {
     timestamps: true,
@@ -32,23 +28,12 @@ const User = sequelize.define(
   }
 );
 
-// Связи "избранное" реализуем через многие-ко-многим
-// Но для простоты в toDTO() будем использовать отдельные таблицы
-
-User.prototype.toDTO = async function () {
-  const [
-    likedTracks,
-    likedAlbums,
-    followedArtists,
-    likedPlaylists,
-    createdPlaylists,
-  ] = await Promise.all([
-    this.getLikedTracks(),
-    this.getLikedAlbums(),
-    this.getFollowedArtists(),
-    this.getLikedPlaylists(),
-    this.getPlaylists(), // created playlists
-  ]);
+User.prototype.toDTO = function () {
+  const likedTracks = this.likedTracks || [];
+  const likedAlbums = this.likedAlbums || [];
+  const followedArtists = this.followedArtists || [];
+  const likedPlaylists = this.likedPlaylists || [];
+  const createdPlaylists = this.playlists || [];
 
   return {
     id: this.id,

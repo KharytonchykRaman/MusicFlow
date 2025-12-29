@@ -44,21 +44,26 @@ const Playlist = sequelize.define(
   }
 );
 
-Playlist.prototype.toDTO = function () {
+Playlist.prototype.toCompact = function () {
   return {
     id: this.id,
     title: this.title,
     cover: this.cover,
-    label: this.label,
     userId: this.userId,
     visibility: this.visibility,
-    nb_tracks: this.nb_tracks,
-    fans: this.fans,
-    trackIds: (this.tracks || []).map((track) => track.id),
   };
 };
 
 Playlist.prototype.toFull = function () {
+  if (this.tracks === undefined) {
+    const newError = new Error(
+      "Playlist.toFull(): tracks not loaded. " +
+        "Use include: [{ model: Track, as: 'tracks' }] in query."
+    );
+    newError.status = 500;
+    throw newError;
+  }
+
   return {
     id: this.id,
     title: this.title,
@@ -68,7 +73,7 @@ Playlist.prototype.toFull = function () {
     visibility: this.visibility,
     nb_tracks: this.nb_tracks,
     fans: this.fans,
-    tracks: (this.tracks || []).map((track) => track.toDTO()),
+    tracks: (this.tracks || []).map((track) => track.toFull()),
   };
 };
 

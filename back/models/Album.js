@@ -50,10 +50,10 @@ const Album = sequelize.define(
   }
 );
 
-Album.prototype.compact = function () {
+Album.prototype.toCompact = function () {
   if (!this.artists) {
     const newError = new Error(
-      "Album.compact(): artists not loaded. Use include: [{ model: Artist, as: 'artists' }] in query."
+      "Album.toCompact(): artists not loaded. Use include: [{ model: Artist, as: 'artists' }] in query."
     );
     newError.status = 500;
     throw newError;
@@ -65,29 +65,33 @@ Album.prototype.compact = function () {
     cover: this.cover || null,
     release_date: this.release_date,
     record_type: this.record_type,
-    artists: this.artists.map((a) => a.toAlbumArtist()),
+    artists: this.artists.map((a) => a.toCompact()),
   };
 };
 
 Album.prototype.toFull = function () {
-  const [artists, genres, tracks] = await Promise.all([
-    this.getArtists(),
-    this.getGenres(),
-    this.getTracks({ order: [["track_position", "ASC"]] }), // если у вас есть track_position
-  ]);
+  if (!this.artists || this.tracks === undefined) {
+    const newError = new Error(
+      "Album.toFull(): artists or tracks not loaded. " +
+        "Use include: [{ model: Artist, as: 'artists' }, { model: Track, as: 'tracks' }] in query."
+    );
+    newError.status = 500;
+    throw newError;
+  }
 
   return {
     id: this.id,
     title: this.title,
-    cover: this.cover?.trim() || null,
+    cover: this.cover || null,
     label: this.label,
     fans: this.fans,
     release_date: this.release_date,
     record_type: this.record_type,
     nb_tracks: this.nb_tracks,
-    artists: artists.map((a) => a.toFull?.() || a.toDTO()),
-    genres: genres.map((g) => g.toDTO()),
-    tracks: tracks.map((t) => t.toDTO()),
+    artists: this.artists.map((a) => a.toFull()),
+    tracks: (this.tracks || [])
+      .sort((a, b) => a.track_position - b.track_position)
+      .map((t) => t.toFull()),
   };
 };
 
