@@ -1,4 +1,3 @@
-// models/Playlist.js
 const { DataTypes } = require("sequelize");
 const sequelize = require("../database");
 
@@ -45,11 +44,7 @@ const Playlist = sequelize.define(
   }
 );
 
-Playlist.prototype.toDTO = async function () {
-  const tracks = await this.getTracks({
-    through: { attributes: ["track_position"] }, // если нужно сохранить порядок
-  });
-
+Playlist.prototype.toDTO = function () {
   return {
     id: this.id,
     title: this.title,
@@ -59,7 +54,21 @@ Playlist.prototype.toDTO = async function () {
     visibility: this.visibility,
     nb_tracks: this.nb_tracks,
     fans: this.fans,
-    trackIds: tracks.map(t => t.id),
+    trackIds: (this.tracks || []).map((track) => track.id),
+  };
+};
+
+Playlist.prototype.toFull = function () {
+  return {
+    id: this.id,
+    title: this.title,
+    cover: this.cover,
+    label: this.label,
+    userId: this.userId,
+    visibility: this.visibility,
+    nb_tracks: this.nb_tracks,
+    fans: this.fans,
+    tracks: (this.tracks || []).map((track) => track.toDTO()),
   };
 };
 

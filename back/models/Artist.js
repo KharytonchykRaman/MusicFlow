@@ -41,4 +41,11 @@ Artist.prototype.toDTO = function () {
   };
 };
 
+Artist.prototype.toAlbumArtist = function () {
+  return {
+    id: this.id,
+    name: this.name,
+  };
+};
+
 module.exports = Artist;

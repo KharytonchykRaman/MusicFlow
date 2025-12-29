@@ -1,4 +1,3 @@
-// models/Album.js
 const { DataTypes } = require("sequelize");
 const sequelize = require("../database");
 
@@ -51,9 +50,31 @@ const Album = sequelize.define(
   }
 );
 
-Album.prototype.toDTO = async function () {
-  const artists = await this.getArtists();
-  const genres = await this.getGenres();
+Album.prototype.compact = function () {
+  if (!this.artists) {
+    const newError = new Error(
+      "Album.compact(): artists not loaded. Use include: [{ model: Artist, as: 'artists' }] in query."
+    );
+    newError.status = 500;
+    throw newError;
+  }
+
+  return {
+    id: this.id,
+    title: this.title,
+    cover: this.cover || null,
+    release_date: this.release_date,
+    record_type: this.record_type,
+    artists: this.artists.map((a) => a.toAlbumArtist()),
+  };
+};
+
+Album.prototype.toFull = function () {
+  const [artists, genres, tracks] = await Promise.all([
+    this.getArtists(),
+    this.getGenres(),
+    this.getTracks({ order: [["track_position", "ASC"]] }), // если у вас есть track_position
+  ]);
 
   return {
     id: this.id,
@@ -64,8 +85,9 @@ Album.prototype.toDTO = async function () {
     release_date: this.release_date,
     record_type: this.record_type,
     nb_tracks: this.nb_tracks,
-    artists: artists.map(a => a.toDTO()),
-    genres: genres.map(g => g.toDTO()),
+    artists: artists.map((a) => a.toFull?.() || a.toDTO()),
+    genres: genres.map((g) => g.toDTO()),
+    tracks: tracks.map((t) => t.toDTO()),
   };
 };
 
