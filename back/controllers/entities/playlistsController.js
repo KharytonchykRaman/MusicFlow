@@ -1,14 +1,12 @@
-const trackService = require("../../services/entities/trackService");
 const playlistService = require("../../services/entities/playlistService");
 
 async function getPlaylist(req, res) {
   try {
-    const { id } = req.params;
+    const id = Number(req.params.id);
 
     const playlist = await playlistService.getPlaylistById(id);
 
-    const result = await playlistService.fillPlaylist(playlist);
-    res.json(result);
+    res.json(playlist);
   } catch (err) {
     const status = err.status || 500;
     res.status(status).json({ status: "error", message: err.message });

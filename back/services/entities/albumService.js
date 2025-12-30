@@ -1,47 +1,44 @@
 const repository = require("../../data/repositories/albumRepository");
+const artistRepo = require("../../data/repositories/artistRepository");
 
 async function getPopularAlbums(limit = 10) {
-  const rawAlbums = await repository.findAlbumsSortedByFans(limit);
-  return rawAlbums;
-}
-
-function sortByFans(albums) {
-  const result = structuredClone(albums);
-
-  result.sort((al1, al2) => al2.fans - al1.fans);
-
-  return result;
+  const albums = await repository.findAlbumsSortedByFans(limit);
+  const DTOs = albums.map((al) => al.toCompact());
+  return DTOs;
 }
 
 async function getSearchedAlbums(q, limit) {
-  const rawSearchedAlbums = await repository.findSearchedAlbums(q, limit);
-
-  const sorted = sortByFans(rawSearchedAlbums);
-
-  return sorted;
+  const albums = await repository.findSearchedAlbumsSorted(q, limit);
+  const DTOs = albums.map((al) => al.toCompact());
+  return DTOs;
 }
 
 async function getAlbumById(id) {
-  const numId = Number(id);
-  const rawAlbum = await repository.findAlbumById(numId);
-  if (!rawAlbum) {
+  const album = await repository.findFullAlbumById(id);
+  if (!album) {
     const newError = new Error(`Album with id ${id} not found`);
+    newError.status = 400;
     throw newError;
   }
-  return rawAlbum;
+  return album.toFull();
 }
 
 async function getAlbumsByArtistId(artistId) {
-  const numId = Number(artistId);
-  const result = await repository.findAlbumsByArtistId(numId);
+  const artist = await artistRepo.findArtistById(artistId);
+  if (!artist) {
+    const newError = new Error(`Artist with id ${artistId} not found`);
+    newError.status = 400;
+    throw newError;
+  }
 
-  return result;
+  const albums = await repository.findAlbumsByArtistId(artistId);
+  const DTOs = albums.map((al) => al.toCompact());
+  return DTOs;
 }
 
 module.exports = {
   getSearchedAlbums,
   getPopularAlbums,
-  sortByFans,
   getAlbumById,
   getAlbumsByArtistId,
 };

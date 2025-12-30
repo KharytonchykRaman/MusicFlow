@@ -1,54 +1,29 @@
 const repository = require("../../data/repositories/playlistRepository");
-const trackService = require("./trackService");
 
 async function getPopularPlaylists(limit = 10) {
-  const rawPlaylists = await repository.findPublicPlaylistsSortedByFans(limit);
-  return rawPlaylists;
-}
-
-function sortByFans(playlists) {
-  const result = structuredClone(playlists);
-
-  result.sort((pl1, pl2) => pl2.fans - pl1.fans);
-
-  return result;
+  const playlists = await repository.findPublicPlaylistsSortedByFans(limit);
+  const DTOs = playlists.map((pl) => pl.toCompact());
+  return DTOs;
 }
 
 async function getSearchedPlaylists(q, limit) {
-  const rawSearchedPlaylists = await repository.findSearchedPlaylists(q, limit);
-
-  const sorted = sortByFans(rawSearchedPlaylists);
-
-  return sorted;
+  const playlists = await repository.findSearchedPlaylistsSorted(q, limit);
+  const DTOs = playlists.map((pl) => pl.toCompact());
+  return DTOs;
 }
 
 async function getPlaylistById(id) {
-  const numId = Number(id);
-  const rawPlaylist = await repository.findPlaylistById(numId);
-  if (!rawPlaylist) {
+  const playlist = await repository.findFullPlaylistById(id);
+  if (!playlist) {
     const newError = new Error(`Playlist with id ${id} not found`);
+    newError.status = 400;
     throw newError;
   }
-  return rawPlaylist;
-}
-
-async function fillPlaylist(playlist) {
-  const result = structuredClone(playlist);
-
-  const trackIds = [...result.tracklist];
-
-  const tracks = await Promise.all(
-    trackIds.map((trId) => trackService.getTrackById(trId))
-  );
-
-  result.tracklist = tracks;
-  return result;
+  return playlist.toFull();
 }
 
 module.exports = {
   getPopularPlaylists,
-  sortByFans,
   getSearchedPlaylists,
   getPlaylistById,
-  fillPlaylist,
 };

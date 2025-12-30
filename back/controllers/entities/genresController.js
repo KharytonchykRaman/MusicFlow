@@ -2,7 +2,7 @@ const trackService = require("../../services/entities/trackService");
 
 async function getTracks(req, res) {
   try {
-    const { id } = req.params;
+    const id = Number(req.params.id);
 
     const tracks = await trackService.getTracksByGenreId(id);
     res.json(tracks);

@@ -1,59 +1,53 @@
-const fs = require("fs").promises;
-const path = require("path");
+const { Playlist } = require("../../models");
+const { Op } = require("sequelize");
 
-const { createAsyncSearch } = require("../../utils");
-
-const PLAYLIST_FILE_PATH = path.join(
-  __dirname,
-  "..",
-  "mocked",
-  "playlists.json"
-);
-
-async function getPlaylistsFromFile() {
-  const data = await fs.readFile(PLAYLIST_FILE_PATH, "utf8");
-  return JSON.parse(data);
+async function findSearchedPlaylistsSorted(query, limit = 20) {
+  return Playlist.findAll({
+    where: {
+      [Op.or]: [
+        { title: { [Op.like]: `%${query}%` } },
+        { label: { [Op.like]: `%${query}%` } },
+      ],
+    },
+    order: [["fans", "DESC"]],
+    limit: limit,
+  });
 }
-
-const findSearchedPlaylists = createAsyncSearch(getPlaylistsFromFile, [
-  "title",
-  "label",
-]);
 
 async function findPublicPlaylistsSortedByFans(limit) {
-  const playlistsFromFile = await getPlaylistsFromFile();
-  return playlistsFromFile
-    .filter((p) => p.visibility === "public")
-    .sort((a, b) => b.fans - a.fans)
-    .slice(0, limit);
+  return Playlist.findAll({
+    where: { visibility: true },
+    order: [["fans", "DESC"]],
+    limit: limit,
+  });
 }
 
-async function savePlaylist(playlist) {
-  const playlistsFromFile = await getPlaylistsFromFile();
+// async function savePlaylist(playlist) {
+//   const playlistsFromFile = await getPlaylistsFromFile();
 
-  if (playlistsFromFile.some((p) => p.id === playlist.id)) {
-    const err = new Error(`Playlist with id ${playlist.id} already exists`);
-    err.status = 400;
-    throw err;
-  }
+//   if (playlistsFromFile.some((p) => p.id === playlist.id)) {
+//     const err = new Error(`Playlist with id ${playlist.id} already exists`);
+//     err.status = 400;
+//     throw err;
+//   }
 
-  playlistsFromFile.push(playlist);
+//   playlistsFromFile.push(playlist);
 
-  await fs.writeFile(
-    PLAYLIST_FILE_PATH,
-    JSON.stringify(playlistsFromFile, null, 2)
-  );
-}
+//   await fs.writeFile(
+//     PLAYLIST_FILE_PATH,
+//     JSON.stringify(playlistsFromFile, null, 2)
+//   );
+// }
 
-async function findPlaylistById(playlistId) {
-  const playlistsFromFile = await getPlaylistsFromFile();
-
-  return playlistsFromFile.find((pl) => pl.id === playlistId);
+async function findFullPlaylistById(id) {
+  return Playlist.findByPk(id, {
+    include: [{ model: Track, as: "tracks" }],
+  });
 }
 
 module.exports = {
-  savePlaylist,
+  //savePlaylist,
   findPublicPlaylistsSortedByFans,
-  findSearchedPlaylists,
-  findPlaylistById,
+  findSearchedPlaylistsSorted,
+  findFullPlaylistById,
 };

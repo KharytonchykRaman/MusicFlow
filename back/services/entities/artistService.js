@@ -1,39 +1,29 @@
 const repository = require("../../data/repositories/artistRepository");
 
 async function getPopularArtists(limit = 10) {
-  const rawArtists = await repository.findArtistsSortedByFans(limit);
-  return rawArtists;
-}
-
-function sortByFans(artists) {
-  const result = structuredClone(artists);
-
-  result.sort((ar1, ar2) => ar2.fans - ar1.fans);
-
-  return result;
+  const artists = await repository.findArtistsSortedByFans(limit);
+  const DTOs = artists.map((ar) => ar.toFull());
+  return DTOs;
 }
 
 async function getSearchedArtists(q, limit) {
-  const rawSearchedArtists = await repository.findSearchedArtists(q, limit);
-
-  const sorted = sortByFans(rawSearchedArtists);
-
-  return sorted;
+  const artists = await repository.findSearchedArtistsSorted(q, limit);
+  const DTOs = artists.map((ar) => ar.toFull());
+  return DTOs;
 }
 
 async function getArtistById(id) {
-  const numId = Number(id);
-  const rawArtist = await repository.findArtistById(numId);
-  if (!rawArtist) {
+  const artist = await repository.findArtistById(id);
+  if (!artist) {
     const newError = new Error(`Artist with id ${id} not found`);
+    newError.status = 400;
     throw newError;
   }
-  return rawArtist;
+  return artist.toFull();
 }
 
 module.exports = {
   getSearchedArtists,
   getPopularArtists,
-  sortByFans,
   getArtistById,
 };

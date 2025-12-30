@@ -4,7 +4,7 @@ const trackService = require("../../services/entities/trackService");
 
 async function getArtist(req, res) {
   try {
-    const { id } = req.params;
+    const id = Number(req.params.id);
 
     const artist = await artistService.getArtistById(id);
 
@@ -18,9 +18,7 @@ async function getArtist(req, res) {
 
 async function getTracks(req, res) {
   try {
-    const { id } = req.params;
-
-    await artistService.getArtistById(id);
+    const id = Number(req.params.id);
 
     const tracks = await trackService.getTracksByArtistId(id);
     res.json(tracks);

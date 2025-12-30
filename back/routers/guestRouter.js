@@ -20,11 +20,11 @@ router.get("/playlist/:id", (req, res) =>
 
 router.get("/artist/:id", (req, res) => artistsController.getArtist(req, res));
 
-router.get("/artists/:id/tracks", (req, res) =>
+router.get("/artist/:id/tracks", (req, res) =>
   artistsController.getTracks(req, res)
 );
 
-router.get("/genres/:id/tracks", (req, res) =>
+router.get("/genre/:id/tracks", (req, res) =>
   genresController.getTracks(req, res)
 );
 

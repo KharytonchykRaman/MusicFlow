@@ -25,7 +25,7 @@ const Playlist = sequelize.define(
     visibility: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: true, // true = public, false = private
+      defaultValue: false, // true = public, false = private
     },
     nb_tracks: {
       type: DataTypes.INTEGER,

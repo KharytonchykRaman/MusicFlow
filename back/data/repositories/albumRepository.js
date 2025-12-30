@@ -1,55 +1,91 @@
-const fs = require("fs").promises;
-const path = require("path");
-
-const { createAsyncSearch } = require("../../utils");
-
-const ALBUM_FILE_PATH = path.join(__dirname, "..", "mocked", "albums.json");
-
-async function getAlbumsFromFile() {
-  const data = await fs.readFile(ALBUM_FILE_PATH, "utf8");
-  return JSON.parse(data);
-}
-
-const findSearchedAlbums = createAsyncSearch(getAlbumsFromFile, [
-  "title",
-  "label",
-]);
+const { Album, Track, Artist, Genre } = require("../../models");
+const { Op } = require("sequelize");
 
 async function findAlbumsSortedByFans(limit) {
-  const albumsData = await getAlbumsFromFile();
-  return albumsData.sort((a, b) => b.fans - a.fans).slice(0, limit);
+  return Album.findAll({
+    include: [
+      {
+        model: Artist,
+        as: "artists",
+      },
+    ],
+    order: [["fans", "DESC"]],
+    limit: limit,
+  });
 }
 
-async function saveAlbum(album) {
-  const albumsData = await getAlbumsFromFile();
-
-  if (albumsData.some((al) => al.id === album.id)) {
-    const err = new Error(`Album with id ${album.id} already exists`);
-    err.status = 400;
-    throw err;
-  }
-
-  albumsData.push(album);
-
-  await fs.writeFile(ALBUM_FILE_PATH, JSON.stringify(albumsData, null, 2));
+async function findSearchedAlbumsSorted(query, limit = 20) {
+  return Album.findAll({
+    where: {
+      [Op.or]: [
+        { title: { [Op.like]: `%${query}%` } },
+        { label: { [Op.like]: `%${query}%` } },
+      ],
+    },
+    include: [{ model: Artist, as: "artists" }],
+    order: [["fans", "DESC"]],
+    limit: limit,
+  });
 }
 
-async function findAlbumById(id) {
-  const albumsData = await getAlbumsFromFile();
+// async function saveAlbum(album) {
+//   const albumsData = await getAlbumsFromFile();
 
-  return albumsData.find((al) => al.id === id);
+//   if (albumsData.some((al) => al.id === album.id)) {
+//     const err = new Error(`Album with id ${album.id} already exists`);
+//     err.status = 400;
+//     throw err;
+//   }
+
+//   albumsData.push(album);
+
+//   await fs.writeFile(ALBUM_FILE_PATH, JSON.stringify(albumsData, null, 2));
+// }
+
+async function findFullAlbumById(id) {
+  return Album.findByPk(id, {
+    include: [
+      {
+        model: Artist,
+        as: "artists",
+      },
+      {
+        model: Track,
+        as: "tracks",
+        include: [
+          { model: Genre, as: "genres" },
+          { model: Artist, as: "artists" },
+        ],
+        order: [["track_position", "ASC"]],
+      },
+    ],
+  });
+}
+
+async function findCompactAlbumById(id) {
+  return Album.findByPk(id, {
+    include: [{ model: Artist, as: "artists" }],
+  });
 }
 
 async function findAlbumsByArtistId(artistId) {
-  const albumsData = await getAlbumsFromFile();
-
-  return albumsData.filter((al) => al.artists.some((ar) => ar.id === artistId));
+  return Album.findAll({
+    include: [
+      {
+        model: Artist,
+        as: "artists",
+        where: { id: artistId },
+      },
+    ],
+    order: [["release_date", "DESC"]],
+  });
 }
 
 module.exports = {
-  findSearchedAlbums,
+  findSearchedAlbumsSorted,
   findAlbumsSortedByFans,
-  saveAlbum,
-  findAlbumById,
+  //saveAlbum,
+  findFullAlbumById,
   findAlbumsByArtistId,
+  findCompactAlbumById,
 };

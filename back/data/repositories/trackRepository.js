@@ -1,64 +1,114 @@
-const fs = require("fs").promises;
-const path = require("path");
+const { Track, Genre, Artist } = require("../../models");
+const { Op } = require("sequelize");
 
-const { createAsyncSearch } = require("../../utils");
-
-const TRACK_FILE_PATH = path.join(__dirname, "..", "mocked", "tracks.json");
-
-async function getTracksFromFile() {
-  const data = await fs.readFile(TRACK_FILE_PATH, "utf8");
-  return JSON.parse(data);
+async function findSearchedTracksSorted(query, limit = 20) {
+  return Track.findAll({
+    where: {
+      title: { [Op.like]: `%${query}%` },
+    },
+    include: [
+      { model: Artist, as: "artists" },
+      { model: Genre, as: "genres" },
+    ],
+    order: [["rank", "DESC"]],
+    limit: limit,
+  });
 }
-
-const findSearchedTracks = createAsyncSearch(getTracksFromFile, ["title"]);
 
 async function findTracksSortedByRank(limit) {
-  const tracksData = await getTracksFromFile();
-  return tracksData.sort((a, b) => b.rank - a.rank).slice(0, limit);
+  return Track.findAll({ order: [["rank", "DESC"]], limit: limit });
 }
 
-async function saveTrack(track) {
-  const tracksData = await getTracksFromFile();
+// async function saveTrack(track) {
+//   const tracksData = await getTracksFromFile();
 
-  if (tracksData.some((tr) => tr.id === track.id)) {
-    const err = new Error(`Track with id ${track.id} already exists`);
-    err.status = 400;
-    throw err;
-  }
+//   if (tracksData.some((tr) => tr.id === track.id)) {
+//     const err = new Error(`Track with id ${track.id} already exists`);
+//     err.status = 400;
+//     throw err;
+//   }
 
-  tracksData.push(track);
+//   tracksData.push(track);
 
-  await fs.writeFile(TRACK_FILE_PATH, JSON.stringify(tracksData, null, 2));
-}
+//   await fs.writeFile(TRACK_FILE_PATH, JSON.stringify(tracksData, null, 2));
+// }
 
 async function findTracksByAlbumId(albumId) {
-  const tracksData = await getTracksFromFile();
-
-  return tracksData.filter((tr) => tr.albumId === albumId);
+  return Track.findAll({
+    where: { albumId: albumId },
+    order: [["track_position", "ASC"]],
+  });
 }
 
 async function findTracksByArtistId(artistId) {
-  const tracksData = await getTracksFromFile();
+  const tracks = await Track.findAll({
+    attributes: ["id"],
+    include: [
+      {
+        model: Artist,
+        as: "artists",
+        where: { id: artistId },
+        attributes: [],
+      },
+    ],
+  });
+  const trackIds = tracks.map((tr) => tr.id);
 
-  return tracksData.filter((tr) => tr.artist.id === artistId);
+  if (trackIds.length === 0) {
+    return [];
+  }
+
+  return Track.findAll({
+    where: { id: { [Op.in]: trackIds } },
+    include: [
+      { model: Artist, as: "artists" },
+      { model: Genre, as: "genres" },
+    ],
+    order: [["rank", "DESC"]],
+  });
 }
 
 async function findTracksByGenreId(genreId) {
-  const tracksData = await getTracksFromFile();
+  const tracks = await Track.findAll({
+    attributes: ["id"],
+    include: [
+      {
+        model: Genre,
+        as: "genres",
+        where: { id: genreId },
+        attributes: [],
+      },
+    ],
+  });
+  const trackIds = tracks.map((tr) => tr.id);
 
-  return tracksData.filter((tr) => tr.genres.some((g) => g.id === genreId));
+  if (trackIds.length === 0) {
+    return [];
+  }
+
+  return Track.findAll({
+    where: { id: { [Op.in]: trackIds } },
+    include: [
+      { model: Genre, as: "genres" },
+      { model: Artist, as: "artists" },
+    ],
+    order: [["rank", "DESC"]],
+  });
 }
 
-async function findTrackById(trackId) {
-  const tracksData = await getTracksFromFile();
-
-  return tracksData.find((tr) => tr.id === trackId);
+async function findTrackById(id) {
+  return Track.findByPk(id, {
+    include: [
+      { model: Artist, as: "artists" },
+      { model: Genre, as: "genres" },
+    ],
+  });
 }
 
 module.exports = {
-  saveTrack,
+  //saveTrack,
   findTracksSortedByRank,
-  findSearchedTracks,
+  findSearchedTracksSorted,
   findTracksByAlbumId,
   findTracksByArtistId,
   findTracksByGenreId,

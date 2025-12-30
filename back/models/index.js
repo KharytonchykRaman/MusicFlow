@@ -24,7 +24,7 @@ Track.belongsToMany(Genre, {
   through: "TrackGenre",
   as: "genres",
   timestamps: false,
-  onDelete: "CASCADE", 
+  onDelete: "CASCADE",
 });
 Genre.belongsToMany(Track, {
   through: "TrackGenre",
@@ -135,7 +135,7 @@ Playlist.belongsToMany(User, {
 
 const syncDatabase = async () => {
   try {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync();
     console.log("✅ Database synchronized");
   } catch (error) {
     console.error("❌ Database sync error:", error);
