@@ -39,9 +39,9 @@ const Track = sequelize.define(
 );
 
 Track.prototype.toFull = function () {
-  if (!this.artists) {
+  if (!this.artists || !this.genres) {
     const newError = new Error(
-      "Track.toFull(): artists not loaded. Use include: [{ model: Artist, as: 'artists' }] in query."
+      "Track.toFull(): artists or genres not loaded. Use include: [{ model: Artist, as: 'artists' }, { model: Genre, as: 'genres' }] in query."
     );
     newError.status = 500;
     throw newError;
@@ -56,6 +56,7 @@ Track.prototype.toFull = function () {
     cover: this.cover,
     albumId: this.albumId,
     artists: this.artists.map((a) => a.toFull()),
+    genres: this.genres.map((g) => g.toFull()),
   };
 };
 

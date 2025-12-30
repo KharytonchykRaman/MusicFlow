@@ -20,15 +20,15 @@ Artist.belongsToMany(Album, {
   onDelete: "CASCADE",
 });
 
-Album.belongsToMany(Genre, {
-  through: "AlbumGenre",
+Track.belongsToMany(Genre, {
+  through: "TrackGenre",
   as: "genres",
   timestamps: false,
-  onDelete: "CASCADE",
+  onDelete: "CASCADE", 
 });
-Genre.belongsToMany(Album, {
-  through: "AlbumGenre",
-  as: "albums",
+Genre.belongsToMany(Track, {
+  through: "TrackGenre",
+  as: "tracks",
   timestamps: false,
   onDelete: "RESTRICT",
 });
