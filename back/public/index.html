@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Верхняя панель с SVG иконками</title>
+    <title>Music Flow</title>
     <style>
       /* === ОБЩИЕ СТИЛИ === */
       body {
@@ -130,16 +130,7 @@
         flex: 1;
         padding: 0 20px;
         overflow-y: auto;
-        background: linear-gradient(180deg, #3f225c, #181818);
-        border-radius: 8px;
-      }
-
-      /* Правая панель */
-      .sidebar-right {
-        width: 280px;
         background-color: #181818;
-        padding: 20px;
-        overflow-y: auto;
         border-radius: 8px;
       }
 
@@ -163,6 +154,180 @@
         font-size: 16px;
         margin-bottom: 10px;
         color: #ffffff;
+      }
+
+      .card:hover {
+        background-color: rgba(75, 75, 75, 0.189);
+      }
+
+      /* === СТИЛИЗАЦИЯ СКРОЛЛБАРА === */
+      ::-webkit-scrollbar {
+        width: 14px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #444;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #666;
+      }
+
+      /* ---------- слайдеры ---------- */
+      .slider-section {
+        margin-bottom: 32px; /* отступ между секциями */
+      }
+      .slider-title {
+        font-size: 22px;
+        margin: 0 0 16px 0;
+        color: #ffffff;
+        letter-spacing: 0.5px;
+      }
+
+      /* строка-контейнер карточек */
+      .slider-row {
+        display: flex;
+        gap: 20px; /* расстояние между карточками */
+        overflow-x: auto; /* горизонтальный скролл */
+        overflow-y: hidden;
+        padding-bottom: 8px; /* чтобы тень/zoom не обрезались */
+        scrollbar-width: none; /* Firefox */
+      }
+      .slider-row::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+      }
+
+      /* ---------- карточка (переработанная) ---------- */
+      .card {
+        flex: 0 0 180px; /* фикс-ширина, не растягивается */
+        padding: 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.2s;
+        display: flex;
+        flex-direction: column;
+      }
+      .card:hover {
+        background-color: rgba(75, 75, 75, 0.19);
+        transform: scale(1.03);
+      }
+
+      /* обложка 1:1 */
+      .cover-box {
+        position: relative;
+        width: 100%;
+        padding-top: 100%; /* квадрат */
+        overflow: hidden;
+        border-radius: 8px;
+      }
+      .cover-box img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* текст под обложкой */
+      .card-text {
+        margin-top: 12px;
+      }
+      .card-name {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 4px;
+        color: #ffffff;
+      }
+      .card-artist {
+        font-size: 12px;
+        color: #b3b3b3;
+      }
+
+      /* ===== СТИЛИ ПРАВОЙ ПАНЕЛИ ===== */
+      .sidebar-right {
+        width: 280px;
+        background-color: #181818;
+        padding: 20px;
+        overflow-y: auto;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* --- блок трека --- */
+
+      .np-album {
+        font-size: 14px;
+        color: #b3b3b3;
+      }
+
+      /* --- новая полно-широкая карточка трека --- */
+      /* --- полно-широкая карточка трека --- */
+      .now-playing {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .np-album {
+        font-size: 14px;
+        color: #b3b3b3;
+      }
+      .np-full-cover {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .np-full-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .np-track {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+      }
+      .np-artist {
+        font-size: 14px;
+        color: #b3b3b3;
+      }
+
+      /* --- карточка исполнителя --- */
+      .artist-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: bg 0.2s;
+      }
+      .artist-card:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      .artist-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .artist-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+      }
+      .artist-meta {
+        font-size: 12px;
+        color: #b3b3b3;
+        margin-top: 2px;
       }
     </style>
   </head>
@@ -554,29 +719,750 @@
       </div>
 
       <!-- Центральная область -->
+      <!-- ==========  MAIN-AREA  ========== -->
       <div class="main-area">
-        <div class="section">
-          <!-- Здесь будут быстрые доступы: "Любимые треки", "Горгород", "Охххумирон" и т.д. -->
-        </div>
-        <div class="section">
-          <!-- Здесь будет заголовок "Только для тебя, qvel_noname_" -->
-        </div>
-        <div class="section">
-          <!-- Здесь будут карточки миксов и треков -->
-        </div>
-        <div class="section">
-          <!-- Здесь будет заголовок "Слушаем дальше?" -->
-        </div>
+        <!-- 1-й слайдер -->
+        <section class="slider-section">
+          <h2 class="slider-title">Плейлисты дня</h2>
+          <div class="slider-row">
+            <!-- карточка -->
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <!-- карточка -->
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <!-- карточка -->
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <!-- добавьте ещё карточки -->
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2-й слайдер -->
+        <section class="slider-section">
+          <h2 class="slider-title">Новые релизы</h2>
+          <div class="slider-row">
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <!-- и т.д. -->
+          </div>
+        </section>
+
+        <!-- 3-й слайдер -->
+        <section class="slider-section">
+          <h2 class="slider-title">Для вас</h2>
+          <div class="slider-row">
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+            <div
+              class="card"
+              style="
+                width: 180px;
+                padding: 12px; /* Общий падинг вокруг всего блока */
+                cursor: pointer;
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+              "
+            >
+              <!-- Обложка с закруглёнными углами -->
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 100%;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="/public/img/test.jpg"
+                  alt="Обложка"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px; /* Закругление только у изображения */
+                  "
+                />
+              </div>
+
+              <!-- Текст — без фона, без блока-обёртки -->
+              <div style="margin-top: 12px">
+                <div
+                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
+                >
+                  Название
+                </div>
+                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+              </div>
+            </div>
+
+            <!-- и т.д. -->
+          </div>
+        </section>
       </div>
 
       <!-- Правая панель -->
       <div class="sidebar-right">
-        <div class="section">
-          <div class="section-title">Любимые треки</div>
-          <!-- Здесь будет карточка трека (Juice WRLD) -->
+        <!-- Карточка трека -->
+        <div class="now-playing">
+          <div class="np-album">SALUKI</div>
+          <img class="np-full-cover" src="/public/img/test.jpg" alt="cover" />
+          <div class="np-full-text">
+            <div class="np-track">Переплетено</div>
+            <div class="np-artist">Oxxxymiron</div>
+          </div>
         </div>
-        <div class="section">
-          <!-- Здесь будет информация о треке и исполнителе -->
+
+        <!-- Карточка исполнителя -->
+        <div class="artist-card">
+          <img
+            class="artist-avatar"
+            src="/public/img/test.jpg"
+            alt="24kGoldn"
+          />
+          <div class="artist-info">
+            <div class="artist-name">24kGoldn</div>
+            <div class="artist-meta">Исполнитель</div>
+          </div>
         </div>
       </div>
     </div>
@@ -586,4 +1472,74 @@
       <!-- Здесь будет мини-плеер с текущим треком и контролами -->
     </div>
   </body>
+  <template id="sidebarLeftElementTemplate">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s;
+      "
+    >
+      <img
+        src="/public/img/test.jpg"
+        alt="Виселица"
+        style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover"
+      />
+      <div style="flex-grow: 1">
+        <div style="font-weight: bold; font-size: 14px">Виселица</div>
+        <div style="color: #b3b3b3; font-size: 12px">Альбом • ЛСП</div>
+      </div>
+    </div>
+  </template>
+
+  <template id="cardTemplate">
+    <div
+      class="card"
+      style="
+        width: 180px;
+        padding: 12px; /* Общий падинг вокруг всего блока */
+        cursor: pointer;
+        transition: transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+      "
+    >
+      <!-- Обложка с закруглёнными углами -->
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          padding-top: 100%;
+          overflow: hidden;
+        "
+      >
+        <img
+          src="/public/img/test.jpg"
+          alt="Обложка"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px; /* Закругление только у изображения */
+          "
+        />
+      </div>
+
+      <!-- Текст — без фона, без блока-обёртки -->
+      <div style="margin-top: 12px">
+        <div style="font-weight: bold; font-size: 14px; margin-bottom: 4px">
+          Название
+        </div>
+        <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+      </div>
+    </div>
+  </template>
 </html>
