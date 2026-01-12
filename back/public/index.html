@@ -4,227 +4,183 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Flow</title>
+
+    <script defer src="/public/js/script.js"></script>
+
+    <!-- =========  CORE STYLES  ========= -->
     <style>
-      /* === ОБЩИЕ СТИЛИ === */
-      body {
+      :root {
+        --bg-main: #121212;
+        --bg-card: #181818;
+        --bg-hover: rgba(255, 255, 255, 0.05);
+        --accent: #1db954;
+        --text: #fff;
+        --text-secondary: #b3b3b3;
+        --radius: 8px;
+        --gap: 20px;
+        --transition: 0.2s;
+      }
+      * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        background-color: #121212;
-        color: #ffffff;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        height: 100vh;
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        background: var(--bg-main);
+        color: var(--text);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      svg {
+        fill: currentColor;
       }
 
-      /* === ВЕРХНЯЯ ПАНЕЛЬ (уже есть) === */
+      /* -----  HEADER  ----- */
       .header {
-        background-color: #121212;
-        padding: 10px 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        z-index: 100;
+        padding: 10px var(--gap);
+        background: var(--bg-main);
+        z-index: 10;
       }
-
       .search-wrapper {
         display: flex;
         align-items: center;
         gap: 15px;
         margin: 0 auto;
       }
-
-      .home-icon {
+      .home-button {
         width: 40px;
         height: 40px;
-        background-color: #1e1e1e;
+        background: var(--bg-card);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        transition: transform var(--transition);
+        border: none;
       }
-
-      .home-icon svg {
-        width: 20px;
-        height: 20px;
-        fill: #ffffff;
+      .home-button:hover {
+        transform: scale(1.1);
       }
-
+      .home-icon__svg {
+        color: var(--text);
+      }
       .search-bar {
-        background-color: #1e1e1e;
+        background: var(--bg-card);
         border-radius: 20px;
         padding: 8px 15px;
         display: flex;
         align-items: center;
         width: 400px;
       }
-
-      .search-icon {
-        width: 16px;
-        height: 16px;
-        margin-right: 10px;
-      }
-
-      .search-icon svg {
-        width: 100%;
-        height: 100%;
-        fill: #b3b3b3;
-      }
-
       .search-input {
-        background: transparent;
+        padding-left: 5px;
+        background: none;
         border: none;
-        color: #ffffff;
+        color: var(--text);
+        flex: 1;
         font-size: 14px;
-        flex-grow: 1;
         outline: none;
       }
-
       .profile-icon {
         width: 30px;
         height: 30px;
-        background-color: #1db954;
+        background: var(--accent);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
-        transition: transform 0.2s;
       }
 
-      .profile-icon:hover {
-        transform: scale(1.1);
-      }
-
-      .profile-icon::after {
-        content: "";
-        position: absolute;
-        width: 34px;
-        height: 34px;
-        border: 2px solid #353535;
-        border-radius: 50%;
-        pointer-events: none;
-      }
-
-      /* === ГЛАВНАЯ ЧАСТЬ === */
+      /* -----  MAIN GRID  ----- */
       .main-content {
-        display: flex;
         flex: 1;
+        display: flex;
         overflow: hidden;
-        gap: 10px; /* Расстояние между блоками */
+        gap: 10px;
         padding: 0 7px;
       }
-
-      /* Левая боковая пане ль */
-      .sidebar-left {
+      .sidebar {
         width: 320px;
-        background-color: #181818;
-        padding: 20px;
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        padding: var(--gap);
         overflow-y: auto;
-        border-radius: 8px;
-      }
-
-      /* Центральная область */
-      .main-area {
-        flex: 1;
-        padding: 0 20px;
-        overflow-y: auto;
-        background-color: #181818;
-        border-radius: 8px;
-      }
-
-      /* Нижняя панель (плеер) */
-      .player-bar {
-        background-color: #121212;
-        padding: 10px 20px;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-top: 1px solid #282828;
-        z-index: 100;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .center {
+        flex: 1;
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        padding: var(--gap);
+        overflow-y: auto;
       }
 
-      /* Блоки внутри — пока без содержимого */
-      .section {
-        margin-bottom: 20px;
-      }
-
-      .section-title {
-        font-size: 16px;
-        margin-bottom: 10px;
-        color: #ffffff;
-      }
-
-      .card:hover {
-        background-color: rgba(75, 75, 75, 0.189);
-      }
-
-      /* === СТИЛИЗАЦИЯ СКРОЛЛБАРА === */
+      /* -----  SCROLL  ----- */
       ::-webkit-scrollbar {
         width: 14px;
       }
-
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
       ::-webkit-scrollbar-thumb {
-        background-color: #444;
+        background: #444;
       }
-
       ::-webkit-scrollbar-thumb:hover {
-        background-color: #666;
+        background: #666;
       }
 
-      /* ---------- слайдеры ---------- */
-      .slider-section {
-        margin-bottom: 32px; /* отступ между секциями */
+      /* -----  SLIDER  ----- */
+      .slider {
+        margin-bottom: 32px;
       }
-      .slider-title {
+      .slider__title {
         font-size: 22px;
-        margin: 0 0 16px 0;
-        color: #ffffff;
+        margin-bottom: 16px;
         letter-spacing: 0.5px;
       }
-
-      /* строка-контейнер карточек */
-      .slider-row {
+      .slider__row {
         display: flex;
-        gap: 20px; /* расстояние между карточками */
-        overflow-x: auto; /* горизонтальный скролл */
+        gap: var(--gap) - 5px;
+        overflow-x: auto;
         overflow-y: hidden;
-        padding-bottom: 8px; /* чтобы тень/zoom не обрезались */
-        scrollbar-width: none; /* Firefox */
+        padding-bottom: 8px;
+        scrollbar-width: none;
       }
-      .slider-row::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
+      .slider__row::-webkit-scrollbar {
+        display: none;
       }
 
-      /* ---------- карточка (переработанная) ---------- */
+      /* -----  CARD  ----- */
       .card {
-        flex: 0 0 180px; /* фикс-ширина, не растягивается */
+        flex: 0 0 180px;
         padding: 12px;
-        border-radius: 8px;
+        border-radius: var(--radius);
         cursor: pointer;
-        transition: background-color 0.2s, transform 0.2s;
+        transition: background var(--transition), transform var(--transition);
         display: flex;
         flex-direction: column;
       }
       .card:hover {
-        background-color: rgba(75, 75, 75, 0.19);
+        background: var(--bg-hover);
         transform: scale(1.03);
       }
-
-      /* обложка 1:1 */
-      .cover-box {
+      .card__cover {
         position: relative;
         width: 100%;
-        padding-top: 100%; /* квадрат */
+        padding-top: 100%;
         overflow: hidden;
-        border-radius: 8px;
+        border-radius: var(--radius);
       }
-      .cover-box img {
+      .card__cover img {
         position: absolute;
         top: 0;
         left: 0;
@@ -232,124 +188,577 @@
         height: 100%;
         object-fit: cover;
       }
-
-      /* текст под обложкой */
-      .card-text {
-        margin-top: 12px;
-      }
-      .card-name {
+      .card__title {
         font-weight: 600;
         font-size: 14px;
-        margin-bottom: 4px;
-        color: #ffffff;
+        margin-top: 12px;
       }
-      .card-artist {
+      .card__info {
         font-size: 12px;
-        color: #b3b3b3;
+        color: var(--text-secondary);
+        margin-top: 4px;
       }
 
-      /* ===== СТИЛИ ПРАВОЙ ПАНЕЛИ ===== */
-      .sidebar-right {
-        width: 280px;
-        background-color: #181818;
-        padding: 20px;
-        overflow-y: auto;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      /* --- блок трека --- */
-
-      .np-album {
-        font-size: 14px;
-        color: #b3b3b3;
-      }
-
-      /* --- новая полно-широкая карточка трека --- */
-      /* --- полно-широкая карточка трека --- */
+      /* -----  NOW-PLAYING  ----- */
       .now-playing {
         display: flex;
         flex-direction: column;
         gap: 12px;
       }
-      .np-album {
+      .now-playing__album {
         font-size: 14px;
-        color: #b3b3b3;
+        color: var(--text-secondary);
       }
-      .np-full-cover {
+      .now-playing__cover {
         width: 100%;
         aspect-ratio: 1/1;
         object-fit: cover;
-        border-radius: 8px;
+        border-radius: var(--radius);
       }
-      .np-full-text {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-      .np-track {
+      .now-playing__title {
         font-size: 16px;
         font-weight: 600;
-        color: #fff;
       }
-      .np-artist {
-        font-size: 14px;
-        color: #b3b3b3;
-      }
-
-      /* --- карточка исполнителя --- */
-      .artist-card {
+      /* -----  ARTIST CARD  ----- */
+      .artist {
         display: flex;
         align-items: center;
         gap: 12px;
         padding: 10px;
-        border-radius: 6px;
+        border-radius: var(--radius);
         cursor: pointer;
-        transition: bg 0.2s;
+        transition: background var(--transition);
       }
-      .artist-card:hover {
-        background-color: rgba(255, 255, 255, 0.05);
+      .artist:hover {
+        background: var(--bg-hover);
       }
-      .artist-avatar {
+      .artist__avatar {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
-        flex-shrink: 0;
       }
-      .artist-name {
+      .artist__name {
         font-size: 14px;
         font-weight: 600;
-        color: #fff;
       }
-      .artist-meta {
+      .artist__meta {
         font-size: 12px;
-        color: #b3b3b3;
-        margin-top: 2px;
+        color: var(--text-secondary);
+      }
+
+      /* -----  LIBRARY  ----- */
+      .lib-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+      .lib-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 15px;
+      }
+      .lib-tab {
+        background: #282828;
+        border: none;
+        color: var(--text);
+        padding: 6px 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .lib-search {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+      .lib-search__left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+      }
+      .lib-search__input {
+        background: none;
+        border: none;
+        color: var(--text);
+        flex: 1;
+        font-size: 14px;
+        outline: none;
+      }
+      .search-icon {
+        width: 16px;
+        height: 16px;
+        fill: var(--text-secondary);
+      }
+      .lib-recent {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--text-secondary);
+        font-size: 14px;
+      }
+
+      /* -----  COMPACT ROW  ----- */
+      .compact {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px;
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: background var(--transition);
+      }
+      .compact:hover {
+        background: var(--bg-hover);
+      }
+      .compact__cover {
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+      .compact__title {
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .compact__meta {
+        font-size: 12px;
+        color: var(--text-secondary);
+      }
+
+      /* ========== страница альбома ========== */
+      .album-page {
+        padding: 0 8px 40px;
+      }
+      .album-hero {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+      .album-hero__cover {
+        width: 232px;
+        height: 232px;
+        object-fit: cover;
+        border-radius: var(--radius);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      }
+      .album-hero__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .album-hero__type {
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .album-hero__title {
+        font-size: 56px;
+        margin: 8px 0 12px;
+        line-height: 1.1;
+      }
+      .album-hero__meta {
+        font-size: 14px;
+        color: var(--text-secondary);
+      }
+      .album-hero__meta span:not(:last-child)::after {
+        content: "•";
+        margin: 0 4px;
+        color: var(--text-secondary);
+      }
+      .btn-like {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .btn-like:hover {
+        color: var(--text);
+      }
+
+      /* ========== строка трека ========== */
+      .tracklist {
+        list-style: none;
+        padding: 0;
+      }
+      .track {
+        display: grid;
+        grid-template-columns: 44px 1fr 80px;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      .track:hover {
+        background: var(--bg-hover);
+      }
+
+      .track__left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text-secondary);
+        font-size: 14px;
+      }
+      .track__play-ico {
+        fill: currentColor;
+        display: none;
+      } /* по умолчанию скрыта */
+      .track:hover .track__num {
+        display: none;
+      } /* убрать номер */
+      .track:hover .track__play-ico {
+        display: block;
+        color: var(--accent);
+      }
+
+      .track__info {
+        overflow: hidden;
+      }
+      .track__title {
+        font-weight: 600;
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .track__artists {
+        font-size: 12px;
+        color: var(--text-secondary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .track__right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        justify-self: end;
+        color: var(--text-secondary);
+        font-size: 12px;
+      }
+      .track__more {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.15s;
+      }
+      .track:hover .track__more {
+        opacity: 1;
+      }
+
+      .album-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .album-artists-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .artist-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 10px 4px 4px;
+        background: var(--bg-hover);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .artist-chip:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .artist-chip__img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .artist-chip__name {
+        font-size: 14px;
+        color: var(--text);
+      }
+
+      /* сердечко */
+      .album-like {
+        font-size: 28px;
+        margin-left: auto;
+      }
+      .album-like.liked {
+        color: var(--accent);
+      }
+
+      /* шапка над трек-листом (как в Spotify) */
+      .track-header {
+        display: grid;
+        grid-template-columns: 44px 1fr 80px;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        font-size: 12px;
+        color: var(--text-secondary);
+        border-bottom: 1px solid #282828;
+      }
+
+      /* ========= PLAYER-BAR ========= */
+      .player-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 20px;
+        background: var(--bg-main);
+        border-top: 1px solid #282828;
+        gap: 24px;
+      }
+      .player-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 0 0 220px; /* ← фикс. ширина, не расширяется */
+        overflow: hidden; /* ← обрезаем длинный текст */
+      }
+      .player-cover {
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        border-radius: 4px;
+        border: none;
+      }
+      .player-track {
+        min-width: 0; /* ← разрешаем сжиматься */
+      }
+      .player-center {
+        flex: 1 1 auto; /* ← занимает всё свободное место */
+        min-width: 320px; /* ← НО не меньше 320 px – ползунок всегда виден */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .player-artist {
+        font-size: 12px;
+        color: var(--text-secondary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .player-like {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 22px;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .player-like.liked {
+        color: var(--accent);
+      }
+
+      .player-center {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .player-controls {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .player-title {
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap; /* одна строка */
+        overflow: hidden; /* скрыть лишнее */
+        text-overflow: ellipsis; /* многоточие */
+      }
+      .ctrl-btn {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 20px;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .ctrl-btn:hover {
+        color: var(--text);
+      }
+      .play-pause {
+        font-size: 28px;
+        color: var(--accent);
+      }
+
+      .player-timeline {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .progress,
+      .volume {
+        flex: 1;
+        appearance: none;
+        height: 4px;
+        border-radius: 2px;
+        background: #535353;
+        outline: none;
+        cursor: pointer;
+      }
+      .progress::-webkit-slider-thumb,
+      .volume::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      .time {
+        font-size: 12px;
+        color: var(--text-secondary);
+        min-width: 36px;
+        text-align: center;
+      }
+
+      .player-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 0 0 180px; /* ← тоже фикс. ширина */
+      }
+      .volume-ico {
+        font-size: 18px;
+      }
+
+      /* ========= ARTIST-PAGE ========= */
+      .artist-page {
+        padding: 0 8px 40px;
+      }
+      .artist-hero {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 32px;
+      }
+      .artist-hero__cover {
+        width: 232px;
+        height: 232px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      }
+      .artist-hero__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .artist-hero__type {
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .artist-hero__name {
+        font-size: 56px;
+        margin: 8px 0 12px;
+        line-height: 1.1;
+      }
+      .artist-hero__stats {
+        font-size: 14px;
+        color: var(--text-secondary);
+      }
+
+      .artist-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+      .btn-follow {
+        background: var(--accent);
+        color: #121212;
+        border: none;
+        border-radius: 20px;
+        padding: 8px 24px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .btn-follow:hover {
+        transform: scale(1.06);
+      }
+      .btn-follow.following {
+        background: #fff;
+      }
+
+      /* блок «популярные треки» */
+      .popular-tracks {
+        margin-bottom: 40px;
+      }
+      .popular-tracks__title {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+
+      /* ========= страница поиска ========= */
+      .search-page {
+        padding: 0 8px 40px;
+      }
+
+      .no-results {
+        font-size: 14px;
+        color: var(--text-secondary);
+        padding: 16px 12px;
       }
     </style>
   </head>
+
   <body>
-    <!-- Верхняя панель -->
-    <div class="header">
+    <!-- =====  SVG-SPRITE  ===== -->
+    <svg style="display: none">
+      <symbol id="icon-home" viewBox="0 0 24 24">
+        <path
+          d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732z"
+        />
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <path
+          d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z"
+        />
+      </symbol>
+      <symbol id="icon-plus" viewBox="0 0 16 16">
+        <path
+          d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75"
+        />
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+      </symbol>
+    </svg>
+
+    <!-- =================  HEADER  ================= -->
+    <header class="header">
       <div class="search-wrapper">
-        <div class="home-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path
-              d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732z"
-            />
+        <button class="home-button" id="homeButton" href="/" aria-label="Home">
+          <svg class="home-icon__svg" width="20" height="20">
+            <use href="#icon-home" />
           </svg>
-        </div>
+        </button>
         <div class="search-bar">
-          <div class="search-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z"
-              />
-            </svg>
-          </div>
+          <svg class="search-icon" width="16" height="16">
+            <use href="#icon-search" />
+          </svg>
           <input
             type="text"
             class="search-input"
@@ -357,1189 +766,286 @@
           />
         </div>
       </div>
-      <div class="profile-icon">👤</div>
-    </div>
+      <div class="profile-icon" aria-label="Profile">👤</div>
+    </header>
 
-    <!-- Главная часть -->
-    <div class="main-content">
-      <!-- Левая боковая панель -->
-      <div class="sidebar-left">
-        <!-- Заголовок и кнопка "Создать" -->
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-          "
-        >
-          <h3 style="margin: 0; font-size: 16px">Моя медиатека</h3>
-          <button
-            style="
-              background-color: #282828;
-              border: none;
-              color: white;
-              padding: 6px 12px;
-              border-radius: 20px;
-              cursor: pointer;
-              display: flex;
-              align-items: center;
-              gap: 5px;
-              font-size: 14px;
-            "
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="white"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75"
-              ></path>
-            </svg>
+    <!-- =================  MAIN GRID  ================= -->
+    <main class="main-content">
+      <!--  LEFT  -->
+      <aside class="sidebar">
+        <div class="lib-header">
+          <h3 class="lib-title">Моя медиатека</h3>
+          <button class="lib-tab" aria-label="Создать плейлист">
+            <svg width="16" height="16"><use href="#icon-plus" /></svg>
             Создать
           </button>
         </div>
 
-        <!-- Вкладки -->
-        <div style="display: flex; gap: 8px; margin-bottom: 15px">
-          <button
-            style="
-              background-color: #282828;
-              border: none;
-              color: white;
-              padding: 6px 12px;
-              border-radius: 20px;
-              cursor: pointer;
-              font-size: 14px;
-            "
-          >
-            Плейлисты
-          </button>
-          <button
-            style="
-              background-color: #282828;
-              border: none;
-              color: white;
-              padding: 6px 12px;
-              border-radius: 20px;
-              cursor: pointer;
-              font-size: 14px;
-            "
-          >
-            Исполнители
-          </button>
-          <button
-            style="
-              background-color: #282828;
-              border: none;
-              color: white;
-              padding: 6px 12px;
-              border-radius: 20px;
-              cursor: pointer;
-              font-size: 14px;
-            "
-          >
-            Альбомы
-          </button>
+        <div class="lib-tabs">
+          <button class="lib-tab">Плейлисты</button>
+          <button class="lib-tab">Исполнители</button>
+          <button class="lib-tab">Альбомы</button>
         </div>
 
-        <!-- Поиск и "Недавние" на одной строке -->
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-          "
-        >
-          <!-- Поиск слева -->
-          <div
-            style="display: flex; align-items: center; gap: 8px; flex-grow: 1"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#b3b3b3"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z"
-              />
-            </svg>
-            <input
-              type="text"
-              placeholder="Поиск"
-              style="
-                background: transparent;
-                border: none;
-                color: white;
-                flex-grow: 1;
-                outline: none;
-                font-size: 14px;
-              "
-            />
+        <div class="lib-search">
+          <div class="lib-search__left">
+            <svg class="search-icon"><use href="#icon-search" /></svg>
+            <input type="text" class="lib-search__input" placeholder="Поиск" />
           </div>
-
-          <!-- "Недавние" справа -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 5px;
-              color: #b3b3b3;
-              font-size: 14px;
-            "
-          >
+          <div class="lib-recent">
             <span>Недавние</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#b3b3b3"
-              viewBox="0 0 24 24"
-            >
-              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-            </svg>
+            <svg width="16" height="16"><use href="#icon-menu" /></svg>
           </div>
         </div>
 
-        <!-- Список элементов -->
-        <div style="display: flex; flex-direction: column; gap: 15px">
-          <!-- Любимые треки -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              padding: 8px;
-              border-radius: 6px;
-              cursor: pointer;
-              transition: background 0.2s;
-              position: relative;
-            "
-          >
-            <img
-              src="/public/img/test.jpg"
-              alt="Любимые треки"
-              style="
-                width: 40px;
-                height: 40px;
-                border-radius: 4px;
-                object-fit: cover;
-              "
-            />
-            <div style="flex-grow: 1">
-              <div style="font-weight: bold; font-size: 14px">
-                Любимые треки
-              </div>
-              <div style="color: #b3b3b3; font-size: 12px">
-                Плейлист • 1044 трека
-              </div>
-            </div>
-          </div>
+        <div class="lib-list"></div>
+      </aside>
 
-          <!-- ЛСП -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              padding: 8px;
-              border-radius: 6px;
-              cursor: pointer;
-              transition: background 0.2s;
-            "
-          >
-            <img
-              src="/public/img/test.jpg"
-              alt="ЛСП"
-              style="
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                object-fit: cover;
-              "
-            />
-            <div style="flex-grow: 1">
-              <div style="font-weight: bold; font-size: 14px">ЛСП</div>
-              <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-            </div>
-          </div>
-
-          <!-- Eminem -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              padding: 8px;
-              border-radius: 6px;
-              cursor: pointer;
-              transition: background 0.2s;
-            "
-          >
-            <img
-              src="/public/img/test.jpg"
-              alt="Eminem"
-              style="
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                object-fit: cover;
-              "
-            />
-            <div style="flex-grow: 1">
-              <div style="font-weight: bold; font-size: 14px">Eminem</div>
-              <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-            </div>
-          </div>
-
-          <!-- Виселица -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              padding: 8px;
-              border-radius: 6px;
-              cursor: pointer;
-              transition: background 0.2s;
-            "
-          >
-            <img
-              src="/public/img/test.jpg"
-              alt="Виселица"
-              style="
-                width: 40px;
-                height: 40px;
-                border-radius: 4px;
-                object-fit: cover;
-              "
-            />
-            <div style="flex-grow: 1">
-              <div style="font-weight: bold; font-size: 14px">Виселица</div>
-              <div style="color: #b3b3b3; font-size: 12px">Альбом • ЛСП</div>
-            </div>
-          </div>
-
-          <!-- Death Race For Love -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              padding: 8px;
-              border-radius: 6px;
-              cursor: pointer;
-              transition: background 0.2s;
-            "
-          >
-            <img
-              src="/public/img/test.jpg"
-              alt="Death Race For Love"
-              style="
-                width: 40px;
-                height: 40px;
-                border-radius: 4px;
-                object-fit: cover;
-              "
-            />
-            <div style="flex-grow: 1">
-              <div style="font-weight: bold; font-size: 14px">
-                Death Race For Love (Bonus Track V...
-              </div>
-              <div style="color: #b3b3b3; font-size: 12px">
-                Альбом • Juice WRLD
-              </div>
-            </div>
-          </div>
-
-          <!-- Juice WRLD -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              padding: 8px;
-              border-radius: 6px;
-              cursor: pointer;
-              transition: background 0.2s;
-            "
-          >
-            <img
-              src="/public/img/test.jpg"
-              alt="Juice WRLD"
-              style="
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                object-fit: cover;
-              "
-            />
-            <div style="flex-grow: 1">
-              <div style="font-weight: bold; font-size: 14px">Juice WRLD</div>
-              <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-            </div>
-          </div>
-
-          <!-- Ваня Дмитриенко -->
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              padding: 8px;
-              border-radius: 6px;
-              cursor: pointer;
-              transition: background 0.2s;
-            "
-          >
-            <img
-              src="/public/img/test.jpg"
-              alt="Ваня Дмитриенко"
-              style="
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                object-fit: cover;
-              "
-            />
-            <div style="flex-grow: 1">
-              <div style="font-weight: bold; font-size: 14px">
-                Ваня Дмитриенко
-              </div>
-              <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-            </div>
-          </div>
+      <!--  CENTER  -->
+      <section class="center" id="centerSection">
+        <div class="slider">
+          <h2 class="slider__title">Популярные артисты</h2>
+          <div class="slider__row" id="popularArtists"></div>
         </div>
+
+        <div class="slider">
+          <h2 class="slider__title">Популярные альбомы</h2>
+          <div class="slider__row" id="popularAlbums"></div>
+        </div>
+
+        <div class="slider">
+          <h2 class="slider__title">Популярные плейлисты</h2>
+          <div class="slider__row" id="popularPlaylists"></div>
+        </div>
+      </section>
+
+      <!--  RIGHT  -->
+      <aside class="sidebar" id="leftSidebar"></aside>
+    </main>
+
+    <!-- =========  PLAYER-BAR  ========= -->
+    <section class="player-bar">
+      <!-- левая часть: обложка + название + like -->
+      <div class="player-left">
+        <img class="player-cover" src="" alt="" />
+        <div class="player-track">
+          <div class="player-title"></div>
+          <div class="player-artist"></div>
+        </div>
+        <button class="player-like">♡</button>
       </div>
 
-      <!-- Центральная область -->
-      <!-- ==========  MAIN-AREA  ========== -->
-      <div class="main-area">
-        <!-- 1-й слайдер -->
-        <section class="slider-section">
-          <h2 class="slider-title">Плейлисты дня</h2>
-          <div class="slider-row">
-            <!-- карточка -->
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <!-- карточка -->
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <!-- карточка -->
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <!-- добавьте ещё карточки -->
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 2-й слайдер -->
-        <section class="slider-section">
-          <h2 class="slider-title">Новые релизы</h2>
-          <div class="slider-row">
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <!-- и т.д. -->
-          </div>
-        </section>
-
-        <!-- 3-й слайдер -->
-        <section class="slider-section">
-          <h2 class="slider-title">Для вас</h2>
-          <div class="slider-row">
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="
-                width: 180px;
-                padding: 12px; /* Общий падинг вокруг всего блока */
-                cursor: pointer;
-                transition: transform 0.2s;
-                display: flex;
-                flex-direction: column;
-                border-radius: 8px;
-              "
-            >
-              <!-- Обложка с закруглёнными углами -->
-              <div
-                style="
-                  position: relative;
-                  width: 100%;
-                  padding-top: 100%;
-                  overflow: hidden;
-                "
-              >
-                <img
-                  src="/public/img/test.jpg"
-                  alt="Обложка"
-                  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px; /* Закругление только у изображения */
-                  "
-                />
-              </div>
-
-              <!-- Текст — без фона, без блока-обёртки -->
-              <div style="margin-top: 12px">
-                <div
-                  style="font-weight: bold; font-size: 14px; margin-bottom: 4px"
-                >
-                  Название
-                </div>
-                <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
-              </div>
-            </div>
-
-            <!-- и т.д. -->
-          </div>
-        </section>
-      </div>
-
-      <!-- Правая панель -->
-      <div class="sidebar-right">
-        <!-- Карточка трека -->
-        <div class="now-playing">
-          <div class="np-album">SALUKI</div>
-          <img class="np-full-cover" src="/public/img/test.jpg" alt="cover" />
-          <div class="np-full-text">
-            <div class="np-track">Переплетено</div>
-            <div class="np-artist">Oxxxymiron</div>
-          </div>
+      <!-- центр: кнопки + таймлайн -->
+      <div class="player-center">
+        <div class="player-controls">
+          <button class="ctrl-btn shuffle" title="Shuffle">🔀</button>
+          <button class="ctrl-btn prev" title="Prev">⏮</button>
+          <button class="ctrl-btn play-pause" id="playPauseBtn">▶</button>
+          <button class="ctrl-btn next" title="Next">⏭</button>
+          <button class="ctrl-btn repeat" title="Repeat">🔁</button>
         </div>
 
-        <!-- Карточка исполнителя -->
-        <div class="artist-card">
-          <img
-            class="artist-avatar"
-            src="/public/img/test.jpg"
-            alt="24kGoldn"
+        <div class="player-timeline">
+          <span class="time current">0:00</span>
+          <input
+            type="range"
+            class="progress"
+            id="progressBar"
+            min="0"
+            max="100"
+            value="0"
           />
-          <div class="artist-info">
-            <div class="artist-name">24kGoldn</div>
-            <div class="artist-meta">Исполнитель</div>
-          </div>
+          <span class="time total">0:00</span>
         </div>
       </div>
-    </div>
 
-    <!-- Нижняя панель (плеер) -->
-    <div class="player-bar">
-      <!-- Здесь будет мини-плеер с текущим треком и контролами -->
-    </div>
-  </body>
-  <template id="sidebarLeftElementTemplate">
-    <div
-      style="
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.2s;
-      "
-    >
-      <img
-        src="/public/img/test.jpg"
-        alt="Виселица"
-        style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover"
-      />
-      <div style="flex-grow: 1">
-        <div style="font-weight: bold; font-size: 14px">Виселица</div>
-        <div style="color: #b3b3b3; font-size: 12px">Альбом • ЛСП</div>
-      </div>
-    </div>
-  </template>
-
-  <template id="cardTemplate">
-    <div
-      class="card"
-      style="
-        width: 180px;
-        padding: 12px; /* Общий падинг вокруг всего блока */
-        cursor: pointer;
-        transition: transform 0.2s;
-        display: flex;
-        flex-direction: column;
-        border-radius: 8px;
-      "
-    >
-      <!-- Обложка с закруглёнными углами -->
-      <div
-        style="
-          position: relative;
-          width: 100%;
-          padding-top: 100%;
-          overflow: hidden;
-        "
-      >
-        <img
-          src="/public/img/test.jpg"
-          alt="Обложка"
-          style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px; /* Закругление только у изображения */
-          "
+      <!-- правая часть: громкость -->
+      <div class="player-right">
+        <button class="ctrl-btn volume-ico">🔊</button>
+        <input
+          type="range"
+          class="volume"
+          id="volumeBar"
+          min="0"
+          max="100"
+          value="70"
         />
       </div>
 
-      <!-- Текст — без фона, без блока-обёртки -->
-      <div style="margin-top: 12px">
-        <div style="font-weight: bold; font-size: 14px; margin-bottom: 4px">
-          Название
-        </div>
-        <div style="color: #b3b3b3; font-size: 12px">Исполнитель</div>
+      <!-- скрытый аудио-элемент -->
+      <audio id="audioPlayer" preload="metadata"></audio>
+    </section>
+
+    <!-- =================  TEMPLATES  ================= -->
+    <template id="cardTmpl">
+      <div class="card">
+        <div class="card__cover"><img src="" alt="" /></div>
+        <div class="card__title"></div>
+        <div class="card__info"></div>
       </div>
-    </div>
-  </template>
+    </template>
+
+    <template id="compactTmpl">
+      <div class="compact">
+        <img class="compact__cover" src="" alt="" />
+        <div class="compact__info">
+          <div class="compact__title"></div>
+          <div class="compact__meta"></div>
+        </div>
+      </div>
+    </template>
+
+    <!-- ========= TEMPLATE: страница альбома ========= -->
+    <template id="albumPageTmpl">
+      <div class="album-page">
+        <!-- шапка -->
+        <div class="album-hero">
+          <img class="album-hero__cover" src="" alt="" />
+          <div class="album-hero__info">
+            <div class="album-hero__type">Альбом</div>
+            <h1 class="album-hero__title"></h1>
+            <div class="album-hero__meta">
+              <div class="album-hero__artists" id="albumArtists"></div>
+              <span class="album-hero__year"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- кнопки -->
+        <div class="album-actions">
+          <div class="album-artists-list" id="albumArtistsList"></div>
+          <button class="btn-like album-like" aria-label="Like">♡</button>
+        </div>
+
+        <div class="track-header">
+          <div>#</div>
+          <div>НАЗВАНИЕ</div>
+          <div style="text-align: right">ПРОСЛУШИВАНИЯ</div>
+        </div>
+        <ol class="tracklist" id="albumTrackList"></ol>
+      </div>
+    </template>
+
+    <!-- ========= TEMPLATE: одна строка трека ========= -->
+    <template id="trackRowTmpl">
+      <li class="track">
+        <!-- левая часть: номер / иконка play -->
+        <div class="track__left">
+          <span class="track__num"></span>
+          <svg
+            class="track__play-ico"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+          >
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+
+        <!-- центр: название и артисты -->
+        <div class="track__info">
+          <div class="track__title"></div>
+          <div class="track__artists"></div>
+        </div>
+
+        <!-- правая часть: длительность и ⋯ -->
+        <div class="track__right">
+          <span class="track__rank"></span>
+        </div>
+      </li>
+    </template>
+
+    <template id="nowPlayingTmpl">
+      <div class="now-playing__album">{{album}}</div>
+      <img class="now-playing__cover" src="{{cover}}" alt="" />
+      <div class="now-playing__title">{{title}}</div>
+    </template>
+
+    <!-- ========= TEMPLATE: страница артиста ========= -->
+    <template id="artistPageTmpl">
+      <div class="artist-page">
+        <!-- шапка -->
+        <div class="artist-hero">
+          <img class="artist-hero__cover" src="" alt="" />
+          <div class="artist-hero__info">
+            <div class="artist-hero__type">Исполнитель</div>
+            <h1 class="artist-hero__name"></h1>
+            <div class="artist-hero__stats"></div>
+          </div>
+        </div>
+
+        <!-- кнопки -->
+        <div class="artist-actions">
+          <button class="btn-follow" id="followBtn">Подписаться</button>
+        </div>
+
+        <!-- популярные треки -->
+        <section class="popular-tracks">
+          <h2 class="popular-tracks__title">Популярные треки</h2>
+          <ol class="tracklist" id="artistTopTracks"></ol>
+        </section>
+
+        <!-- слайдер альбомов -->
+        <div class="slider">
+          <h2 class="slider__title">Альбомы</h2>
+          <div class="slider__row" id="artistAlbums"></div>
+        </div>
+
+        <!-- слайдер плейлистов -->
+        <div class="slider">
+          <h2 class="slider__title">Плейлисты с участием артиста</h2>
+          <div class="slider__row" id="artistPlaylists"></div>
+        </div>
+      </div>
+    </template>
+
+    <!-- ========= TEMPLATE: главная страница ========= -->
+    <template id="homePageTmpl">
+      <div class="home-page">
+        <div class="slider">
+          <h2 class="slider__title">Популярные артисты</h2>
+          <div class="slider__row" id="popularArtists"></div>
+        </div>
+
+        <div class="slider">
+          <h2 class="slider__title">Популярные альбомы</h2>
+          <div class="slider__row" id="popularAlbums"></div>
+        </div>
+
+        <div class="slider">
+          <h2 class="slider__title">Популярные плейлисты</h2>
+          <div class="slider__row" id="popularPlaylists"></div>
+        </div>
+      </div>
+    </template>
+
+    <!-- ========= TEMPLATE: страница поиска ========= -->
+    <template id="searchPageTmpl">
+      <div class="search-page">
+        <!-- популярные треки -->
+        <section class="popular-tracks">
+          <h2 class="popular-tracks__title">Треки</h2>
+          <ol class="tracklist" id="searchTracks"></ol>
+        </section>
+
+        <!-- слайдер артистов -->
+        <div class="slider">
+          <h2 class="slider__title">Артисты</h2>
+          <div class="slider__row" id="searchArtists"></div>
+        </div>
+
+        <!-- слайдер альбомов -->
+        <div class="slider">
+          <h2 class="slider__title">Альбомы</h2>
+          <div class="slider__row" id="searchAlbums"></div>
+        </div>
+
+        <!-- слайдер плейлистов -->
+        <div class="slider">
+          <h2 class="slider__title">Плейлисты</h2>
+          <div class="slider__row" id="searchPlaylists"></div>
+        </div>
+      </div>
+    </template>
+  </body>
 </html>

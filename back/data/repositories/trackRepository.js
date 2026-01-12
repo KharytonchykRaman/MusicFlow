@@ -40,7 +40,7 @@ async function findTracksByAlbumId(albumId) {
   });
 }
 
-async function findTracksByArtistId(artistId) {
+async function findTracksByArtistId(artistId, limit) {
   const tracks = await Track.findAll({
     attributes: ["id"],
     include: [
@@ -65,6 +65,7 @@ async function findTracksByArtistId(artistId) {
       { model: Genre, as: "genres" },
     ],
     order: [["rank", "DESC"]],
+    limit,
   });
 }
 

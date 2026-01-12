@@ -28,7 +28,7 @@ async function getTracksByAlbumId(albumId) {
   return DTOs;
 }
 
-async function getTracksByArtistId(artistId) {
+async function getTracksByArtistId(artistId, limit) {
   const artist = await artistRepo.findArtistById(artistId);
   if (!artist) {
     const newError = new Error(`Artist with id ${artistId} not found`);
@@ -36,7 +36,7 @@ async function getTracksByArtistId(artistId) {
     throw newError;
   }
 
-  const tracks = await repository.findTracksByArtistId(artistId);
+  const tracks = await repository.findTracksByArtistId(artistId, limit);
   const DTOs = tracks.map((tr) => tr.toFull());
   return DTOs;
 }

@@ -9,7 +9,10 @@ async function getArtist(req, res) {
     const artist = await artistService.getArtistById(id);
 
     const albums = await albumService.getAlbumsByArtistId(id);
-    res.json({ ...artist, albums });
+
+    const limit = 10;
+    const topTracks = await trackService.getTracksByArtistId(id, limit);
+    res.json({ ...artist, albums, topTracks });
   } catch (err) {
     const status = err.status || 500;
     res.status(status).json({ status: "error", message: err.message });
